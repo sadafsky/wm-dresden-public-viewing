@@ -1,0 +1,50 @@
+[
+  {
+    "id": "watzke",
+    "name": "Brauhaus Watzke",
+    "type": "bar",
+    "coordinates": [13.6803, 51.0649],
+    "address": "Kötzschenbroder Str. 1, 01139 Dresden",
+    "photo": null,
+    "screens": 3,
+    "indoor": true,
+    "hours": "17:00 – 24:00",
+    "website": "https://watzke.de",
+    "description": {
+      "de": "Klassische Dresdner Brauerei direkt an der Elbe. Mehrere große Bildschirme im Schankraum und auf der Terrasse.",
+      "en": "Classic Dresden brewery right on the Elbe river. Multiple large screens in the taproom and on the terrace."
+    }
+  },
+  {
+    "id": "strandbar",
+    "name": "Strandbar Elbe",
+    "type": "outdoor",
+    "coordinates": [13.7420, 51.0520],
+    "address": "Terrassenufer 1, 01069 Dresden",
+    "photo": null,
+    "screens": 1,
+    "indoor": false,
+    "hours": "15:00 – 23:00",
+    "website": null,
+    "description": {
+      "de": "Entspannte Strandbar direkt an der Elbe mit einem großen Outdoor-Screen. Perfekt für Sommerspiele.",
+      "en": "Relaxed beach bar right on the Elbe with one large outdoor screen. Perfect for summer matches."
+    }
+  },
+  {
+    "id": "sportscafe",
+    "name": "Sports Café König",
+    "type": "restaurant",
+    "coordinates": [13.7380, 51.0500],
+    "address": "Altmarkt 15, 01067 Dresden",
+    "photo": null,
+    "screens": 5,
+    "indoor": true,
+    "hours": "16:00 – 02:00",
+    "website": null,
+    "description": {
+      "de": "Großes Sports Café am Altmarkt mit 5 Bildschirmen und Leinwand. Reservierung für Spielabende empfohlen.",
+      "en": "Large sports café at Altmarkt with 5 screens and a projection wall. Reservations recommended for match nights."
+    }
+  }
+]
