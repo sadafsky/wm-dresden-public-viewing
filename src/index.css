@@ -1,1 +1,87 @@
-/* placeholder — filled in Task 3 */
+/* Design tokens */
+:root {
+  --bg-deep: #0a0a14;
+  --bg-card: #0d1526;
+  --bg-card-hover: #141f35;
+  --accent: #f4a261;
+  --accent-dim: rgba(244, 162, 97, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #8899bb;
+  --border-muted: #2a3a5c;
+  --shadow-sheet: 0 -4px 20px rgba(0, 0, 0, 0.5);
+  --radius-card: 12px;
+  --radius-sheet: 16px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Hide scrollbars on bottom sheet card row */
+.cards-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mapbox map pin — gold diamond shape */
+.map-pin {
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  border: 2px solid white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(244, 162, 97, 0.4);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Pulse ring around pin */
+.map-pin::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(244, 162, 97, 0.5);
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: pin-pulse 2s ease-out infinite;
+}
+
+/* Selected pin: bigger + glow */
+.map-pin--active {
+  transform: rotate(-45deg) scale(1.4);
+  box-shadow: 0 0 14px rgba(244, 162, 97, 0.9), 0 2px 8px rgba(244, 162, 97, 0.5);
+}
+
+@keyframes pin-pulse {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg) scale(2.8);
+    opacity: 0;
+  }
+}
