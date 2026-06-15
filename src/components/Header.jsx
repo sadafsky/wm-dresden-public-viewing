@@ -9,7 +9,7 @@ export default function Header({ lang, hidden, inline }) {
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       className={`app-header${inline ? ' app-header--inline' : ''}${hidden ? ' ui-hidden' : ''}`}
     >
-      <Wordmark lang={lang} />
+      <Wordmark lang={lang} hideTagline={inline} />
     </motion.div>
   )
 }

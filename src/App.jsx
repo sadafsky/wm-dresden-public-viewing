@@ -12,6 +12,7 @@ import SidePanel from './components/SidePanel'
 import VenueDetail from './components/VenueDetail'
 import AboutModal from './components/AboutModal'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
+import { t } from './i18n'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
 import { useMatches } from './hooks/useMatches'
@@ -125,7 +126,7 @@ function AppContent() {
           <div className={`mobile-top${sheetOpen ? ' ui-hidden' : ''}`}>
             <Header lang={lang} inline />
             <div className="mobile-top__bar">
-              <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} inline />
+              <span className="mobile-top__tagline">{t[lang].tagline}</span>
               <TopControls
                 lang={lang}
                 toggleLang={toggleLang}
@@ -139,6 +140,7 @@ function AppContent() {
                 inline
               />
             </div>
+            <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} inline />
           </div>
           {openPanel && (
             <div onClick={() => setOpenPanel(null)} style={{ position: 'fixed', inset: 0, zIndex: 25 }} />
