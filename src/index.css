@@ -426,7 +426,8 @@ body::after {
 
 /* Hide top chrome when the mobile sheet is up */
 .app-header, .filter-chips, .top-controls, .mobile-top { transition: opacity 0.28s ease; }
-.ui-hidden { opacity: 0 !important; pointer-events: none !important; }
+.ui-hidden { opacity: 0 !important; }
+.ui-hidden, .ui-hidden * { pointer-events: none !important; }
 
 /* ── Mobile top stack: brand row, then filters + controls row ── */
 .mobile-top {
