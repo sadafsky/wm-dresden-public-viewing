@@ -15,7 +15,7 @@ const InfoIcon = () => (
 const listVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } } }
 
 export default function BottomSheet({
-  venues, selectedId, onVenueSelect, lang, query, setQuery, matches, counts, onAbout,
+  venues, selectedId, onVenueSelect, lang, query, setQuery, matches, counts, onAbout, onOpenChange,
 }) {
   const tr = t[lang]
   const sheetRef = useRef(null)
@@ -31,8 +31,8 @@ export default function BottomSheet({
     if (!isOpen) y.set(h - PEEK)
   }, [venues.length, isOpen, tab])
 
-  function snapOpen() { animate(y, 0, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(true) }
-  function snapClose() { animate(y, sheetHeight - PEEK, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(false) }
+  function snapOpen() { animate(y, 0, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(true); onOpenChange?.(true) }
+  function snapClose() { animate(y, sheetHeight - PEEK, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(false); onOpenChange?.(false) }
   function handleDragEnd(_, info) {
     if (info.velocity.y > 150 || info.offset.y > sheetHeight * 0.25) snapClose()
     else snapOpen()

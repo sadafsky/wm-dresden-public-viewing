@@ -34,6 +34,7 @@ function AppContent() {
   const [showTraffic, setShowTraffic]     = useState(false)
   const [aboutOpen, setAboutOpen]         = useState(false)
   const [railOpen, setRailOpen]           = useState(true)
+  const [sheetOpen, setSheetOpen]         = useState(false)
 
   const types = useMemo(
     () => [...new Set(venues.map((v) => v.type).filter(Boolean))],
@@ -121,8 +122,8 @@ function AppContent() {
         </>
       ) : (
         <>
-          <Header lang={lang} />
-          <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} />
+          <Header lang={lang} hidden={sheetOpen} />
+          <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} hidden={sheetOpen} />
           <TopControls
             lang={lang}
             toggleLang={toggleLang}
@@ -133,6 +134,7 @@ function AppContent() {
             setShowRain={setShowRain}
             showTraffic={showTraffic}
             setShowTraffic={setShowTraffic}
+            hidden={sheetOpen}
           />
           {openPanel && (
             <div onClick={() => setOpenPanel(null)} style={{ position: 'fixed', inset: 0, zIndex: 25 }} />
@@ -161,6 +163,7 @@ function AppContent() {
             matches={matches}
             counts={counts}
             onAbout={() => setAboutOpen(true)}
+            onOpenChange={setSheetOpen}
           />
         </>
       )}

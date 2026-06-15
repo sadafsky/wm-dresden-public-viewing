@@ -424,17 +424,15 @@ body::after {
 }
 .about-close:hover { color: var(--text); }
 
+/* Hide top chrome (header / filters / controls) when the mobile sheet is up */
+.app-header, .filter-chips, .top-controls { transition: opacity 0.28s ease; }
+.ui-hidden { opacity: 0 !important; pointer-events: none !important; }
+
 /* ── Responsive (mobile) ──────────────────────────────── */
 @media (max-width: 640px) {
-  .app-header { padding: 12px 14px 64px; }
-  .app-header__title { font-size: 34px; margin-top: 4px; }
-  .app-header__title .ttl-full { display: none; }
-  .app-header__title .ttl-short { display: inline; }
-  .app-header__sub { display: none; }
-
-  /* Controls wrap into a tidy 2-row cluster on the right */
-  .top-controls__row { flex-wrap: wrap; justify-content: flex-end; max-width: 176px; }
-
-  /* Filters sit just below the compact header + slim control row */
-  .filter-chips { top: 96px; right: 12px; left: 12px; }
+  .app-header { padding: 12px 14px 58px; }
+  .app-header__title { font-size: clamp(19px, 5vw, 24px); margin-top: 6px; }
+  .app-header__lockup { max-width: calc(100% - 150px); }  /* keep clear of controls */
+  .top-controls__row { justify-content: flex-end; }
+  .filter-chips { top: 92px; right: 12px; left: 12px; }
 }

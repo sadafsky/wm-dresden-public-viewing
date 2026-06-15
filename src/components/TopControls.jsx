@@ -17,12 +17,12 @@ const panelMotion = {
 }
 
 export default function TopControls({
-  lang, toggleLang, openPanel, setOpenPanel, weather,
+  lang, toggleLang, openPanel, setOpenPanel, weather, hidden,
   showRain, setShowRain, showTraffic, setShowTraffic,
 }) {
   const anyLayerOn = showRain || showTraffic
   return (
-    <div className="top-controls">
+    <div className={`top-controls${hidden ? ' ui-hidden' : ''}`}>
       <div className="top-controls__row">
         <WeatherChip weather={weather} lang={lang} compact />
         <button

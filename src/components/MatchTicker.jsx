@@ -87,7 +87,7 @@ export default function MatchTicker({ lang, matches = [] }) {
   return (
     <div className="ticker">
       <div className={`ticker__badge${hasLive ? ' ticker__badge--live' : ''}`}>
-        {hasLive ? (<><span className="ticker__badge-dot" />{t[lang].live}</>) : 'WM 26'}
+        <span className="ticker__badge-dot" />{t[lang].live}
       </div>
       <div className="ticker__viewport">
         <motion.div

@@ -2,12 +2,12 @@ import { motion } from 'framer-motion'
 import { t } from '../i18n'
 
 // Horizontal, scrollable row of type filters. "Alle" + one chip per type present.
-export default function FilterChips({ types, active, onChange, lang, counts }) {
+export default function FilterChips({ types, active, onChange, lang, counts, hidden }) {
   const tr = t[lang]
   const chips = [{ key: 'all', label: tr.all }, ...types.map((ty) => ({ key: ty, label: tr.types[ty] ?? ty }))]
 
   return (
-    <div className="filter-chips">
+    <div className={`filter-chips${hidden ? ' ui-hidden' : ''}`}>
       {chips.map((chip) => {
         const isActive = active === chip.key
         const count = chip.key === 'all' ? counts.all : counts[chip.key]
