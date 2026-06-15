@@ -1,167 +1,349 @@
-import { motion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
+import { motion, animate } from 'framer-motion'
 import { t } from '../i18n'
 
-const TYPE_EMOJI = {
-  bar: '🍺',
-  restaurant: '🍔',
-  outdoor: '🌤️',
-  other: '⚽',
-}
-
-function Tag({ children, muted }) {
+// Top-down football pitch pattern — gives context without a photo
+function PitchPattern() {
   return (
-    <span
-      style={{
-        background: '#141f35',
-        border: `1px solid ${muted ? 'transparent' : 'rgba(244,162,97,0.3)'}`,
-        borderRadius: 20,
-        padding: '4px 12px',
-        fontSize: 12,
-        color: muted ? 'var(--text-secondary)' : 'var(--accent)',
-        display: 'inline-block',
-      }}
+    <svg
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+      preserveAspectRatio="xMidYMid slice"
+      viewBox="0 0 420 200"
     >
-      {children}
-    </span>
+      <defs>
+        <radialGradient id="pitch-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="rgba(242,197,0,0.18)"/>
+          <stop offset="100%" stopColor="transparent"/>
+        </radialGradient>
+      </defs>
+      {/* Glow center */}
+      <ellipse cx="210" cy="100" rx="160" ry="80" fill="url(#pitch-glow)"/>
+      {/* Outer boundary */}
+      <rect x="24" y="18" width="372" height="164" stroke="rgba(242,197,0,0.1)" strokeWidth="1" fill="none" rx="4"/>
+      {/* Center circle */}
+      <circle cx="210" cy="100" r="42" stroke="rgba(242,197,0,0.14)" strokeWidth="1" fill="none"/>
+      {/* Center spot */}
+      <circle cx="210" cy="100" r="3" fill="rgba(242,197,0,0.35)"/>
+      {/* Halfway line */}
+      <line x1="210" y1="18" x2="210" y2="182" stroke="rgba(242,197,0,0.08)" strokeWidth="1"/>
+      {/* Left penalty area */}
+      <rect x="24" y="56" width="72" height="88" stroke="rgba(242,197,0,0.08)" strokeWidth="1" fill="none"/>
+      {/* Right penalty area */}
+      <rect x="324" y="56" width="72" height="88" stroke="rgba(242,197,0,0.08)" strokeWidth="1" fill="none"/>
+      {/* Left goal */}
+      <rect x="24" y="80" width="22" height="40" stroke="rgba(242,197,0,0.12)" strokeWidth="1" fill="rgba(242,197,0,0.02)"/>
+      {/* Right goal */}
+      <rect x="374" y="80" width="22" height="40" stroke="rgba(242,197,0,0.12)" strokeWidth="1" fill="rgba(242,197,0,0.02)"/>
+    </svg>
   )
 }
 
-export default function VenueDetail({ venue, lang, onClose }) {
+function AnimatedNumber({ value }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const c = animate(0, value, {
+      duration: 0.8,
+      ease: 'easeOut',
+      onUpdate: (v) => { if (ref.current) ref.current.textContent = Math.round(v) },
+    })
+    return c.stop
+  }, [value])
+  return <span ref={ref}>{value}</span>
+}
+
+export default function VenueDetail({ venue, venues = [], lang, onClose, onNavigate, floating }) {
   const tr = t[lang]
-  const isDesktop = window.innerWidth >= 768
+  const scrollRef = useRef(null)
+  const isDesktop = floating ?? window.innerWidth >= 768
+  const idx = venues.findIndex((v) => v.id === venue.id)
+  const prevVenue = venues[idx - 1] ?? null
+  const nextVenue = venues[idx + 1] ?? null
+
+  const mobileStyle = {
+    bottom: 0, left: 0, right: 0,
+    borderRadius: '22px 22px 0 0',
+    maxHeight: '82vh',
+  }
+  const desktopStyle = {
+    bottom: 24, left: 24,
+    width: 400,
+    borderRadius: 16,
+    maxHeight: 'calc(100vh - 48px)',
+  }
 
   return (
     <motion.div
-      initial={{ y: '100%' }}
-      animate={{ y: 0 }}
-      exit={{ y: '100%' }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-      drag="y"
+      ref={scrollRef}
+      initial={isDesktop ? { opacity: 0, y: 28, scale: 0.97 } : { y: '100%' }}
+      animate={isDesktop ? { opacity: 1, y: 0, scale: 1 }  : { y: 0 }}
+      exit={isDesktop  ? { opacity: 0, y: 16, scale: 0.97 } : { y: '100%' }}
+      transition={{ type: 'spring', stiffness: 340, damping: 34 }}
+      drag={isDesktop ? false : 'y'}
       dragConstraints={{ top: 0, bottom: 0 }}
-      onDragEnd={(_, info) => {
-        if (info.offset.y > 80) onClose()
-      }}
+      onDragEnd={(_, info) => { if (info.offset.y > 80) onClose() }}
       style={{
         position: 'fixed',
-        bottom: 0,
-        left: isDesktop ? 'auto' : 0,
-        right: 0,
-        width: isDesktop ? 400 : '100%',
-        top: isDesktop ? 0 : 'auto',
         zIndex: 20,
-        background: 'var(--bg-card)',
-        borderRadius: isDesktop ? 0 : '20px 20px 0 0',
-        maxHeight: isDesktop ? '100vh' : '88vh',
+        background: 'var(--surface)',
+        border: '1px solid var(--border)',
         overflowY: 'auto',
-        touchAction: 'none',
+        touchAction: isDesktop ? 'auto' : 'none',
+        ...(isDesktop ? desktopStyle : mobileStyle),
       }}
     >
-      {/* Photo / icon area */}
-      <div
+      {/* ── Hero ── */}
+      <motion.div
+        className="scanlines"
         style={{
-          height: 200,
-          background: 'linear-gradient(135deg, #1e3a5f, #0f2040)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 72,
+          height: 180,
           position: 'relative',
           overflow: 'hidden',
           flexShrink: 0,
+          background: 'linear-gradient(145deg, rgba(242,197,0,0.06) 0%, var(--bg) 100%)',
         }}
       >
-        {venue.photo ? (
-          <img
-            src={venue.photo}
-            alt={venue.name}
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-        ) : (
-          TYPE_EMOJI[venue.type] ?? '⚽'
-        )}
+        {venue.photo
+          ? <img src={venue.photo} alt={venue.name}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+          : <PitchPattern />
+        }
 
-        {/* Venue type badge */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 12,
-            left: 12,
-            background: 'rgba(244,162,97,0.2)',
-            border: '1px solid rgba(244,162,97,0.4)',
-            borderRadius: 20,
-            padding: '3px 10px',
-            fontSize: 10,
-            color: 'var(--accent)',
-            fontWeight: 700,
-          }}
-        >
+        {/* Type badge */}
+        <span className="tag" style={{ position: 'absolute', top: 14, left: 14, zIndex: 2 }}>
           {tr.types[venue.type] ?? venue.type}
+        </span>
+
+        {/* Nav + close row */}
+        <div style={{
+          position: 'absolute', top: 12, right: 12, zIndex: 2,
+          display: 'flex', gap: 6,
+        }}>
+          {/* Prev */}
+          <button
+            onClick={() => prevVenue && onNavigate(prevVenue)}
+            disabled={!prevVenue}
+            style={{
+              width: 30, height: 30, borderRadius: 8,
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(5,7,15,0.8)',
+              color: prevVenue ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.2)',
+              cursor: prevVenue ? 'pointer' : 'default',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+            aria-label="Previous venue"
+          >
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M7 1L2 6l5 5"/>
+            </svg>
+          </button>
+
+          {/* Counter */}
+          <div style={{
+            height: 30, padding: '0 10px',
+            borderRadius: 8,
+            border: '1px solid rgba(255,255,255,0.1)',
+            background: 'rgba(5,7,15,0.8)',
+            display: 'flex', alignItems: 'center',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 700,
+            fontSize: 11,
+            letterSpacing: '0.08em',
+            color: 'rgba(255,255,255,0.5)',
+          }}>
+            {idx + 1} / {venues.length}
+          </div>
+
+          {/* Next */}
+          <button
+            onClick={() => nextVenue && onNavigate(nextVenue)}
+            disabled={!nextVenue}
+            style={{
+              width: 30, height: 30, borderRadius: 8,
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(5,7,15,0.8)',
+              color: nextVenue ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.2)',
+              cursor: nextVenue ? 'pointer' : 'default',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+            aria-label="Next venue"
+          >
+            <svg width="8" height="12" viewBox="0 0 8 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 1l5 5-5 5"/>
+            </svg>
+          </button>
+
+          {/* Close */}
+          <button
+            onClick={onClose}
+            style={{
+              width: 30, height: 30, borderRadius: 8,
+              border: '1px solid rgba(255,255,255,0.1)',
+              background: 'rgba(5,7,15,0.8)',
+              color: 'rgba(255,255,255,0.6)',
+              cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}
+            aria-label="Close"
+          >
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M1 1l8 8M9 1L1 9"/>
+            </svg>
+          </button>
         </div>
+      </motion.div>
 
-        {/* Close button */}
-        <button
-          onClick={onClose}
-          style={{
-            position: 'absolute',
-            top: 12,
-            right: 12,
-            width: 30,
-            height: 30,
-            borderRadius: '50%',
-            background: 'rgba(10,10,20,0.75)',
-            border: 'none',
-            color: 'white',
-            fontSize: 14,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-          aria-label="Close"
-        >
-          ✕
-        </button>
-      </div>
+      {/* ── Thin accent line separating hero from content ── */}
+      <div style={{
+        height: 1,
+        background: 'linear-gradient(90deg, rgba(242,197,0,0.5) 0%, rgba(242,197,0,0.05) 80%, transparent 100%)',
+      }} />
 
-      {/* Content */}
-      <div style={{ padding: '18px 20px 40px' }}>
-        <h2 style={{ color: 'var(--text-primary)', fontSize: 22, fontWeight: 900, marginBottom: 6 }}>
+      {/* ── Content ── */}
+      <div style={{ padding: '20px 20px 44px', position: 'relative', zIndex: 2, background: 'var(--surface)' }}>
+
+        {/* Name */}
+        <div style={{
+          fontFamily: 'var(--font-display)',
+          fontWeight: 600,
+          fontSize: 'clamp(22px, 6vw, 30px)',
+          color: 'var(--text)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.01em',
+          lineHeight: 1,
+          marginBottom: 8,
+          overflowWrap: 'anywhere',
+          hyphens: 'auto',
+        }}>
           {venue.name}
-        </h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: 13, marginBottom: 16 }}>
-          📍 {venue.address}
-        </p>
-
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 18 }}>
-          <Tag>{venue.indoor ? `🏠 ${tr.indoor}` : `🌿 ${tr.outdoor}`}</Tag>
-          <Tag>{`📺 ${tr.screens(venue.screens)}`}</Tag>
-          <Tag muted>{`⏰ ${venue.hours}`}</Tag>
         </div>
 
-        <p style={{ color: 'var(--text-secondary)', fontSize: 14, lineHeight: 1.65, marginBottom: 22 }}>
+        {/* Address */}
+        <div style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: 11,
+          fontWeight: 500,
+          color: 'var(--text-dim)',
+          letterSpacing: '0.06em',
+          textTransform: 'uppercase',
+          marginBottom: 20,
+        }}>
+          {venue.address}
+        </div>
+
+        {/* ── Stats grid: ALL cells same structure ── */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, marginBottom: 20 }}>
+          {[
+            {
+              label: tr.statLocation,
+              value: venue.indoor ? tr.indoor : tr.outdoor,
+              animated: false,
+            },
+            {
+              label: tr.statScreens,
+              value: venue.screens,
+              animated: true,
+              suffix: null,
+            },
+            {
+              label: tr.statHours,
+              value: venue.hours?.[lang] ?? venue.hours,
+              animated: false,
+              small: true,
+            },
+          ].map(({ label, value, animated, small }, i) => (
+            <div
+              key={i}
+              style={{
+                background: 'var(--surface-2)',
+                border: '1px solid var(--border)',
+                borderRadius: 8,
+                padding: '10px 10px 10px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 4,
+              }}
+            >
+              <div style={{
+                fontFamily: 'var(--font-body)',
+                fontSize: 9,
+                fontWeight: 600,
+                letterSpacing: '0.16em',
+                color: 'var(--text-dim)',
+                textTransform: 'uppercase',
+              }}>
+                {label}
+              </div>
+              <div style={{
+                fontFamily: 'var(--font-body)',
+                fontWeight: 700,
+                fontSize: 14,
+                color: animated ? 'var(--accent)' : 'var(--text)',
+                lineHeight: 1.25,
+                letterSpacing: '0.01em',
+                textTransform: 'uppercase',
+              }}>
+                {animated ? <AnimatedNumber value={value} /> : value}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Description */}
+        <p style={{
+          fontFamily: 'var(--font-body)',
+          fontSize: 13,
+          fontWeight: 400,
+          color: 'var(--text-mid)',
+          lineHeight: 1.75,
+          marginBottom: 22,
+        }}>
           {venue.description[lang]}
         </p>
 
-        {venue.website && (
-          <a
-            href={venue.website}
+        {/* CTAs: website (primary) + route (secondary) */}
+        <div style={{ display: 'flex', gap: 8 }}>
+          {venue.website && (
+            <motion.a
+              href={venue.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02, filter: 'brightness(1.08)' }}
+              whileTap={{ scale: 0.97 }}
+              style={{
+                flex: 1,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+                borderRadius: 10, padding: '13px 18px',
+                background: 'var(--accent)',
+                fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13,
+                color: 'var(--ink)', textDecoration: 'none',
+                letterSpacing: '0.06em', textTransform: 'uppercase',
+              }}
+            >
+              {tr.visitWebsite}
+            </motion.a>
+          )}
+          <motion.a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${venue.coordinates[1]},${venue.coordinates[0]}`}
             target="_blank"
             rel="noopener noreferrer"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.97 }}
             style={{
-              display: 'block',
-              background: 'var(--accent)',
-              color: '#0a0a14',
-              borderRadius: 14,
-              padding: '14px',
-              textAlign: 'center',
-              fontWeight: 700,
-              fontSize: 14,
-              textDecoration: 'none',
+              flex: venue.website ? '0 0 auto' : 1,
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+              borderRadius: 10, padding: '13px 18px',
+              background: 'transparent', border: '1px solid var(--border-accent)',
+              fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13,
+              color: 'var(--accent)', textDecoration: 'none',
+              letterSpacing: '0.06em', textTransform: 'uppercase',
             }}
           >
-            {tr.visitWebsite}
-          </a>
-        )}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 11l19-9-9 19-2-8-8-2z"/>
+            </svg>
+            {tr.route}
+          </motion.a>
+        </div>
       </div>
     </motion.div>
   )

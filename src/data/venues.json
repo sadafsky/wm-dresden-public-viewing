@@ -1,50 +1,178 @@
 [
   {
-    "id": "watzke",
-    "name": "Brauhaus Watzke",
-    "type": "bar",
-    "coordinates": [13.6803, 51.0649],
-    "address": "Kötzschenbroder Str. 1, 01139 Dresden",
-    "photo": null,
-    "screens": 3,
-    "indoor": true,
-    "hours": "17:00 – 24:00",
-    "website": "https://watzke.de",
-    "description": {
-      "de": "Klassische Dresdner Brauerei direkt an der Elbe. Mehrere große Bildschirme im Schankraum und auf der Terrasse.",
-      "en": "Classic Dresden brewery right on the Elbe river. Multiple large screens in the taproom and on the terrace."
-    }
-  },
-  {
-    "id": "strandbar",
-    "name": "Strandbar Elbe",
+    "id": "ballsportarena",
+    "name": "BallsportARENA Dresden",
     "type": "outdoor",
-    "coordinates": [13.7420, 51.0520],
-    "address": "Terrassenufer 1, 01069 Dresden",
+    "address": "Weißeritzstraße 4, 01067 Dresden",
+    "coordinates": [
+      13.72565,
+      51.05957
+    ],
     "photo": null,
     "screens": 1,
     "indoor": false,
-    "hours": "15:00 – 23:00",
-    "website": null,
+    "hours": {
+      "de": "30 Min vor Anpfiff",
+      "en": "30 min before kickoff"
+    },
+    "website": "https://www.ballsportarena-dresden.de",
     "description": {
-      "de": "Entspannte Strandbar direkt an der Elbe mit einem großen Outdoor-Screen. Perfekt für Sommerspiele.",
-      "en": "Relaxed beach bar right on the Elbe with one large outdoor screen. Perfect for summer matches."
+      "de": "Public Viewing auf der Nordseite der BallsportARENA: 32 m² große LED-Wand und Platz für bis zu 1.500 Gäste. Einlass rund 30 Minuten vor Anpfiff.",
+      "en": "Public viewing on the north side of the BallsportARENA: a 32 m² LED wall with room for up to 1,500 guests. Doors open about 30 minutes before kickoff."
     }
   },
   {
-    "id": "sportscafe",
-    "name": "Sports Café König",
-    "type": "restaurant",
-    "coordinates": [13.7380, 51.0500],
-    "address": "Altmarkt 15, 01067 Dresden",
+    "id": "kaufpark",
+    "name": "Kaufpark Dresden",
+    "type": "outdoor",
+    "address": "Dohnaer Straße 246, 01239 Dresden",
+    "coordinates": [
+      13.80019,
+      50.99666
+    ],
+    "photo": null,
+    "screens": 1,
+    "indoor": false,
+    "hours": {
+      "de": "Ab 18:00",
+      "en": "From 18:00"
+    },
+    "website": "https://www.kaufpark-dresden.de",
+    "description": {
+      "de": "Größtes Public Viewing Dresdens auf einer 70 m² LED-Leinwand am Kaufpark. Open-Air-Stimmung mit Gastronomie vor Ort.",
+      "en": "Dresden's largest public viewing on a 70 m² LED screen at the Kaufpark. Open-air atmosphere with food and drinks on site."
+    }
+  },
+  {
+    "id": "match-bar",
+    "name": "Match Bar",
+    "type": "bar",
+    "address": "Alaunstraße 57, 01099 Dresden",
+    "coordinates": [
+      13.75236,
+      51.06775
+    ],
     "photo": null,
     "screens": 5,
     "indoor": true,
-    "hours": "16:00 – 02:00",
+    "hours": {
+      "de": "Ab 16:00",
+      "en": "From 16:00"
+    },
     "website": null,
     "description": {
-      "de": "Großes Sports Café am Altmarkt mit 5 Bildschirmen und Leinwand. Reservierung für Spielabende empfohlen.",
-      "en": "Large sports café at Altmarkt with 5 screens and a projection wall. Reservations recommended for match nights."
+      "de": "Sportsbar in der Neustadt – hier dreht sich alles um Fußball. Spiele auf mehreren Bildschirmen, dazu Bier und Snacks.",
+      "en": "Sports bar in the Neustadt district where everything revolves around football. Matches on several screens with beer and snacks."
+    }
+  },
+  {
+    "id": "campus-bar",
+    "name": "Campus Bar",
+    "type": "bar",
+    "address": "Hübnerstraße 13, 01069 Dresden",
+    "coordinates": [
+      13.72521,
+      51.03341
+    ],
+    "photo": null,
+    "screens": 3,
+    "indoor": true,
+    "hours": {
+      "de": "Zu den Spielen",
+      "en": "On matchdays"
+    },
+    "website": null,
+    "description": {
+      "de": "Studentisch-entspannte Bar mit 3,5-Meter-Großbildleinwand. Gezeigt werden u. a. die deutschen Spiele und die Finalrunden – Reservierung empfohlen.",
+      "en": "Relaxed student bar with a 3.5-metre big screen. Shows Germany's matches and the knockout rounds among others – reservation recommended."
+    }
+  },
+  {
+    "id": "faehrhaus-kleinzschachwitz",
+    "name": "Fährhaus Kleinzschachwitz",
+    "type": "outdoor",
+    "address": "Berthold-Haupt-Straße 130, 01259 Dresden",
+    "coordinates": [
+      13.86173,
+      51.00925
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": false,
+    "hours": {
+      "de": "Biergarten-Zeiten",
+      "en": "Beer garden hours"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten direkt an der Elbe. Alle Turnierspiele auf Großbildleinwand, ganz ohne Reservierung.",
+      "en": "Beer garden right on the Elbe. All tournament matches on a big screen, no reservation needed."
+    }
+  },
+  {
+    "id": "loessnitztalschenke",
+    "name": "Lößnitztalschenke",
+    "type": "outdoor",
+    "address": "Mühlweg 3, 01445 Radebeul",
+    "coordinates": [
+      13.66109,
+      51.10852
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": false,
+    "hours": {
+      "de": "Biergarten-Zeiten",
+      "en": "Beer garden hours"
+    },
+    "website": null,
+    "description": {
+      "de": "Gemütlicher Biergarten in Radebeul mit großen Leinwänden und gutem Sound – direkt an der Lößnitzgrundbahn.",
+      "en": "Cosy beer garden in Radebeul with large screens and great sound – right by the Lößnitzgrundbahn line."
+    }
+  },
+  {
+    "id": "watzke",
+    "name": "Brauhaus Watzke",
+    "type": "bar",
+    "address": "Kötzschenbroder Straße 1, 01139 Dresden",
+    "coordinates": [
+      13.71566,
+      51.07745
+    ],
+    "photo": null,
+    "screens": 3,
+    "indoor": true,
+    "hours": {
+      "de": "11:00 – 24:00",
+      "en": "11:00 – 24:00"
+    },
+    "website": "https://watzke.de",
+    "description": {
+      "de": "Traditionsbrauhaus an der Elbe mit eigenem Hausbier und Biergarten. Übertragungen im Schankraum und auf der Terrasse.",
+      "en": "Traditional brewery on the Elbe with its own house beer and a beer garden. Broadcasts in the taproom and on the terrace."
+    }
+  },
+  {
+    "id": "bottoms-up",
+    "name": "Bottoms Up",
+    "type": "bar",
+    "address": "Martin-Luther-Straße 31, 01099 Dresden",
+    "coordinates": [
+      13.75589,
+      51.06517
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": true,
+    "hours": {
+      "de": "Ab 17:00",
+      "en": "From 17:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Gemütliches Restaurant in der Neustadt, das die Turnierspiele zeigt. Reservierung unter 0351 8020158.",
+      "en": "Cosy restaurant in the Neustadt district showing the tournament matches. Reservations on 0351 8020158."
     }
   }
 ]

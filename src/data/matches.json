@@ -1,0 +1,46 @@
+[
+  { "id": "fra-uru-1306", "date": "2026-06-13", "time": "18:00", "group": "C", "score": "2-1",
+    "home": { "code": "FRA", "de": "Frankreich", "en": "France" },
+    "away": { "code": "URU", "de": "Uruguay",    "en": "Uruguay" } },
+  { "id": "por-mar-1306", "date": "2026-06-13", "time": "21:00", "group": "H", "score": "3-0",
+    "home": { "code": "POR", "de": "Portugal", "en": "Portugal" },
+    "away": { "code": "MAR", "de": "Marokko",  "en": "Morocco" } },
+
+  { "id": "ger-esp-1406", "date": "2026-06-14", "time": "18:00", "group": "E", "score": "2-1",
+    "home": { "code": "GER", "de": "Deutschland", "en": "Germany" },
+    "away": { "code": "ESP", "de": "Spanien",     "en": "Spain" } },
+  { "id": "bra-arg-1406", "date": "2026-06-14", "time": "21:00", "group": "G", "score": "1-1",
+    "home": { "code": "BRA", "de": "Brasilien", "en": "Brazil" },
+    "away": { "code": "ARG", "de": "Argentinien", "en": "Argentina" } },
+
+  { "id": "eng-ned-1506", "date": "2026-06-15", "time": "15:00", "group": "B",
+    "home": { "code": "ENG", "de": "England",    "en": "England" },
+    "away": { "code": "NED", "de": "Niederlande","en": "Netherlands" } },
+  { "id": "mex-cro-1506", "date": "2026-06-15", "time": "18:00", "group": "A",
+    "home": { "code": "MEX", "de": "Mexiko",   "en": "Mexico" },
+    "away": { "code": "CRO", "de": "Kroatien", "en": "Croatia" } },
+  { "id": "usa-bel-1506", "date": "2026-06-15", "time": "21:00", "group": "D",
+    "home": { "code": "USA", "de": "USA",     "en": "USA" },
+    "away": { "code": "BEL", "de": "Belgien", "en": "Belgium" } },
+
+  { "id": "ita-sui-1606", "date": "2026-06-16", "time": "18:00", "group": "F",
+    "home": { "code": "ITA", "de": "Italien", "en": "Italy" },
+    "away": { "code": "SUI", "de": "Schweiz", "en": "Switzerland" } },
+  { "id": "ned-jpn-1606", "date": "2026-06-16", "time": "21:00", "group": "B",
+    "home": { "code": "NED", "de": "Niederlande", "en": "Netherlands" },
+    "away": { "code": "JPN", "de": "Japan",       "en": "Japan" } },
+
+  { "id": "ger-sen-1706", "date": "2026-06-17", "time": "18:00", "group": "E",
+    "home": { "code": "GER", "de": "Deutschland", "en": "Germany" },
+    "away": { "code": "SEN", "de": "Senegal",     "en": "Senegal" } },
+  { "id": "esp-cro-1706", "date": "2026-06-17", "time": "21:00", "group": "E",
+    "home": { "code": "ESP", "de": "Spanien",  "en": "Spain" },
+    "away": { "code": "COL", "de": "Kolumbien","en": "Colombia" } },
+
+  { "id": "fra-kor-1806", "date": "2026-06-18", "time": "18:00", "group": "C",
+    "home": { "code": "FRA", "de": "Frankreich", "en": "France" },
+    "away": { "code": "KOR", "de": "Südkorea",   "en": "South Korea" } },
+  { "id": "bra-cmr-1806", "date": "2026-06-18", "time": "21:00", "group": "G",
+    "home": { "code": "BRA", "de": "Brasilien", "en": "Brazil" },
+    "away": { "code": "CMR", "de": "Kamerun",   "en": "Cameroon" } }
+]

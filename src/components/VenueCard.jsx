@@ -1,62 +1,49 @@
+import { motion } from 'framer-motion'
 import { t } from '../i18n'
 
-const TYPE_EMOJI = {
-  bar: '🍺',
-  restaurant: '🍔',
-  outdoor: '🌤️',
-  other: '⚽',
+export const cardVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { type: 'spring', stiffness: 320, damping: 30 },
+  },
 }
 
-export default function VenueCard({ venue, isSelected, onSelect, lang }) {
+export default function VenueCard({ venue, index, isSelected, onSelect, lang, showDivider }) {
   const tr = t[lang]
 
   return (
-    <div
-      onClick={onSelect}
-      style={{
-        width: 140,
-        background: '#141f35',
-        borderRadius: 'var(--radius-card)',
-        overflow: 'hidden',
-        border: `1.5px solid ${isSelected ? '#f4a261' : 'transparent'}`,
-        cursor: 'pointer',
-        flexShrink: 0,
-        transition: 'border-color 0.2s ease',
-      }}
-    >
-      {/* Icon / photo area */}
-      <div
-        style={{
-          height: 64,
-          background: 'linear-gradient(135deg, #1e3a5f, #0f2040)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: 28,
-          overflow: 'hidden',
-        }}
+    <>
+      <motion.div
+        variants={cardVariants}
+        whileHover={{ x: 4 }}
+        whileTap={{ scale: 0.985 }}
+        onClick={onSelect}
+        className={`venue-card${isSelected ? ' venue-card--active' : ''}`}
       >
-        {venue.photo
-          ? <img src={venue.photo} alt={venue.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-          : (TYPE_EMOJI[venue.type] ?? '⚽')
-        }
-      </div>
+        {/* Squad-number style index */}
+        <div className="venue-card__num">{String(index).padStart(2, '0')}</div>
 
-      {/* Info */}
-      <div style={{ padding: '8px 9px' }}>
-        <div style={{ fontSize: 11, fontWeight: 700, color: '#fff', lineHeight: 1.3, marginBottom: 3 }}>
-          {venue.name}
+        <div className="venue-card__body">
+          <div className="venue-card__name">{venue.name}</div>
+          <div className="venue-card__meta">
+            <span className="venue-card__tag">{tr.types[venue.type] ?? venue.type}</span>
+            <span className="venue-card__dot">·</span>
+            {tr.screens(venue.screens)}
+            <span className="venue-card__dot">·</span>
+            {venue.hours?.[lang] ?? venue.hours}
+          </div>
         </div>
-        <div style={{ fontSize: 9, color: '#f4a261' }}>
-          {tr.types[venue.type] ?? venue.type} · {tr.screens(venue.screens)}
+
+        <div className="venue-card__chevron">
+          <svg width="8" height="13" viewBox="0 0 7 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M1 1l5 5-5 5"/>
+          </svg>
         </div>
-        <div style={{ fontSize: 9, color: 'var(--text-secondary)', marginTop: 2 }}>
-          {venue.indoor ? `🏠 ${tr.indoor}` : `🌿 ${tr.outdoor}`}
-        </div>
-        <div style={{ fontSize: 9, color: 'var(--text-secondary)' }}>
-          ⏰ {venue.hours}
-        </div>
-      </div>
-    </div>
+      </motion.div>
+
+      {showDivider && <div className="venue-card__divider" />}
+    </>
   )
 }

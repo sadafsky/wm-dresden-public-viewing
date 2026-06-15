@@ -20,9 +20,9 @@ test('renders venue name', () => {
   expect(screen.getByText('Test Bar')).toBeInTheDocument()
 })
 
-test('renders bar emoji for type bar', () => {
-  render(<VenueCard venue={venue} isSelected={false} onSelect={() => {}} lang="de" />)
-  expect(screen.getByText('🍺')).toBeInTheDocument()
+test('renders SVG icon for type bar', () => {
+  const { container } = render(<VenueCard venue={venue} isSelected={false} onSelect={() => {}} lang="de" />)
+  expect(container.querySelector('svg')).toBeInTheDocument()
 })
 
 test('calls onSelect when clicked', () => {

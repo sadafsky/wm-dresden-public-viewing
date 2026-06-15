@@ -9,29 +9,33 @@ export default function LanguageToggle() {
       onClick={toggleLang}
       style={{
         position: 'fixed',
-        top: 14,
-        right: 14,
+        top: 18,
+        right: 18,
         zIndex: 30,
-        background: 'rgba(244,162,97,0.15)',
-        border: '1px solid rgba(244,162,97,0.35)',
-        borderRadius: 20,
-        padding: '5px 14px',
-        color: '#f4a261',
-        fontWeight: 'bold',
-        fontSize: 11,
-        letterSpacing: 1,
+        borderRadius: 999,
+        padding: '7px 18px',
+        border: '1px solid rgba(255,255,255,0.15)',
+        background: 'rgba(8,8,16,0.85)',
+        color: 'rgba(255,255,255,0.8)',
+        fontFamily: 'var(--font-display)',
+        fontWeight: 700,
+        fontSize: 13,
+        letterSpacing: '0.12em',
         cursor: 'pointer',
-        minWidth: 44,
+        minWidth: 52,
         textAlign: 'center',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
       }}
     >
       <AnimatePresence mode="wait">
         <motion.span
           key={lang}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: -4 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 4 }}
           transition={{ duration: 0.15 }}
+          style={{ display: 'block' }}
         >
           {lang.toUpperCase()}
         </motion.span>
