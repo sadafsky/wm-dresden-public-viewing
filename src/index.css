@@ -231,7 +231,7 @@ body::after {
 .sheet-search { display: flex; align-items: center; gap: 9px; margin: 2px 20px 10px; padding: 10px 12px; border-radius: 11px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-dim); }
 .sheet-search { transition: border-color 0.2s; }
 .sheet-search:focus-within { border-color: var(--border-accent); }
-.sheet-search input { flex: 1; min-width: 0; background: transparent; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 14px; }
+.sheet-search input { flex: 1; min-width: 0; background: transparent; border: none; outline: none; color: var(--text); font-family: var(--font-body); font-size: 16px; }
 .sheet-search input::placeholder { color: var(--text-dim); }
 .sheet-search__clear { background: transparent; border: none; color: var(--text-dim); cursor: pointer; display: flex; padding: 2px; }
 .sheet-search__clear:hover { color: var(--text); }
