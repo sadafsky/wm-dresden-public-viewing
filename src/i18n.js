@@ -17,7 +17,7 @@ export const t = {
     search: 'Ort suchen…',
     noResults: 'Keine Orte gefunden',
     // Layers panel
-    layers: 'Karten-Ebenen',
+    layers: 'Auf der Karte',
     rain: 'Regen',
     traffic: 'Verkehr',
     legendClear: 'frei',
@@ -65,7 +65,7 @@ export const t = {
     search: 'Search place…',
     noResults: 'No places found',
     // Layers panel
-    layers: 'Map layers',
+    layers: 'Show on map',
     rain: 'Rain',
     traffic: 'Traffic',
     legendClear: 'clear',

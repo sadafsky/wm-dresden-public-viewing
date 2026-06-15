@@ -12,7 +12,6 @@ import SidePanel from './components/SidePanel'
 import VenueDetail from './components/VenueDetail'
 import AboutModal from './components/AboutModal'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
-import { t } from './i18n'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
 import { useMatches } from './hooks/useMatches'
@@ -31,7 +30,7 @@ function AppContent() {
   const [activeType, setActiveType]       = useState('all')
   const [query, setQuery]                 = useState('')
   const [openPanel, setOpenPanel]         = useState(null)
-  const [showRain, setShowRain]           = useState(false)
+  const [showRain, setShowRain]           = useState(true)
   const [showTraffic, setShowTraffic]     = useState(false)
   const [aboutOpen, setAboutOpen]         = useState(false)
   const [railOpen, setRailOpen]           = useState(true)
@@ -125,7 +124,6 @@ function AppContent() {
         <>
           <div className={`mobile-top${sheetOpen ? ' ui-hidden' : ''}`}>
             <Header lang={lang} inline />
-            <div className="mobile-top__tagline">{t[lang].tagline}</div>
             <div className="mobile-top__bar">
               <FilterMenu
                 types={types}

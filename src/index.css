@@ -434,13 +434,7 @@ body::after {
   padding: 12px 14px 14px; pointer-events: none;
   background: linear-gradient(180deg, rgba(8,8,7,0.97) 0%, rgba(8,8,7,0.6) 52%, transparent 100%);
 }
-.mobile-top__tagline {
-  margin-top: 8px; pointer-events: none;
-  font-family: var(--font-body); font-weight: 600; font-size: 10px;
-  letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-dim);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.mobile-top__bar { display: flex; align-items: center; gap: 8px; margin-top: 12px; pointer-events: auto; }
+.mobile-top__bar { display: flex; align-items: center; gap: 8px; margin-top: 14px; pointer-events: auto; }
 
 .app-header--inline { position: static; padding: 0; background: none; pointer-events: none; }
 .app-header--inline .app-header__lockup { max-width: none; }
@@ -448,6 +442,8 @@ body::after {
 
 .top-controls--inline { position: relative; inset: auto; flex-shrink: 0; pointer-events: auto; }
 .top-controls--inline .top-controls__panel { position: absolute; right: 0; top: calc(100% + 6px); }
+/* Keep the layers dropdown compact on mobile (was overflowing the screen) */
+.top-controls--inline .panel { width: 230px; max-width: calc(100vw - 24px); padding: 12px; }
 
 /* Filter dropdown button (mobile) */
 .filter-menu { position: relative; flex-shrink: 0; }
