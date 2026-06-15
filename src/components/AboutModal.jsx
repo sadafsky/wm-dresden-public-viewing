@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { t } from '../i18n'
 
 // Contact details (GitHub can be added later)
-const LINKEDIN = 'https://www.linkedin.com/in/safafsky'
+const LINKEDIN = 'https://www.linkedin.com/in/sadafsky/'
 const EMAIL = 'contact.sadafsky@gmail.com'
 const GITHUB = null
 
