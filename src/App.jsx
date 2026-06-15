@@ -129,12 +129,10 @@ function AppContent() {
             openPanel={openPanel}
             setOpenPanel={setOpenPanel}
             weather={weather}
-            matches={matches}
             showRain={showRain}
             setShowRain={setShowRain}
             showTraffic={showTraffic}
             setShowTraffic={setShowTraffic}
-            onAbout={() => setAboutOpen(true)}
           />
           {openPanel && (
             <div onClick={() => setOpenPanel(null)} style={{ position: 'fixed', inset: 0, zIndex: 25 }} />
@@ -155,12 +153,14 @@ function AppContent() {
           </AnimatePresence>
           <BottomSheet
             venues={visibleVenues}
-            geocoding={geocoding}
             selectedId={selectedVenue?.id ?? null}
             onVenueSelect={handleVenueSelect}
             lang={lang}
             query={query}
             setQuery={setQuery}
+            matches={matches}
+            counts={counts}
+            onAbout={() => setAboutOpen(true)}
           />
         </>
       )}

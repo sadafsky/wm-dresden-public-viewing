@@ -1,17 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { t } from '../i18n'
-import MatchesPanel from './MatchesPanel'
-import WeatherControls from './WeatherControls'
+import WeatherChip from './WeatherChip'
+import LayersPanel from './LayersPanel'
 
-const CalendarIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="4" width="18" height="18" rx="2" />
-    <path d="M16 2v4M8 2v4M3 10h18" />
-  </svg>
-)
-const InfoIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+const LayersIcon = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
   </svg>
 )
 
@@ -23,53 +17,39 @@ const panelMotion = {
 }
 
 export default function TopControls({
-  lang, toggleLang, openPanel, setOpenPanel, weather, matches, onAbout,
+  lang, toggleLang, openPanel, setOpenPanel, weather,
   showRain, setShowRain, showTraffic, setShowTraffic,
 }) {
-  const toggle = (name) => setOpenPanel((p) => (p === name ? null : name))
-
+  const anyLayerOn = showRain || showTraffic
   return (
     <div className="top-controls">
       <div className="top-controls__row">
-        <WeatherControls
-          weather={weather}
-          lang={lang}
-          showRain={showRain} setShowRain={setShowRain}
-          showTraffic={showTraffic} setShowTraffic={setShowTraffic}
-          compact
-        />
-
+        <WeatherChip weather={weather} lang={lang} compact />
         <button
-          className={`ctrl-btn${openPanel === 'matches' ? ' ctrl-btn--active' : ''}`}
-          onClick={() => toggle('matches')}
-          aria-label={t[lang].matches}
+          className={`ctrl-btn${openPanel === 'layers' ? ' ctrl-btn--active' : ''}`}
+          onClick={() => setOpenPanel((p) => (p === 'layers' ? null : 'layers'))}
+          aria-label={t[lang].layers}
         >
-          <CalendarIcon />
+          <LayersIcon />
+          {anyLayerOn && <span className="ctrl-btn__dot" />}
         </button>
-
-        <button className="ctrl-btn" onClick={onAbout} aria-label={t[lang].about}>
-          <InfoIcon />
-        </button>
-
         <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>
           <AnimatePresence mode="wait">
-            <motion.span
-              key={lang}
-              initial={{ opacity: 0, y: -4 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 4 }}
-              transition={{ duration: 0.15 }}
-            >
+            <motion.span key={lang} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: 0.15 }}>
               {lang.toUpperCase()}
             </motion.span>
           </AnimatePresence>
         </button>
       </div>
 
-      <AnimatePresence mode="wait">
-        {openPanel === 'matches' && (
-          <motion.div key="matches" {...panelMotion}>
-            <MatchesPanel lang={lang} matches={matches} />
+      <AnimatePresence>
+        {openPanel === 'layers' && (
+          <motion.div key="layers" {...panelMotion}>
+            <LayersPanel
+              lang={lang}
+              showRain={showRain} setShowRain={setShowRain}
+              showTraffic={showTraffic} setShowTraffic={setShowTraffic}
+            />
           </motion.div>
         )}
       </AnimatePresence>

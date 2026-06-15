@@ -222,6 +222,12 @@ body::after {
   border-radius: 22px 22px 0 0;
   box-shadow: 0 -10px 48px rgba(0,0,0,0.88), 0 -1px 0 rgba(242,197,0,0.12);
 }
+.sheet-head { padding: 9px 16px 8px; cursor: pointer; user-select: none; flex-shrink: 0; }
+.sheet-handle { width: 36px; height: 4px; background: rgba(255,255,255,0.2); border-radius: 2px; margin: 0 auto 10px; }
+.sheet-head__row { display: flex; align-items: center; gap: 8px; }
+.sheet-head__row .rail-tabs { flex: 1; min-width: 0; }
+.sheet-info-btn { height: 36px; min-width: 36px; padding: 0; flex-shrink: 0; }
+.sheet-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; padding-bottom: 24px; }
 .sheet-search { display: flex; align-items: center; gap: 9px; margin: 2px 20px 10px; padding: 10px 12px; border-radius: 11px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-dim); }
 .sheet-search { transition: border-color 0.2s; }
 .sheet-search:focus-within { border-color: var(--border-accent); }
@@ -429,6 +435,6 @@ body::after {
   /* Controls wrap into a tidy 2-row cluster on the right */
   .top-controls__row { flex-wrap: wrap; justify-content: flex-end; max-width: 176px; }
 
-  /* Filters sit below the header + controls so nothing overlaps */
-  .filter-chips { top: 134px; right: 12px; left: 12px; }
+  /* Filters sit just below the compact header + slim control row */
+  .filter-chips { top: 96px; right: 12px; left: 12px; }
 }
