@@ -5,7 +5,7 @@ import MatchTicker from './components/MatchTicker'
 import RainOverlay from './components/RainOverlay'
 import Header from './components/Header'
 import TopControls from './components/TopControls'
-import FilterChips from './components/FilterChips'
+import FilterMenu from './components/FilterMenu'
 import BottomSheet from './components/BottomSheet'
 import BrandMatchesBar from './components/BrandMatchesBar'
 import SidePanel from './components/SidePanel'
@@ -125,8 +125,17 @@ function AppContent() {
         <>
           <div className={`mobile-top${sheetOpen ? ' ui-hidden' : ''}`}>
             <Header lang={lang} inline />
+            <div className="mobile-top__tagline">{t[lang].tagline}</div>
             <div className="mobile-top__bar">
-              <span className="mobile-top__tagline">{t[lang].tagline}</span>
+              <FilterMenu
+                types={types}
+                active={activeType}
+                setActive={setActiveType}
+                counts={counts}
+                lang={lang}
+                openPanel={openPanel}
+                setOpenPanel={setOpenPanel}
+              />
               <TopControls
                 lang={lang}
                 toggleLang={toggleLang}
@@ -140,7 +149,6 @@ function AppContent() {
                 inline
               />
             </div>
-            <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} inline />
           </div>
           {openPanel && (
             <div onClick={() => setOpenPanel(null)} style={{ position: 'fixed', inset: 0, zIndex: 25 }} />
