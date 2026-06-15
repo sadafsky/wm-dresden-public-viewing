@@ -40,27 +40,24 @@ export default function SidePanel({
       transition={{ type: 'spring', stiffness: 260, damping: 32 }}
     >
       <div className="side-panel__top">
-        <div className="panel__section-label">WM 2026 · Dresden</div>
+        <div className="rail-tabs">
+          <button
+            className={`rail-tab${tab === 'places' ? ' rail-tab--active' : ''}`}
+            onClick={() => setTab('places')}
+          >
+            {tr.places}<span className="rail-tab__count">{counts.all}</span>
+          </button>
+          <button
+            className={`rail-tab${tab === 'matches' ? ' rail-tab--active' : ''}`}
+            onClick={() => setTab('matches')}
+          >
+            {tr.matches}
+          </button>
+        </div>
         <div className="side-panel__actions">
           <button className="ctrl-btn" onClick={onAbout} aria-label={tr.about}><InfoIcon /></button>
           <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>{lang.toUpperCase()}</button>
         </div>
-      </div>
-
-      {/* Tabs */}
-      <div className="rail-tabs">
-        <button
-          className={`rail-tab${tab === 'places' ? ' rail-tab--active' : ''}`}
-          onClick={() => setTab('places')}
-        >
-          {tr.places}<span className="rail-tab__count">{counts.all}</span>
-        </button>
-        <button
-          className={`rail-tab${tab === 'matches' ? ' rail-tab--active' : ''}`}
-          onClick={() => setTab('matches')}
-        >
-          {tr.matches}
-        </button>
       </div>
 
       {tab === 'places' ? (

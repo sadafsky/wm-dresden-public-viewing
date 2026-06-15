@@ -53,19 +53,21 @@ body::after {
   overflow: hidden;
 }
 .ticker__badge {
-  flex-shrink: 0; display: flex; align-items: center; gap: 6px;
-  padding: 0 18px 0 14px;
+  position: absolute; left: 0; top: 0; bottom: 0;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 20px 0 14px;
   background: var(--accent); color: var(--ink);
   font-family: var(--font-body); font-weight: 600; font-size: 11px;
   letter-spacing: 0.16em; text-transform: uppercase;
-  clip-path: polygon(0 0, 100% 0, calc(100% - 11px) 100%, 0 100%);
-  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 12px) 100%, 0 100%);
+  z-index: 3;
+  box-shadow: 14px 0 18px rgba(0,0,0,0.55);
 }
 .ticker__badge--live { background: var(--live); color: #fff; }
 .ticker__badge-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: live-blink 1.3s ease-in-out infinite; }
 @keyframes live-blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
 
-.ticker__viewport { flex: 1; overflow: hidden; display: flex; align-items: center; }
+.ticker__viewport { flex: 1; overflow: hidden; display: flex; align-items: center; padding-left: 84px; }
 .ticker__track { display: flex; width: max-content; will-change: transform; }
 .ticker__content { display: flex; align-items: center; flex-shrink: 0; }
 
@@ -100,9 +102,10 @@ body::after {
 .app-header__dd { color: var(--accent); }
 .app-header__title {
   font-family: var(--font-display); font-weight: 600;
-  font-size: clamp(26px, 3.6vw, 46px);
+  font-size: clamp(28px, 3.6vw, 46px);
   line-height: 0.92; letter-spacing: -0.02em; color: var(--text); margin-top: 8px;
 }
+.app-header__title .ttl-short { display: none; }
 .app-header__sub {
   font-family: var(--font-body); font-weight: 600; font-size: 10px;
   letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px;
@@ -351,7 +354,7 @@ body::after {
   transition: right 0.35s ease, background 0.2s;
 }
 .rail-toggle:hover { background: var(--surface-2); }
-.side-panel__top { display: flex; align-items: flex-start; justify-content: space-between; padding: 0 18px 12px; }
+.side-panel__top { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 0 16px 12px; }
 .side-panel__count { font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; color: var(--text); }
 .side-panel__actions { display: flex; gap: 8px; }
 .side-panel__section { padding: 4px 14px 8px; border-bottom: 1px solid var(--border); margin-bottom: 4px; }
@@ -363,7 +366,7 @@ body::after {
 .side-panel__scroll { flex: 1; overflow-y: auto; padding: 4px 14px 24px; scrollbar-width: thin; }
 
 /* Rail tabs (Places / Matches) */
-.rail-tabs { display: flex; gap: 6px; padding: 0 18px 12px; }
+.rail-tabs { display: flex; gap: 6px; flex: 1; min-width: 0; }
 .rail-tab {
   flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px;
   padding: 9px; border-radius: 10px; border: 1px solid var(--border); background: transparent;
@@ -415,8 +418,17 @@ body::after {
 }
 .about-close:hover { color: var(--text); }
 
-/* ── Responsive ───────────────────────────────────────── */
+/* ── Responsive (mobile) ──────────────────────────────── */
 @media (max-width: 640px) {
-  .filter-chips { top: 108px; right: 12px; left: 12px; }
-  .app-header { padding-bottom: 88px; }
+  .app-header { padding: 12px 14px 64px; }
+  .app-header__title { font-size: 34px; margin-top: 4px; }
+  .app-header__title .ttl-full { display: none; }
+  .app-header__title .ttl-short { display: inline; }
+  .app-header__sub { display: none; }
+
+  /* Controls wrap into a tidy 2-row cluster on the right */
+  .top-controls__row { flex-wrap: wrap; justify-content: flex-end; max-width: 176px; }
+
+  /* Filters sit below the header + controls so nothing overlaps */
+  .filter-chips { top: 134px; right: 12px; left: 12px; }
 }

@@ -23,7 +23,7 @@ function Segment({ m, lang }) {
         <b>{m.home.code}</b>
         <span className="seg__score seg__score--ft">{m.score ?? '–'}</span>
         <b>{m.away.code}</b>
-        <span className="seg__ft">FT</span>
+        <span className="seg__ft">{t[lang].ft}</span>
       </span>
     )
   }
