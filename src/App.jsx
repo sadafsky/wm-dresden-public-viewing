@@ -122,20 +122,24 @@ function AppContent() {
         </>
       ) : (
         <>
-          <Header lang={lang} hidden={sheetOpen} />
-          <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} hidden={sheetOpen} />
-          <TopControls
-            lang={lang}
-            toggleLang={toggleLang}
-            openPanel={openPanel}
-            setOpenPanel={setOpenPanel}
-            weather={weather}
-            showRain={showRain}
-            setShowRain={setShowRain}
-            showTraffic={showTraffic}
-            setShowTraffic={setShowTraffic}
-            hidden={sheetOpen}
-          />
+          <div className={`mobile-top${sheetOpen ? ' ui-hidden' : ''}`}>
+            <Header lang={lang} inline />
+            <div className="mobile-top__bar">
+              <FilterChips types={types} active={activeType} onChange={setActiveType} lang={lang} counts={counts} inline />
+              <TopControls
+                lang={lang}
+                toggleLang={toggleLang}
+                openPanel={openPanel}
+                setOpenPanel={setOpenPanel}
+                weather={weather}
+                showRain={showRain}
+                setShowRain={setShowRain}
+                showTraffic={showTraffic}
+                setShowTraffic={setShowTraffic}
+                inline
+              />
+            </div>
+          </div>
           {openPanel && (
             <div onClick={() => setOpenPanel(null)} style={{ position: 'fixed', inset: 0, zIndex: 25 }} />
           )}

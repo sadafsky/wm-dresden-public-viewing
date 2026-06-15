@@ -17,12 +17,12 @@ const panelMotion = {
 }
 
 export default function TopControls({
-  lang, toggleLang, openPanel, setOpenPanel, weather, hidden,
+  lang, toggleLang, openPanel, setOpenPanel, weather, hidden, inline,
   showRain, setShowRain, showTraffic, setShowTraffic,
 }) {
   const anyLayerOn = showRain || showTraffic
   return (
-    <div className={`top-controls${hidden ? ' ui-hidden' : ''}`}>
+    <div className={`top-controls${inline ? ' top-controls--inline' : ''}${hidden ? ' ui-hidden' : ''}`}>
       <div className="top-controls__row">
         <WeatherChip weather={weather} lang={lang} compact />
         <button
@@ -44,7 +44,7 @@ export default function TopControls({
 
       <AnimatePresence>
         {openPanel === 'layers' && (
-          <motion.div key="layers" {...panelMotion}>
+          <motion.div key="layers" className="top-controls__panel" {...panelMotion}>
             <LayersPanel
               lang={lang}
               showRain={showRain} setShowRain={setShowRain}
