@@ -223,10 +223,10 @@
     "id": "ostrabeach",
     "name": "Ostrabeach",
     "type": "outdoor",
-    "address": "Pieschener Allee 1, 01067 Dresden",
+    "address": "Pieschener Allee, Ostragehege, 01067 Dresden",
     "coordinates": [
-      13.72508,
-      51.06008
+      13.7235,
+      51.0636
     ],
     "photo": null,
     "screens": 1,
