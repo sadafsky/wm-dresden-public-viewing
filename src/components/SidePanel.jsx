@@ -20,7 +20,7 @@ export default function SidePanel({
 }) {
   const tr = t[lang]
   const [tab, setTab] = useState('places') // 'places' | 'matches'
-  const chips = [{ key: 'all', label: tr.all }, ...types.map((ty) => ({ key: ty, label: tr.types[ty] ?? ty }))]
+  const chips = [{ key: 'all', label: tr.all }, ...types.map((ty) => ({ key: ty, label: tr[ty] ?? ty }))]
 
   // Scroll selected venue into view (when picked from the map)
   const listRef = useRef(null)

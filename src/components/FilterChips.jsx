@@ -4,7 +4,7 @@ import { t } from '../i18n'
 // Horizontal, scrollable row of type filters. "Alle" + one chip per type present.
 export default function FilterChips({ types, active, onChange, lang, counts, hidden, inline }) {
   const tr = t[lang]
-  const chips = [{ key: 'all', label: tr.all }, ...types.map((ty) => ({ key: ty, label: tr.types[ty] ?? ty }))]
+  const chips = [{ key: 'all', label: tr.all }, ...types.map((ty) => ({ key: ty, label: tr[ty] ?? ty }))]
 
   return (
     <div className={`filter-chips${inline ? ' filter-chips--inline' : ''}${hidden ? ' ui-hidden' : ''}`}>

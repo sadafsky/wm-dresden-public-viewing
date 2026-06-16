@@ -19,7 +19,7 @@ export default function FilterMenu({ types, active, setActive, counts, lang, ope
   const tr = t[lang]
   const options = [
     { key: 'all', label: tr.all, count: counts.all },
-    ...types.map((ty) => ({ key: ty, label: tr.types[ty] ?? ty, count: counts[ty] })),
+    ...types.map((ty) => ({ key: ty, label: tr[ty] ?? ty, count: counts[ty] })),
   ]
   const activeOpt = options.find((o) => o.key === active) ?? options[0]
   const isOpen = openPanel === 'filter'

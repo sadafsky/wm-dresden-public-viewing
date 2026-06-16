@@ -40,22 +40,20 @@ function AppContent() {
   const [railOpen, setRailOpen]           = useState(true)
   const [sheetOpen, setSheetOpen]         = useState(false)
 
-  const types = useMemo(
-    () => [...new Set(venues.map((v) => v.type).filter(Boolean))],
-    [venues]
-  )
-  const counts = useMemo(() => {
-    const c = { all: venues.length }
-    for (const ty of types) c[ty] = venues.filter((v) => v.type === ty).length
-    return c
-  }, [venues, types])
+  // Filter by indoor / outdoor (instead of venue type)
+  const types = useMemo(() => ['indoor', 'outdoor'], [])
+  const counts = useMemo(() => ({
+    all: venues.length,
+    indoor: venues.filter((v) => v.indoor).length,
+    outdoor: venues.filter((v) => !v.indoor).length,
+  }), [venues])
 
   const visibleVenues = useMemo(() => {
     const q = query.trim().toLowerCase()
     return venues.filter((v) => {
-      const typeOk = activeType === 'all' || v.type === activeType
+      const catOk = activeType === 'all' || (activeType === 'indoor' ? v.indoor : !v.indoor)
       const queryOk = !q || v.name.toLowerCase().includes(q) || v.address.toLowerCase().includes(q)
-      return typeOk && queryOk
+      return catOk && queryOk
     })
   }, [venues, activeType, query])
 
