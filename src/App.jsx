@@ -79,6 +79,7 @@ function AppContent() {
         onVenueSelect={handleVenueSelect}
         showTraffic={showTraffic}
         padRight={railVisible ? RAIL_WIDTH : 0}
+        isDesktop={isDesktop}
       />
 
       <RainOverlay active={precipActive} type={precipType} />

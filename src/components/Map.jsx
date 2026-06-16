@@ -42,7 +42,7 @@ function removeTrafficFromMap(map) {
   if (map.getSource('mapbox-traffic')) map.removeSource('mapbox-traffic')
 }
 
-export default function Map({ venues, selectedId, onVenueSelect, showTraffic, padRight = 0 }) {
+export default function Map({ venues, selectedId, onVenueSelect, showTraffic, padRight = 0, isDesktop = false }) {
   const containerRef = useRef(null)
   const mapRef       = useRef(null)
   const markersRef   = useRef([])
@@ -54,11 +54,13 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
   const onVenueSelectRef = useRef(onVenueSelect)
   const showTrafficRef   = useRef(showTraffic)
   const padRightRef      = useRef(padRight)
+  const isDesktopRef     = useRef(isDesktop)
   venuesRef.current        = venues
   selectedIdRef.current    = selectedId
   onVenueSelectRef.current = onVenueSelect
   showTrafficRef.current   = showTraffic
   padRightRef.current      = padRight
+  isDesktopRef.current     = isDesktop
 
   const fitAll = useRef((duration = 0) => {
     const map = mapRef.current
@@ -138,10 +140,16 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
     if (!map || !mapLoadedRef.current || !selectedId) return
     const venue = venues.find((v) => v.id === selectedId)
     if (!venue?.coordinates) return
+    // Center the pin in the free space:
+    //  - desktop: between the bottom-left detail card (~424px) and the right rail (padRight)
+    //  - mobile: lifted above the bottom detail sheet
+    const DETAIL_LEFT = 424
+    const offsetX = isDesktopRef.current ? (DETAIL_LEFT - padRightRef.current) / 2 : 0
+    const offsetY = isDesktopRef.current ? 0 : -window.innerHeight * 0.22
     map.flyTo({
       center: venue.coordinates,
       zoom: 15, pitch: 55, duration: 1100, curve: 1.4,
-      offset: [-(padRightRef.current / 2), 0],
+      offset: [offsetX, offsetY],
     })
   }, [selectedId, venues])
 
