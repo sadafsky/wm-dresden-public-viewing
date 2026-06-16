@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import Map from './components/Map'
 import MatchTicker from './components/MatchTicker'
 import RainOverlay from './components/RainOverlay'
@@ -197,6 +198,8 @@ function AppContent() {
       <AnimatePresence>
         {aboutOpen && <AboutModal lang={lang} onClose={() => setAboutOpen(false)} />}
       </AnimatePresence>
+
+      <Analytics />
     </div>
   )
 }

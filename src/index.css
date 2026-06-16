@@ -196,8 +196,23 @@ body::after {
 .mcard__live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--live); box-shadow: 0 0 8px var(--live); animation: live-blink 1.3s ease-in-out infinite; }
 .mcard__ft { color: var(--text-dim); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
 .mcard__group { font-family: var(--font-body); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-dim); }
-.mcard__team { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 11px; padding: 3px 0; }
-.mcard__team .team-code { width: 44px; text-align: center; padding-left: 0; padding-right: 0; }
+.mcard__team { display: grid; grid-template-columns: 22px 40px 1fr auto; align-items: center; gap: 9px; padding: 3px 0; }
+.mcard__team .team-code { width: 40px; text-align: center; padding-left: 0; padding-right: 0; }
+.mcard__flag { width: 22px; height: 16px; border-radius: 3px; object-fit: cover; display: block; box-shadow: 0 0 0 1px rgba(255,255,255,0.14); }
+.mcard__flag--empty { background: var(--surface-3); }
+
+/* Germany-only filter chip in the schedule */
+.ger-filter {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface-2);
+  color: var(--text-mid); cursor: pointer;
+  font-family: var(--font-body); font-weight: 700; font-size: 12px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.ger-filter--active { background: var(--accent); color: var(--ink); border-color: var(--accent); }
+.ger-filter__flag { width: 22px; height: 16px; border-radius: 3px; object-fit: cover; }
 .mcard__name { font-family: var(--font-body); font-size: 13px; color: var(--text-mid); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .mcard__score { font-family: var(--font-display); font-weight: 600; font-size: 18px; color: var(--text-mid); font-variant-numeric: tabular-nums; min-width: 14px; text-align: right; }
 .mcard__team--win .mcard__name { color: var(--text); font-weight: 600; }

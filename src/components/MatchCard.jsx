@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion'
 import { t } from '../i18n'
 import { matchStatus, matchStart, dayLabel } from '../utils/matches'
+import { flagUrl } from '../utils/flags'
+
+function Flag({ code }) {
+  const url = flagUrl(code)
+  if (!url) return <span className="mcard__flag mcard__flag--empty" />
+  return <img className="mcard__flag" src={url} alt={code} loading="lazy" width="22" height="16" />
+}
 
 export const matchCardVariants = {
   hidden: { opacity: 0, y: 12 },
@@ -31,11 +38,13 @@ export default function MatchCard({ m, lang, showDate = false }) {
       </div>
 
       <div className={`mcard__team${homeWin ? ' mcard__team--win' : ''}`}>
+        <Flag code={m.home.code} />
         <span className="team-code">{m.home.code}</span>
         <span className="mcard__name">{m.home[lang]}</span>
         {hasScore && <span className="mcard__score">{hs}</span>}
       </div>
       <div className={`mcard__team${awayWin ? ' mcard__team--win' : ''}`}>
+        <Flag code={m.away.code} />
         <span className="team-code">{m.away.code}</span>
         <span className="mcard__name">{m.away[lang]}</span>
         {hasScore && <span className="mcard__score">{as}</span>}
