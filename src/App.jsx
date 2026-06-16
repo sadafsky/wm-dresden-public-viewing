@@ -64,7 +64,9 @@ function AppContent() {
   const handleClose = useCallback(() => setSelectedVenue(null), [])
 
   // Rain overlay: real weather OR manual toggle
-  const precipActive = showRain || weather.isRain || weather.isSnow
+  // Rain/snow follows REAL weather; the toggle only lets you hide it.
+  // Sunny weather → no precipitation, even with the toggle on.
+  const precipActive = showRain && (weather.isRain || weather.isSnow)
   const precipType = weather.isSnow ? 'snow' : 'rain'
   const railVisible = isDesktop && railOpen
 
