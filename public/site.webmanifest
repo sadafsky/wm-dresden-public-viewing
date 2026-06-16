@@ -1,0 +1,13 @@
+{
+  "name": "WeltmeisterschafDD — Wo Dresden Fußball schaut",
+  "short_name": "WeltmeisterschafDD",
+  "description": "Interaktive Karte aller Public-Viewing-Orte in Dresden zur WM 2026, mit Live-Spielplan, Wetter und Routen.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e0e0c",
+  "theme_color": "#0e0e0c",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}
