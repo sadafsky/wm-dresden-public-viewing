@@ -323,7 +323,7 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
             </motion.a>
           )}
           <motion.a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${venue.coordinates[1]},${venue.coordinates[0]}`}
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${venue.name}, ${venue.address}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.02 }}
