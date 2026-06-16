@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from 'framer-motion'
 import WeatherChip from './WeatherChip'
 import { t } from '../i18n'
 
@@ -16,24 +15,25 @@ const TrafficIcon = () => (
   </svg>
 )
 
-// Weather temperature + the two map toggles (rain, traffic) grouped together.
-// Shows a traffic legend below when traffic is on.
+// Weather temperature + rain & traffic toggles. The traffic colour key
+// shows as a tooltip on hover of the traffic button (desktop).
 export default function WeatherControls({
   weather, lang, showRain, setShowRain, showTraffic, setShowTraffic, compact = false,
 }) {
   const tr = t[lang]
   return (
     <div className="weather-controls">
-      <div className="weather-controls__row">
-        <WeatherChip weather={weather} lang={lang} compact={compact} />
-        <button
-          className={`cond-btn${showRain ? ' cond-btn--on' : ''}`}
-          onClick={() => setShowRain((v) => !v)}
-          title={tr.rain}
-          aria-label={tr.rain}
-        >
-          <RainIcon />
-        </button>
+      <WeatherChip weather={weather} lang={lang} compact={compact} />
+      <button
+        className={`cond-btn${showRain ? ' cond-btn--on' : ''}`}
+        onClick={() => setShowRain((v) => !v)}
+        title={tr.rain}
+        aria-label={tr.rain}
+      >
+        <RainIcon />
+      </button>
+
+      <div className="cond-wrap">
         <button
           className={`cond-btn${showTraffic ? ' cond-btn--on' : ''}`}
           onClick={() => setShowTraffic((v) => !v)}
@@ -42,24 +42,14 @@ export default function WeatherControls({
         >
           <TrafficIcon />
         </button>
+        <div className="cond-tooltip">
+          <div className="traffic-legend">
+            <span><i style={{ background: '#22c55e' }} />{tr.legendClear}</span>
+            <span><i style={{ background: '#f59e0b' }} />{tr.legendBusy}</span>
+            <span><i style={{ background: '#ef4444' }} />{tr.legendJam}</span>
+          </div>
+        </div>
       </div>
-
-      <AnimatePresence>
-        {showTraffic && (
-          <motion.div
-            initial={{ opacity: 0, y: -6 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.2 }}
-          >
-            <div className="traffic-legend traffic-legend--float">
-              <span><i style={{ background: '#22c55e' }} />{tr.legendClear}</span>
-              <span><i style={{ background: '#f59e0b' }} />{tr.legendBusy}</span>
-              <span><i style={{ background: '#ef4444' }} />{tr.legendJam}</span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   )
 }
