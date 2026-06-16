@@ -26,6 +26,28 @@ export const CODE_TO_ISO = {
   // CONCACAF & Caribbean
   CRC: 'cr', CRI: 'cr', PAN: 'pa', JAM: 'jm', HON: 'hn', HND: 'hn',
   HAI: 'ht', HTI: 'ht', CUW: 'cw', SLV: 'sv', GUA: 'gt', GTM: 'gt',
+  TRI: 'tt', SUR: 'sr', GUY: 'gy', NCA: 'ni', GRN: 'gd', SKN: 'kn',
+  CUB: 'cu', DOM: 'do', BRB: 'bb', ATG: 'ag', LCA: 'lc', VIN: 'vc',
+  DMA: 'dm', BLZ: 'bz', BAH: 'bs', BER: 'bm', ARU: 'aw',
+  // Rest of UEFA
+  BIH: 'ba', MKD: 'mk', ALB: 'al', ISR: 'il', FIN: 'fi', ISL: 'is',
+  IRL: 'ie', NIR: 'gb-nir', MNE: 'me', KOS: 'xk', GEO: 'ge', ARM: 'am',
+  AZE: 'az', KAZ: 'kz', BUL: 'bg', BGR: 'bg', BLR: 'by', LUX: 'lu',
+  LTU: 'lt', LVA: 'lv', EST: 'ee', CYP: 'cy', MLT: 'mt', AND: 'ad',
+  FRO: 'fo', GIB: 'gi', LIE: 'li', SMR: 'sm', MDA: 'md',
+  // More Africa
+  BFA: 'bf', GAB: 'ga', BEN: 'bj', TOG: 'tg', ZAM: 'zm', TAN: 'tz',
+  UGA: 'ug', KEN: 'ke', MTN: 'mr', SDN: 'sd', LBY: 'ly', EQG: 'gq',
+  GAM: 'gm', GNB: 'gw', COM: 'km', MAD: 'mg', MDG: 'mg', MOZ: 'mz',
+  NAM: 'na', BOT: 'bw', ZIM: 'zw', SLE: 'sl', LBR: 'lr', NIG: 'ne',
+  // More Asia
+  THA: 'th', VIE: 'vn', IND: 'in', IDN: 'id', MAS: 'my', PHI: 'ph',
+  TJK: 'tj', TKM: 'tm', KGZ: 'kg', PLE: 'ps', LBN: 'lb', SYR: 'sy',
+  KUW: 'kw', YEM: 'ye', HKG: 'hk', BHR: 'bh', OMA: 'om', CHN: 'cn',
+  PRK: 'kp', SGP: 'sg', MNG: 'mn',
+  // More Oceania
+  FIJ: 'fj', SOL: 'sb', VAN: 'vu', PNG: 'pg', NCL: 'nc', TAH: 'pf',
+  COK: 'ck', SAM: 'ws', TGA: 'to',
 }
 
 export function flagUrl(code) {
