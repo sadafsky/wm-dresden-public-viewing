@@ -8,7 +8,7 @@ const ENDPOINT = 'https://formsubmit.co/ajax/1d21ca9bb1bc92d3508728b95d303eaf'
 
 export default function SubmitModal({ lang, onClose }) {
   const tr = t[lang]
-  const [form, setForm] = useState({ name: '', address: '', type: 'bar', note: '', email: '' })
+  const [form, setForm] = useState({ name: '', address: '', type: 'indoor', note: '', email: '' })
   const [status, setStatus] = useState('idle') // idle | sending | ok | err
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }))
@@ -26,7 +26,7 @@ export default function SubmitModal({ lang, onClose }) {
           _subject: 'Neuer Spot-Vorschlag — wmdd.live',
           Name: form.name,
           Adresse: form.address,
-          Typ: tr.types[form.type] ?? form.type,
+          Typ: tr[form.type] ?? form.type,
           Anmerkung: form.note,
           Kontakt: form.email,
         }),
@@ -76,10 +76,8 @@ export default function SubmitModal({ lang, onClose }) {
             <label className="field">
               <span>{tr.fType}</span>
               <select value={form.type} onChange={set('type')}>
-                <option value="bar">{tr.types.bar}</option>
-                <option value="outdoor">{tr.types.outdoor}</option>
-                <option value="restaurant">{tr.types.restaurant}</option>
-                <option value="other">{tr.types.other}</option>
+                <option value="indoor">{tr.indoor}</option>
+                <option value="outdoor">{tr.outdoor}</option>
               </select>
             </label>
             <label className="field">
