@@ -15,8 +15,7 @@ const TrafficIcon = () => (
   </svg>
 )
 
-// Weather temperature + rain & traffic toggles. The traffic colour key
-// shows as a tooltip on hover of the traffic button (desktop).
+// Weather temperature + rain & traffic toggles.
 export default function WeatherControls({
   weather, lang, showRain, setShowRain, showTraffic, setShowTraffic, compact = false,
 }) {
@@ -32,24 +31,14 @@ export default function WeatherControls({
       >
         <RainIcon />
       </button>
-
-      <div className="cond-wrap">
-        <button
-          className={`cond-btn${showTraffic ? ' cond-btn--on' : ''}`}
-          onClick={() => setShowTraffic((v) => !v)}
-          title={tr.traffic}
-          aria-label={tr.traffic}
-        >
-          <TrafficIcon />
-        </button>
-        <div className="cond-tooltip">
-          <div className="traffic-legend">
-            <span><i style={{ background: '#22c55e' }} />{tr.legendClear}</span>
-            <span><i style={{ background: '#f59e0b' }} />{tr.legendBusy}</span>
-            <span><i style={{ background: '#ef4444' }} />{tr.legendJam}</span>
-          </div>
-        </div>
-      </div>
+      <button
+        className={`cond-btn${showTraffic ? ' cond-btn--on' : ''}`}
+        onClick={() => setShowTraffic((v) => !v)}
+        title={tr.traffic}
+        aria-label={tr.traffic}
+      >
+        <TrafficIcon />
+      </button>
     </div>
   )
 }

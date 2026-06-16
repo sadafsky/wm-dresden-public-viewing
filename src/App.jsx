@@ -13,6 +13,7 @@ import SidePanel from './components/SidePanel'
 import VenueDetail from './components/VenueDetail'
 import AboutModal from './components/AboutModal'
 import SubmitModal from './components/SubmitModal'
+import TrafficLegend from './components/TrafficLegend'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
@@ -87,6 +88,10 @@ function AppContent() {
       />
 
       <RainOverlay active={precipActive} type={precipType} />
+
+      <AnimatePresence>
+        {isDesktop && showTraffic && <TrafficLegend lang={lang} />}
+      </AnimatePresence>
 
       <MatchTicker lang={lang} matches={matches} />
 
