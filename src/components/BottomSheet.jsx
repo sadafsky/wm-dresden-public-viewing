@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, useMotionValue, animate } from 'framer-motion'
 import VenueCard from './VenueCard'
 import MatchesPanel from './MatchesPanel'
+import AddSpotCta from './AddSpotCta'
 import { t } from '../i18n'
 
 const PEEK = 88 // px visible when collapsed
@@ -15,7 +16,7 @@ const InfoIcon = () => (
 const listVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.06, delayChildren: 0.04 } } }
 
 export default function BottomSheet({
-  venues, selectedId, onVenueSelect, lang, query, setQuery, matches, counts, onAbout, onOpenChange,
+  venues, selectedId, onVenueSelect, lang, query, setQuery, matches, counts, onAbout, onOpenChange, onAddSpot,
 }) {
   const tr = t[lang]
   const sheetRef = useRef(null)
@@ -126,6 +127,7 @@ export default function BottomSheet({
                   />
                 ))
               )}
+              <AddSpotCta lang={lang} onClick={onAddSpot} />
             </motion.div>
           </>
         ) : (

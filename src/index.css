@@ -439,6 +439,47 @@ body::after {
 }
 .about-close:hover { color: var(--text); }
 
+/* Add-spot CTA */
+.add-spot {
+  display: flex; align-items: center; gap: 12px;
+  margin: 10px 16px 16px; padding: 13px 15px;
+  border-radius: 12px; border: 1px dashed var(--border-accent);
+  background: transparent; color: var(--text-mid); cursor: pointer; text-align: left;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.add-spot:hover { background: rgba(242,197,0,0.05); color: var(--text); border-color: var(--accent); }
+.add-spot__plus {
+  width: 26px; height: 26px; flex-shrink: 0; border-radius: 50%;
+  background: var(--accent); color: var(--ink);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-body); font-weight: 800; font-size: 18px; line-height: 1;
+}
+.add-spot__text { font-family: var(--font-body); font-weight: 600; font-size: 13px; letter-spacing: 0.02em; }
+
+/* Suggest-a-spot form */
+.submit-card { width: 400px; max-height: calc(100vh - 40px); overflow-y: auto; }
+.submit-form { display: flex; flex-direction: column; gap: 12px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field > span { font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); }
+.field input, .field select, .field textarea {
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 11px 12px; color: var(--text); font-family: var(--font-body); font-size: 16px;
+  outline: none; transition: border-color 0.2s; width: 100%;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--border-accent); }
+.field textarea { resize: vertical; min-height: 46px; }
+.field select { appearance: none; -webkit-appearance: none; }
+.submit-err { color: var(--live); font-family: var(--font-body); font-size: 12px; }
+.submit-btn {
+  margin-top: 4px; padding: 13px; border-radius: 11px; border: none;
+  background: var(--accent); color: var(--ink);
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer;
+  transition: filter 0.2s, opacity 0.2s;
+}
+.submit-btn:hover { filter: brightness(1.06); }
+.submit-btn:disabled { opacity: 0.5; cursor: default; }
+
 /* Hide top chrome when the mobile sheet is up */
 .app-header, .filter-chips, .top-controls, .mobile-top { transition: opacity 0.28s ease; }
 .ui-hidden { opacity: 0 !important; }

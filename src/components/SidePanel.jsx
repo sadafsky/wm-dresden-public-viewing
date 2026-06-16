@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { t } from '../i18n'
 import VenueCard from './VenueCard'
 import MatchesPanel from './MatchesPanel'
+import AddSpotCta from './AddSpotCta'
 
 const InfoIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -15,7 +16,7 @@ const listVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.0
 export default function SidePanel({
   open = true,
   lang, toggleLang, venues, selectedId, onVenueSelect,
-  types, activeType, setActiveType, counts, query, setQuery, matches, onAbout,
+  types, activeType, setActiveType, counts, query, setQuery, matches, onAbout, onAddSpot,
 }) {
   const tr = t[lang]
   const [tab, setTab] = useState('places') // 'places' | 'matches'
@@ -110,6 +111,7 @@ export default function SidePanel({
                 />
               ))
             )}
+            <AddSpotCta lang={lang} onClick={onAddSpot} />
           </motion.div>
         </>
       ) : (

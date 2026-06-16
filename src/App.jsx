@@ -12,6 +12,7 @@ import BrandMatchesBar from './components/BrandMatchesBar'
 import SidePanel from './components/SidePanel'
 import VenueDetail from './components/VenueDetail'
 import AboutModal from './components/AboutModal'
+import SubmitModal from './components/SubmitModal'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
@@ -34,6 +35,7 @@ function AppContent() {
   const [showRain, setShowRain]           = useState(true)
   const [showTraffic, setShowTraffic]     = useState(false)
   const [aboutOpen, setAboutOpen]         = useState(false)
+  const [submitOpen, setSubmitOpen]       = useState(false)
   const [railOpen, setRailOpen]           = useState(true)
   const [sheetOpen, setSheetOpen]         = useState(false)
 
@@ -120,6 +122,7 @@ function AppContent() {
             setQuery={setQuery}
             matches={matches}
             onAbout={() => setAboutOpen(true)}
+            onAddSpot={() => setSubmitOpen(true)}
           />
         </>
       ) : (
@@ -177,6 +180,7 @@ function AppContent() {
             matches={matches}
             counts={counts}
             onAbout={() => setAboutOpen(true)}
+            onAddSpot={() => setSubmitOpen(true)}
             onOpenChange={setSheetOpen}
           />
         </>
@@ -198,6 +202,10 @@ function AppContent() {
 
       <AnimatePresence>
         {aboutOpen && <AboutModal lang={lang} onClose={() => setAboutOpen(false)} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {submitOpen && <SubmitModal lang={lang} onClose={() => setSubmitOpen(false)} />}
       </AnimatePresence>
 
       <Analytics />
