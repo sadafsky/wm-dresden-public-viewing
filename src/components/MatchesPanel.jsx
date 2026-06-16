@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { t } from '../i18n'
 import { todayMatches, upcomingMatches } from '../utils/matches'
@@ -13,6 +13,11 @@ const isGermany = (m) => m.home.code === 'GER' || m.away.code === 'GER'
 export default function MatchesPanel({ lang, matches = [], bare = false }) {
   const tr = t[lang]
   const [gerOnly, setGerOnly] = useState(false)
+  const [, setTick] = useState(0)
+  useEffect(() => {
+    const id = setInterval(() => setTick((n) => n + 1), 30000)
+    return () => clearInterval(id)
+  }, [])
 
   let today = todayMatches(matches)
   let upcoming = upcomingMatches(matches, new Date(), 6)

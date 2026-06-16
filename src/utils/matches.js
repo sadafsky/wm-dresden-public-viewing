@@ -4,15 +4,22 @@ export const matchStart = (m) => new Date(`${m.date}T${m.time}:00`)
 
 const FULL_MS = 115 * 60000
 
+// Approximate on-pitch minute from elapsed real time (accounts for ~15min halftime).
+function liveMinute(diff) {
+  const m = Math.floor(diff / 60000)
+  if (m <= 45) return Math.max(1, m)
+  if (m < 60) return 45          // halftime break
+  return Math.min(95, m - 15)    // second half, minus the break
+}
+
 export function matchStatus(m, now = new Date()) {
+  const diff = now - matchStart(m)
+  // API status takes precedence; minute comes from API if present, else the clock
   if (m.status === 'finished') return { state: 'finished', minute: 90 }
-  if (m.status === 'live') return { state: 'live', minute: m.minute ?? 1 }
-  const start = matchStart(m)
-  const diff = now - start
+  if (m.status === 'live') return { state: 'live', minute: m.minute ?? liveMinute(diff) }
   if (diff < 0) return { state: 'upcoming', minute: 0 }
   if (diff > FULL_MS) return { state: 'finished', minute: 90 }
-  const minute = Math.min(95, Math.max(1, Math.floor(diff / 60000)))
-  return { state: 'live', minute }
+  return { state: 'live', minute: m.minute ?? liveMinute(diff) }
 }
 
 export function todayMatches(matches = [], now = new Date()) {
