@@ -174,5 +174,159 @@
       "de": "Gemütliches Restaurant in der Neustadt, das die Turnierspiele zeigt. Reservierung unter 0351 8020158.",
       "en": "Cosy restaurant in the Neustadt district showing the tournament matches. Reservations on 0351 8020158."
     }
+  },
+  {
+    "id": "konzertplatz-weisser-hirsch",
+    "name": "Konzertplatz Weißer Hirsch",
+    "type": "outdoor",
+    "address": "Stechgrundstraße 1, 01324 Dresden",
+    "coordinates": [
+      13.82382,
+      51.06553
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": false,
+    "hours": {
+      "de": "Zu den Spielen",
+      "en": "On matchdays"
+    },
+    "website": "https://www.konzertplatz-weisser-hirsch.de",
+    "description": {
+      "de": "Open-Air-Public-Viewing unter dem Rondell am Konzertplatz Weißer Hirsch. Große Leinwände, alle deutschen Gruppenspiele und ausgewählte weitere Partien. Eintritt frei.",
+      "en": "Open-air public viewing under the pavilion at Konzertplatz Weißer Hirsch. Big screens, all German group matches and selected other games. Free entry."
+    }
+  },
+  {
+    "id": "uci-elbepark",
+    "name": "UCI Kino ElbePark",
+    "type": "other",
+    "address": "Lommatzscher Straße 82, 01139 Dresden",
+    "coordinates": [
+      13.6967,
+      51.0825
+    ],
+    "photo": null,
+    "screens": 1,
+    "indoor": true,
+    "hours": {
+      "de": "Nach Reservierung",
+      "en": "By reservation"
+    },
+    "website": "https://www.uci-kino.de",
+    "description": {
+      "de": "WM-Spiele auf Kinoleinwand im UCI ElbePark – bequeme, reservierte Plätze. Mindestverzehr 7 €, Tickets online buchbar.",
+      "en": "World Cup matches on the big cinema screen at UCI ElbePark — comfy reserved seats. €7 minimum spend, tickets online."
+    }
+  },
+  {
+    "id": "ostrabeach",
+    "name": "Ostrabeach",
+    "type": "outdoor",
+    "address": "Pieschener Allee 1, 01067 Dresden",
+    "coordinates": [
+      13.72508,
+      51.06008
+    ],
+    "photo": null,
+    "screens": 1,
+    "indoor": false,
+    "hours": {
+      "de": "Biergarten-Zeiten",
+      "en": "Beer garden hours"
+    },
+    "website": null,
+    "description": {
+      "de": "Stadtstrand am Ostragehege mit Sandfläche und Strandbar. Ausgewählte WM-Spiele auf Großleinwand – Fußball mit Beach-Feeling.",
+      "en": "City beach at Ostragehege with sand and a beach bar. Selected World Cup matches on a big screen — football with beach vibes."
+    }
+  },
+  {
+    "id": "play-off",
+    "name": "Play Off Dresden",
+    "type": "bar",
+    "address": "Webergasse 1, 01067 Dresden",
+    "coordinates": [
+      13.73529,
+      51.04879
+    ],
+    "photo": null,
+    "screens": 6,
+    "indoor": true,
+    "hours": {
+      "de": "Ab 12:00",
+      "en": "From 12:00"
+    },
+    "website": "https://www.play-off-dresden.de",
+    "description": {
+      "de": "Sky-Sportsbar in der Altstadt mit vielen Bildschirmen und Großleinwand. Bundesliga, Champions League und alle WM-Spiele live, dazu Burger & Drinks.",
+      "en": "Sky sports bar in the Old Town with many screens and a big projection. Bundesliga, Champions League and all World Cup matches live, plus burgers & drinks."
+    }
+  },
+  {
+    "id": "baerenzwinger",
+    "name": "Bärenzwinger",
+    "type": "bar",
+    "address": "Brühlscher Garten 1, 01067 Dresden",
+    "coordinates": [
+      13.74519,
+      51.05245
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": true,
+    "hours": {
+      "de": "Ab 19:00",
+      "en": "From 19:00"
+    },
+    "website": "https://www.baerenzwinger.de",
+    "description": {
+      "de": "Studentenclub in den Kasematten der Brühlschen Terrasse. WM-Übertragungen in lockerer Atmosphäre, günstige Getränke, Biergarten an der Elbe.",
+      "en": "Student club in the casemates below the Brühl Terrace. World Cup broadcasts in a relaxed vibe, cheap drinks, beer garden by the Elbe."
+    }
+  },
+  {
+    "id": "katys-garage",
+    "name": "Katy's Garage",
+    "type": "bar",
+    "address": "Alaunstraße 48, 01099 Dresden",
+    "coordinates": [
+      13.75182,
+      51.06674
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": true,
+    "hours": {
+      "de": "Ab 18:00",
+      "en": "From 18:00"
+    },
+    "website": "https://katysgarage.de",
+    "description": {
+      "de": "Kultbar und Club in der Neustadt mit Rampe und Garten. WM-Spiele auf Leinwand, danach Party – Fußball trifft Neustadt-Feeling.",
+      "en": "Cult bar and club in the Neustadt with its ramp and garden. World Cup matches on screen, party afterwards — football meets Neustadt vibes."
+    }
+  },
+  {
+    "id": "groove-station",
+    "name": "Groove Station",
+    "type": "bar",
+    "address": "Katharinenstraße 11-13, 01099 Dresden",
+    "coordinates": [
+      13.74923,
+      51.06644
+    ],
+    "photo": null,
+    "screens": 2,
+    "indoor": true,
+    "hours": {
+      "de": "Ab 19:00",
+      "en": "From 19:00"
+    },
+    "website": "https://www.groovestation.de",
+    "description": {
+      "de": "Bar und Konzertclub in der Neustadt. Übertragung der WM-Spiele auf Leinwand, dazu Konzerte und Partys.",
+      "en": "Bar and live-music club in the Neustadt. World Cup matches on screen, plus concerts and parties."
+    }
   }
 ]
