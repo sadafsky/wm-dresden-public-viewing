@@ -1,6 +1,6 @@
 // Map team codes → flagcdn slugs (ISO 3166-1 alpha-2 / UK nations).
 // Covers BOTH FIFA codes (static data) and ISO3 codes (live football-data API).
-const ISO = {
+export const CODE_TO_ISO = {
   // Hosts
   USA: 'us', CAN: 'ca', MEX: 'mx',
   // Europe
@@ -29,6 +29,6 @@ const ISO = {
 }
 
 export function flagUrl(code) {
-  const iso = ISO[(code || '').toUpperCase()]
+  const iso = CODE_TO_ISO[(code || '').toUpperCase()]
   return iso ? `https://flagcdn.com/w40/${iso}.png` : null
 }

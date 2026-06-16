@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { t } from '../i18n'
 import { matchStatus, matchStart, dayLabel } from '../utils/matches'
 import { flagUrl } from '../utils/flags'
+import { countryName } from '../utils/countries'
 
 function Flag({ code }) {
   const url = flagUrl(code)
@@ -23,6 +24,8 @@ export default function MatchCard({ m, lang, showDate = false }) {
   const hasScore = state !== 'upcoming' && hs != null && as != null
   const homeWin = hasScore && Number(hs) > Number(as)
   const awayWin = hasScore && Number(as) > Number(hs)
+  const homeName = countryName(m.home.code, lang) ?? m.home[lang] ?? m.home.code
+  const awayName = countryName(m.away.code, lang) ?? m.away[lang] ?? m.away.code
 
   return (
     <motion.div variants={matchCardVariants} className={`mcard mcard--${state}`}>
@@ -40,13 +43,13 @@ export default function MatchCard({ m, lang, showDate = false }) {
       <div className={`mcard__team${homeWin ? ' mcard__team--win' : ''}`}>
         <Flag code={m.home.code} />
         <span className="team-code">{m.home.code}</span>
-        <span className="mcard__name">{m.home[lang]}</span>
+        <span className="mcard__name">{homeName}</span>
         {hasScore && <span className="mcard__score">{hs}</span>}
       </div>
       <div className={`mcard__team${awayWin ? ' mcard__team--win' : ''}`}>
         <Flag code={m.away.code} />
         <span className="team-code">{m.away.code}</span>
-        <span className="mcard__name">{m.away[lang]}</span>
+        <span className="mcard__name">{awayName}</span>
         {hasScore && <span className="mcard__score">{as}</span>}
       </div>
     </motion.div>
