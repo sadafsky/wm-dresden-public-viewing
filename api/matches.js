@@ -27,7 +27,8 @@ function teamShape(team) {
 
 function mapStatus(s) {
   if (s === 'FINISHED' || s === 'AWARDED') return 'finished'
-  if (s === 'IN_PLAY' || s === 'PAUSED') return 'live'
+  if (s === 'PAUSED') return 'paused'   // halftime
+  if (s === 'IN_PLAY') return 'live'
   return 'upcoming'
 }
 

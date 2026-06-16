@@ -188,7 +188,7 @@ body::after {
   background: var(--surface-2); border: 1px solid var(--border);
   border-radius: 12px; padding: 10px 12px 8px; margin-bottom: 8px;
 }
-.mcard--live { border-color: rgba(255,68,56,0.38); }
+.mcard--live, .mcard--halftime { border-color: rgba(255,68,56,0.38); }
 .mcard__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 7px; }
 .mcard__time { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-body); font-weight: 600; font-size: 12px; color: var(--text-mid); font-variant-numeric: tabular-nums; }
 .mcard__date { color: var(--text-dim); }

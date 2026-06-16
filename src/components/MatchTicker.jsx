@@ -4,16 +4,16 @@ import { t } from '../i18n'
 import { tickerMatches, matchStatus } from '../utils/matches'
 
 function Segment({ m, lang }) {
-  const { state, minute } = matchStatus(m)
+  const { state, minute, estimated } = matchStatus(m)
 
-  if (state === 'live') {
+  if (state === 'live' || state === 'halftime') {
     return (
       <span className="seg seg--live">
         <span className="seg__live-dot" />
         <b>{m.home.code}</b>
         <span className="seg__score">{m.score ?? '–'}</span>
         <b>{m.away.code}</b>
-        <span className="seg__min">{minute}'</span>
+        <span className="seg__min">{state === 'halftime' ? t[lang].halftime : `${estimated ? '~' : ''}${minute}'`}</span>
       </span>
     )
   }
@@ -70,7 +70,7 @@ export default function MatchTicker({ lang, matches = [] }) {
   }, [])
 
   const list = tickerMatches(matches)
-  const hasLive = list.some((m) => matchStatus(m).state === 'live')
+  const hasLive = list.some((m) => ['live', 'halftime'].includes(matchStatus(m).state))
 
   // Measure one copy so we can translate by its EXACT pixel width (seamless loop)
   useEffect(() => {

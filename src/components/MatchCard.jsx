@@ -19,7 +19,7 @@ export const matchCardVariants = {
 // aligned on a grid so everything lines up perfectly — no truncation.
 export default function MatchCard({ m, lang, showDate = false }) {
   const tr = t[lang]
-  const { state, minute } = matchStatus(m)
+  const { state, minute, estimated } = matchStatus(m)
   const [hs, as] = (m.score || '').split('-')
   const hasScore = state !== 'upcoming' && hs != null && as != null
   const homeWin = hasScore && Number(hs) > Number(as)
@@ -31,7 +31,8 @@ export default function MatchCard({ m, lang, showDate = false }) {
     <motion.div variants={matchCardVariants} className={`mcard mcard--${state}`}>
       <div className="mcard__head">
         <span className="mcard__time">
-          {state === 'live' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.live} {minute}'</b></>}
+          {state === 'live' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.live} {estimated ? '~' : ''}{minute}'</b></>}
+          {state === 'halftime' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.halftime}</b></>}
           {state === 'finished' && <span className="mcard__ft">{tr.ft}</span>}
           {state === 'upcoming' && (
             <>{showDate && <span className="mcard__date">{dayLabel(matchStart(m), lang)} · </span>}{m.time}</>

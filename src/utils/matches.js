@@ -14,12 +14,16 @@ function liveMinute(diff) {
 
 export function matchStatus(m, now = new Date()) {
   const diff = now - matchStart(m)
-  // API status takes precedence; minute comes from API if present, else the clock
-  if (m.status === 'finished') return { state: 'finished', minute: 90 }
-  if (m.status === 'live') return { state: 'live', minute: m.minute ?? liveMinute(diff) }
+  // API status takes precedence; exact minute from API if present, else estimated
+  if (m.status === 'finished') return { state: 'finished', minute: 90, estimated: false }
+  if (m.status === 'paused' || m.status === 'halftime') return { state: 'halftime', minute: 45, estimated: false }
+  if (m.status === 'live') {
+    if (m.minute != null) return { state: 'live', minute: m.minute, estimated: false }
+    return { state: 'live', minute: liveMinute(diff), estimated: true }
+  }
   if (diff < 0) return { state: 'upcoming', minute: 0 }
-  if (diff > FULL_MS) return { state: 'finished', minute: 90 }
-  return { state: 'live', minute: m.minute ?? liveMinute(diff) }
+  if (diff > FULL_MS) return { state: 'finished', minute: 90, estimated: false }
+  return { state: 'live', minute: liveMinute(diff), estimated: true }
 }
 
 export function todayMatches(matches = [], now = new Date()) {
