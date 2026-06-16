@@ -4,7 +4,7 @@ import { t } from '../i18n'
 
 // Form-to-email via FormSubmit (no backend). First submission must be
 // confirmed once via the activation email FormSubmit sends to the owner.
-const ENDPOINT = 'https://formsubmit.co/ajax/contact.sadafsky@gmail.com'
+const ENDPOINT = 'https://formsubmit.co/ajax/1d21ca9bb1bc92d3508728b95d303eaf'
 
 export default function SubmitModal({ lang, onClose }) {
   const tr = t[lang]
