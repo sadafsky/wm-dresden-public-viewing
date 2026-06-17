@@ -85,7 +85,6 @@ function AppContent() {
         showTraffic={showTraffic}
         padRight={railVisible ? RAIL_WIDTH : 0}
         isDesktop={isDesktop}
-        theme={theme}
       />
 
       <RainOverlay active={precipActive} type={precipType} />
