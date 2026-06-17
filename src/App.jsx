@@ -19,6 +19,7 @@ import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
 import { useMatches } from './hooks/useMatches'
 import { useMediaQuery } from './hooks/useMediaQuery'
+import { useTheme } from './hooks/useTheme'
 
 const RAIL_WIDTH = 408
 
@@ -27,6 +28,7 @@ function AppContent() {
   const { venues, geocoding } = useVenues()
   const weather = useWeather()
   const matches = useMatches()
+  const { theme, toggle: toggleTheme } = useTheme()
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   const [selectedVenue, setSelectedVenue] = useState(null)
@@ -83,6 +85,7 @@ function AppContent() {
         showTraffic={showTraffic}
         padRight={railVisible ? RAIL_WIDTH : 0}
         isDesktop={isDesktop}
+        theme={theme}
       />
 
       <RainOverlay active={precipActive} type={precipType} />
@@ -128,6 +131,8 @@ function AppContent() {
             matches={matches}
             onAbout={() => setAboutOpen(true)}
             onAddSpot={() => setSubmitOpen(true)}
+            theme={theme}
+            onToggleTheme={toggleTheme}
           />
         </>
       ) : (
@@ -155,6 +160,8 @@ function AppContent() {
                 showTraffic={showTraffic}
                 setShowTraffic={setShowTraffic}
                 inline
+                theme={theme}
+                onToggleTheme={toggleTheme}
               />
             </div>
           </div>

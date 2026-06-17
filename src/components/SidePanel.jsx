@@ -4,6 +4,7 @@ import { t } from '../i18n'
 import VenueCard from './VenueCard'
 import MatchesPanel from './MatchesPanel'
 import AddSpotCta from './AddSpotCta'
+import ThemeToggle from './ThemeToggle'
 
 const InfoIcon = () => (
   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -17,6 +18,7 @@ export default function SidePanel({
   open = true,
   lang, toggleLang, venues, selectedId, onVenueSelect,
   types, activeType, setActiveType, counts, query, setQuery, matches, onAbout, onAddSpot,
+  theme, onToggleTheme,
 }) {
   const tr = t[lang]
   const [tab, setTab] = useState('places') // 'places' | 'matches'
@@ -57,6 +59,7 @@ export default function SidePanel({
         </div>
         <div className="side-panel__actions">
           <button className="ctrl-btn" onClick={onAbout} aria-label={tr.about}><InfoIcon /></button>
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>{lang.toUpperCase()}</button>
         </div>
       </div>

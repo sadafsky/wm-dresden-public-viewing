@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { t } from '../i18n'
 import WeatherChip from './WeatherChip'
 import LayersPanel from './LayersPanel'
+import ThemeToggle from './ThemeToggle'
 
 const LayersIcon = () => (
   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -18,7 +19,7 @@ const panelMotion = {
 
 export default function TopControls({
   lang, toggleLang, openPanel, setOpenPanel, weather, hidden, inline,
-  showRain, setShowRain, showTraffic, setShowTraffic,
+  showRain, setShowRain, showTraffic, setShowTraffic, theme, onToggleTheme,
 }) {
   const anyLayerOn = showRain || showTraffic
   return (
@@ -33,6 +34,7 @@ export default function TopControls({
           <LayersIcon />
           {anyLayerOn && <span className="ctrl-btn__dot" />}
         </button>
+        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>
           <AnimatePresence mode="wait">
             <motion.span key={lang} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: 0.15 }}>

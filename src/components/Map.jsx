@@ -42,7 +42,12 @@ function removeTrafficFromMap(map) {
   if (map.getSource('mapbox-traffic')) map.removeSource('mapbox-traffic')
 }
 
-export default function Map({ venues, selectedId, onVenueSelect, showTraffic, padRight = 0, isDesktop = false }) {
+// Light theme → bright day map; dark theme → time-of-day lighting.
+function presetFor(theme) {
+  return theme === 'light' ? 'day' : lightPreset()
+}
+
+export default function Map({ venues, selectedId, onVenueSelect, showTraffic, padRight = 0, isDesktop = false, theme = 'dark' }) {
   const containerRef = useRef(null)
   const mapRef       = useRef(null)
   const markersRef   = useRef([])
@@ -55,12 +60,14 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
   const showTrafficRef   = useRef(showTraffic)
   const padRightRef      = useRef(padRight)
   const isDesktopRef     = useRef(isDesktop)
+  const themeRef         = useRef(theme)
   venuesRef.current        = venues
   selectedIdRef.current    = selectedId
   onVenueSelectRef.current = onVenueSelect
   showTrafficRef.current   = showTraffic
   padRightRef.current      = padRight
   isDesktopRef.current     = isDesktop
+  themeRef.current         = theme
 
   const fitAll = useRef((duration = 0) => {
     const map = mapRef.current
@@ -101,7 +108,7 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
     mapRef.current = map
 
     map.on('style.load', () => {
-      try { map.setConfigProperty('basemap', 'lightPreset', lightPreset()) } catch (_) {}
+      try { map.setConfigProperty('basemap', 'lightPreset', presetFor(themeRef.current)) } catch (_) {}
       try { map.setConfigProperty('basemap', 'showPointOfInterestLabels', false) } catch (_) {}
       if (!map.getSource('mapbox-dem')) {
         map.addSource('mapbox-dem', { type: 'raster-dem', url: 'mapbox://mapbox.mapbox-terrain-dem-v1', tileSize: 512, maxzoom: 14 })
@@ -130,6 +137,13 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
     if (showTraffic) addTrafficToMap(map)
     else removeTrafficFromMap(map)
   }, [showTraffic])
+
+  // ── Theme → map lighting ────────────────────────────────────
+  useEffect(() => {
+    const map = mapRef.current
+    if (!map || !mapLoadedRef.current) return
+    try { map.setConfigProperty('basemap', 'lightPreset', presetFor(theme)) } catch (_) {}
+  }, [theme])
 
   // ── Markers refresh ─────────────────────────────────────────
   useEffect(() => { refreshMarkers() }, [venues, selectedId, refreshMarkers])
