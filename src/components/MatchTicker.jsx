@@ -13,7 +13,7 @@ function Segment({ m, lang }) {
         <b>{m.home.code}</b>
         <span className="seg__score">{m.score ?? '–'}</span>
         <b>{m.away.code}</b>
-        <span className="seg__min">{state === 'halftime' ? t[lang].halftime : `${estimated ? '~' : ''}${minute}'`}</span>
+        <span className="seg__min">{state === 'halftime' ? t[lang].halftime : `${minute}'`}</span>
       </span>
     )
   }

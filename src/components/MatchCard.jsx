@@ -31,7 +31,7 @@ export default function MatchCard({ m, lang, showDate = false }) {
     <motion.div variants={matchCardVariants} className={`mcard mcard--${state}`}>
       <div className="mcard__head">
         <span className="mcard__time">
-          {state === 'live' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.live} {estimated ? '~' : ''}{minute}'</b></>}
+          {state === 'live' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.live} {minute}'</b></>}
           {state === 'halftime' && <><span className="mcard__live-dot" /><b className="mcard__live">{tr.halftime}</b></>}
           {state === 'finished' && <span className="mcard__ft">{tr.ft}</span>}
           {state === 'upcoming' && (

@@ -2,8 +2,10 @@ import { useEffect, useRef } from 'react'
 import { motion, animate } from 'framer-motion'
 import { t } from '../i18n'
 
-// Top-down football pitch pattern — gives context without a photo
+// Top-down football pitch — a dark green "photo" with white lines,
+// clearly visible in both light and dark themes.
 function PitchPattern() {
+  const line = 'rgba(255,255,255,0.30)'
   return (
     <svg
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
@@ -11,29 +13,30 @@ function PitchPattern() {
       viewBox="0 0 420 200"
     >
       <defs>
-        <radialGradient id="pitch-glow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="rgba(242,197,0,0.18)"/>
+        <linearGradient id="pitch-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#1a4029"/>
+          <stop offset="100%" stopColor="#0e2418"/>
+        </linearGradient>
+        <radialGradient id="pitch-glow" cx="50%" cy="44%" r="55%">
+          <stop offset="0%" stopColor="rgba(242,197,0,0.16)"/>
           <stop offset="100%" stopColor="transparent"/>
         </radialGradient>
       </defs>
-      {/* Glow center */}
-      <ellipse cx="210" cy="100" rx="160" ry="80" fill="url(#pitch-glow)"/>
-      {/* Outer boundary */}
-      <rect x="24" y="18" width="372" height="164" stroke="rgba(242,197,0,0.1)" strokeWidth="1" fill="none" rx="4"/>
-      {/* Center circle */}
-      <circle cx="210" cy="100" r="42" stroke="rgba(242,197,0,0.14)" strokeWidth="1" fill="none"/>
-      {/* Center spot */}
-      <circle cx="210" cy="100" r="3" fill="rgba(242,197,0,0.35)"/>
-      {/* Halfway line */}
-      <line x1="210" y1="18" x2="210" y2="182" stroke="rgba(242,197,0,0.08)" strokeWidth="1"/>
-      {/* Left penalty area */}
-      <rect x="24" y="56" width="72" height="88" stroke="rgba(242,197,0,0.08)" strokeWidth="1" fill="none"/>
-      {/* Right penalty area */}
-      <rect x="324" y="56" width="72" height="88" stroke="rgba(242,197,0,0.08)" strokeWidth="1" fill="none"/>
-      {/* Left goal */}
-      <rect x="24" y="80" width="22" height="40" stroke="rgba(242,197,0,0.12)" strokeWidth="1" fill="rgba(242,197,0,0.02)"/>
-      {/* Right goal */}
-      <rect x="374" y="80" width="22" height="40" stroke="rgba(242,197,0,0.12)" strokeWidth="1" fill="rgba(242,197,0,0.02)"/>
+      <rect width="420" height="200" fill="url(#pitch-bg)"/>
+      {/* mowing stripes */}
+      {[0, 1, 2, 3, 4, 5].map((i) => (
+        <rect key={i} x={i * 70} y="0" width="35" height="200" fill="rgba(255,255,255,0.025)"/>
+      ))}
+      <ellipse cx="210" cy="100" rx="175" ry="92" fill="url(#pitch-glow)"/>
+      {/* Markings */}
+      <rect x="24" y="18" width="372" height="164" stroke={line} strokeWidth="1.4" fill="none" rx="2"/>
+      <circle cx="210" cy="100" r="42" stroke={line} strokeWidth="1.4" fill="none"/>
+      <circle cx="210" cy="100" r="3" fill={line}/>
+      <line x1="210" y1="18" x2="210" y2="182" stroke={line} strokeWidth="1.4"/>
+      <rect x="24" y="56" width="72" height="88" stroke={line} strokeWidth="1.4" fill="none"/>
+      <rect x="324" y="56" width="72" height="88" stroke={line} strokeWidth="1.4" fill="none"/>
+      <rect x="24" y="80" width="14" height="40" stroke={line} strokeWidth="1.4" fill="none"/>
+      <rect x="382" y="80" width="14" height="40" stroke={line} strokeWidth="1.4" fill="none"/>
     </svg>
   )
 }
@@ -124,8 +127,8 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
             disabled={!prevVenue}
             style={{
               width: 30, height: 30, borderRadius: 8,
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(5,7,15,0.8)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'rgba(10,20,14,0.55)',
               color: prevVenue ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.2)',
               cursor: prevVenue ? 'pointer' : 'default',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -142,7 +145,7 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
             height: 30, padding: '0 10px',
             borderRadius: 8,
             border: '1px solid rgba(255,255,255,0.1)',
-            background: 'rgba(5,7,15,0.8)',
+            background: 'rgba(10,20,14,0.55)',
             display: 'flex', alignItems: 'center',
             fontFamily: 'var(--font-display)',
             fontWeight: 700,
@@ -159,8 +162,8 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
             disabled={!nextVenue}
             style={{
               width: 30, height: 30, borderRadius: 8,
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(5,7,15,0.8)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'rgba(10,20,14,0.55)',
               color: nextVenue ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.2)',
               cursor: nextVenue ? 'pointer' : 'default',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -177,8 +180,8 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
             onClick={onClose}
             style={{
               width: 30, height: 30, borderRadius: 8,
-              border: '1px solid rgba(255,255,255,0.1)',
-              background: 'rgba(5,7,15,0.8)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              background: 'rgba(10,20,14,0.55)',
               color: 'rgba(255,255,255,0.6)',
               cursor: 'pointer',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
