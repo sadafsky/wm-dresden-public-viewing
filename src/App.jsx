@@ -97,7 +97,7 @@ function AppContent() {
 
       <MatchTicker lang={lang} matches={matches} />
 
-      {!isDesktop && !selectedVenue && <MatchHeatSelector matches={matches} lang={lang} />}
+      {!isDesktop && !selectedVenue && <MatchHeatSelector matches={matches} lang={lang} variant="floating" />}
 
       {isDesktop ? (
         <>

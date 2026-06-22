@@ -328,5 +328,49 @@
       "de": "Bar und Konzertclub in der Neustadt. Übertragung der WM-Spiele auf Leinwand, dazu Konzerte und Partys.",
       "en": "Bar and live-music club in the Neustadt. World Cup matches on screen, plus concerts and parties."
     }
+  },
+  {
+    "id": "faehrgarten-johannstadt",
+    "name": "Fährgarten Johannstadt",
+    "type": "outdoor",
+    "address": "Käthe-Kollwitz-Ufer 23b, 01307 Dresden",
+    "coordinates": [
+      13.76901,
+      51.05863
+    ],
+    "photo": null,
+    "screens": 1,
+    "indoor": false,
+    "hours": {
+      "de": "Bei gutem Wetter ab 11:00",
+      "en": "In good weather from 11:00"
+    },
+    "website": "https://www.faehrgarten.de",
+    "description": {
+      "de": "Traditioneller Biergarten direkt an der Elbe an der Johannstädter Fähre. Public Viewing unter freiem Himmel mit Blick aufs Wasser – Bier, Bratwurst und Fußball.",
+      "en": "Traditional beer garden right on the Elbe by the Johannstadt ferry. Open-air public viewing with a view over the water — beer, bratwurst and football."
+    }
+  },
+  {
+    "id": "elbavista",
+    "name": "ElbaVista Terrassen",
+    "type": "outdoor",
+    "address": "Theaterplatz 3, 01067 Dresden",
+    "coordinates": [
+      13.73555,
+      51.05520
+    ],
+    "photo": null,
+    "screens": 1,
+    "indoor": false,
+    "hours": {
+      "de": "Mo–Fr ab 15:00, Sa/So ab 13:00",
+      "en": "Mon–Fri from 15:00, Sat/Sun from 13:00"
+    },
+    "website": "https://palaissommer.de",
+    "description": {
+      "de": "Sommer-Terrassen am Italienischen Dörfchen direkt neben der Semperoper, mit Blick auf die Elbe. Pop-up-Lounge mit Musik, Kunst und Gastronomie – im WM-Sommer 2026 ein stimmungsvoller Ort zum gemeinsamen Schauen.",
+      "en": "Summer terraces at the Italienisches Dörfchen right next to the Semperoper, overlooking the Elbe. A pop-up lounge with music, art and food — an atmospheric spot to watch together during the 2026 World Cup summer."
+    }
   }
 ]

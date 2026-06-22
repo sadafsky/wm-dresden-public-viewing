@@ -22,7 +22,7 @@ export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, 
         />
       </div>
 
-      <MatchHeatSelector matches={matches} lang={lang} vertical />
+      <MatchHeatSelector matches={matches} lang={lang} variant="rail" />
     </motion.div>
   )
 }

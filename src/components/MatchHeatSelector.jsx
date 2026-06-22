@@ -5,10 +5,11 @@ import { todayMatches, upcomingMatches, matchStatus } from '../utils/matches'
 import { flagUrl } from '../utils/flags'
 import { t } from '../i18n'
 
-// Floating strip above the map: pick which match the "heat" reflects.
+// Vertical match list: pick which match the "heat" reflects.
 // People go to a venue to watch a SPECIFIC match — this selector scopes the
 // glowing pins to "who's going to THIS match".
-export default function MatchHeatSelector({ matches, lang, vertical = false }) {
+// variant: 'rail' (desktop, inside the left brand bar) | 'floating' (mobile, fixed top-left).
+export default function MatchHeatSelector({ matches, lang, variant = 'floating' }) {
   const tr = t[lang]
   const { selectedMatchId, setSelectedMatchId, counts } = useGoing()
 
@@ -30,12 +31,12 @@ export default function MatchHeatSelector({ matches, lang, vertical = false }) {
 
   return (
     <motion.div
-      className={`match-heat${vertical ? ' match-heat--rail' : ''}`}
+      className={`match-heat match-heat--${variant}`}
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
     >
-      {vertical && <div className="match-heat__title">{tr.watchingWhich}</div>}
+      <div className="match-heat__title">{tr.watchingWhich}</div>
       <div className="match-heat__row">
         {list.map((m) => {
           const st = matchStatus(m)
