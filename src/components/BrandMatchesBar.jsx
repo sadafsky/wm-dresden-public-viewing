@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import Wordmark from './Wordmark'
 import WeatherControls from './WeatherControls'
+import MatchHeatSelector from './MatchHeatSelector'
 
-export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, showTraffic, setShowTraffic }) {
+export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, showTraffic, setShowTraffic, matches }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -14 }}
@@ -20,6 +21,8 @@ export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, 
           showTraffic={showTraffic} setShowTraffic={setShowTraffic}
         />
       </div>
+
+      <MatchHeatSelector matches={matches} lang={lang} vertical />
     </motion.div>
   )
 }

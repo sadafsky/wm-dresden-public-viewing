@@ -97,7 +97,7 @@ function AppContent() {
 
       <MatchTicker lang={lang} matches={matches} />
 
-      {!selectedVenue && <MatchHeatSelector matches={matches} lang={lang} />}
+      {!isDesktop && !selectedVenue && <MatchHeatSelector matches={matches} lang={lang} />}
 
       {isDesktop ? (
         <>
@@ -106,6 +106,7 @@ function AppContent() {
             weather={weather}
             showRain={showRain} setShowRain={setShowRain}
             showTraffic={showTraffic} setShowTraffic={setShowTraffic}
+            matches={matches}
           />
           <button
             className="rail-toggle"
