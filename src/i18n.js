@@ -43,6 +43,9 @@ export const t = {
     loading: 'wird geladen…',
     lightMode: 'Helles Design',
     darkMode: 'Dunkles Design',
+    imGoing: 'Ich geh hin',
+    youreGoing: 'Du gehst hin',
+    goingCount: (n) => `${n} ${n === 1 ? 'geht' : 'gehen'} hin`,
     // About
     // Suggest a spot
     addSpotCta: 'Dein Lieblings-Spot fehlt? Füg ihn zur Karte hinzu.',
@@ -108,6 +111,9 @@ export const t = {
     loading: 'loading…',
     lightMode: 'Light mode',
     darkMode: 'Dark mode',
+    imGoing: "I'm going",
+    youreGoing: "You're going",
+    goingCount: (n) => `${n} going`,
     // About
     // Suggest a spot
     addSpotCta: "Can't find your favorite spot? Add it to the map.",

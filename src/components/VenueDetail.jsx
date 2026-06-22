@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { motion, animate } from 'framer-motion'
 import { t } from '../i18n'
+import { useGoing } from '../context/GoingContext'
+
+const FlameIcon = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c1 3-1 4-2.5 6C8 10 8 12 9 13c-2 0-3-2-3-2-1 2-1 4 0 6 1.4 2.6 4 3 6 3s4.5-1 5.5-3.5c1.2-3-.5-6-2-7.5-.4 2-1.5 2.5-2.5 2 .8-1.2 1.5-3.5-.5-9z"/>
+  </svg>
+)
 
 // Top-down football pitch — a dark green "photo" with white lines,
 // clearly visible in both light and dark themes.
@@ -61,6 +68,9 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
   const idx = venues.findIndex((v) => v.id === venue.id)
   const prevVenue = venues[idx - 1] ?? null
   const nextVenue = venues[idx + 1] ?? null
+  const { counts, going, toggleGoing } = useGoing()
+  const goingCount = counts[venue.id] || 0
+  const isGoing = going.has(venue.id)
 
   const mobileStyle = {
     bottom: 0, left: 0, right: 0,
@@ -302,6 +312,25 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
         }}>
           {venue.description[lang]}
         </p>
+
+        {/* "I'm going" — drives the venue heat */}
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          onClick={() => toggleGoing(venue.id)}
+          style={{
+            width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+            marginBottom: 10, padding: '12px 18px', borderRadius: 10, cursor: 'pointer',
+            border: isGoing ? '1px solid transparent' : '1px solid var(--border-accent)',
+            background: isGoing ? 'var(--accent)' : 'transparent',
+            color: isGoing ? 'var(--ink)' : 'var(--accent)',
+            fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: 13,
+            letterSpacing: '0.04em', textTransform: 'uppercase',
+          }}
+        >
+          <FlameIcon />
+          {isGoing ? tr.youreGoing : tr.imGoing}
+          {goingCount > 0 && <span style={{ opacity: 0.8 }}>· {goingCount}</span>}
+        </motion.button>
 
         {/* CTAs: website (primary) + route (secondary) */}
         <div style={{ display: 'flex', gap: 8 }}>

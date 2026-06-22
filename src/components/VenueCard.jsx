@@ -1,5 +1,12 @@
 import { motion } from 'framer-motion'
 import { t } from '../i18n'
+import { useGoing } from '../context/GoingContext'
+
+const FlameIcon = () => (
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2c1 3-1 4-2.5 6C8 10 8 12 9 13c-2 0-3-2-3-2-1 2-1 4 0 6 1.4 2.6 4 3 6 3s4.5-1 5.5-3.5c1.2-3-.5-6-2-7.5-.4 2-1.5 2.5-2.5 2 .8-1.2 1.5-3.5-.5-9z"/>
+  </svg>
+)
 
 export const cardVariants = {
   hidden: { opacity: 0, x: -20 },
@@ -12,6 +19,8 @@ export const cardVariants = {
 
 export default function VenueCard({ venue, index, isSelected, onSelect, lang, showDivider }) {
   const tr = t[lang]
+  const { counts } = useGoing()
+  const count = counts[venue.id] || 0
 
   return (
     <>
@@ -33,6 +42,7 @@ export default function VenueCard({ venue, index, isSelected, onSelect, lang, sh
             {tr.screens(venue.screens)}
             <span className="venue-card__dot">·</span>
             {venue.hours?.[lang] ?? venue.hours}
+            {count > 0 && <span className="venue-card__heat"><FlameIcon />{count}</span>}
           </div>
         </div>
 

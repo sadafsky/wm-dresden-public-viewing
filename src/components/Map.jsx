@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { useGoing } from '../context/GoingContext'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN
 
@@ -55,6 +56,9 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
   const showTrafficRef   = useRef(showTraffic)
   const padRightRef      = useRef(padRight)
   const isDesktopRef     = useRef(isDesktop)
+  const { counts } = useGoing()
+  const countsRef        = useRef(counts)
+  countsRef.current        = counts
   venuesRef.current        = venues
   selectedIdRef.current    = selectedId
   onVenueSelectRef.current = onVenueSelect
@@ -81,7 +85,17 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
       .forEach((venue) => {
         const wrapper = document.createElement('div')
         const pin = document.createElement('div')
-        pin.className = `map-pin map-pin--${venue.type || 'other'}${venue.id === selectedIdRef.current ? ' map-pin--active' : ''}`
+        const count = countsRef.current[venue.id] || 0
+        pin.className = `map-pin map-pin--${venue.type || 'other'}${venue.id === selectedIdRef.current ? ' map-pin--active' : ''}${count > 0 ? ' map-pin--hot' : ''}`
+        // Heat: glow grows & reddens with how many people are going
+        if (count > 0) {
+          const i = Math.min(count, 12) / 12
+          pin.style.boxShadow = `0 0 0 ${4 + 6 * i}px rgba(255,86,40,${0.14 + 0.18 * i}), 0 6px 18px rgba(0,0,0,0.5), 0 0 ${16 + 28 * i}px rgba(255,86,40,${0.4 + 0.45 * i})`
+          const badge = document.createElement('div')
+          badge.className = 'map-pin__heat'
+          badge.textContent = String(count)
+          wrapper.appendChild(badge)
+        }
         wrapper.appendChild(pin)
         wrapper.addEventListener('click', () => onVenueSelectRef.current(venue))
         const marker = new mapboxgl.Marker({ element: wrapper }).setLngLat(venue.coordinates).addTo(map)
@@ -132,7 +146,7 @@ export default function Map({ venues, selectedId, onVenueSelect, showTraffic, pa
   }, [showTraffic])
 
   // ── Markers refresh ─────────────────────────────────────────
-  useEffect(() => { refreshMarkers() }, [venues, selectedId, refreshMarkers])
+  useEffect(() => { refreshMarkers() }, [venues, selectedId, counts, refreshMarkers])
 
   // ── Fly to selected ─────────────────────────────────────────
   useEffect(() => {

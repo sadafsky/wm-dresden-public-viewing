@@ -15,6 +15,7 @@ import AboutModal from './components/AboutModal'
 import SubmitModal from './components/SubmitModal'
 import TrafficLegend from './components/TrafficLegend'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
+import { GoingProvider } from './context/GoingContext'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
 import { useMatches } from './hooks/useMatches'
@@ -227,7 +228,9 @@ function AppContent() {
 export default function App() {
   return (
     <LanguageProvider>
-      <AppContent />
+      <GoingProvider>
+        <AppContent />
+      </GoingProvider>
     </LanguageProvider>
   )
 }
