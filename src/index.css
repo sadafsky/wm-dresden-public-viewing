@@ -406,7 +406,7 @@ body::after {
 /* Mobile: fixed vertical column, top-left over the map */
 .match-heat--floating {
   position: fixed; z-index: 16; left: 12px;
-  top: calc(var(--ticker-h) + 96px);
+  top: calc(var(--ticker-h) + 132px);
   width: min(58vw, 210px); pointer-events: auto;
 }
 
