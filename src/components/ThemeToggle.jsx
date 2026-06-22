@@ -1,3 +1,5 @@
+import { t } from '../i18n'
+
 const SunIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <circle cx="12" cy="12" r="4.5" />
@@ -10,14 +12,10 @@ const MoonIcon = () => (
   </svg>
 )
 
-export default function ThemeToggle({ theme, onToggle }) {
+export default function ThemeToggle({ theme, onToggle, lang = 'de' }) {
+  const tip = theme === 'dark' ? t[lang].lightMode : t[lang].darkMode
   return (
-    <button
-      className="ctrl-btn"
-      onClick={onToggle}
-      aria-label={theme === 'dark' ? 'Helles Design' : 'Dunkles Design'}
-      title={theme === 'dark' ? 'Hell' : 'Dunkel'}
-    >
+    <button className="ctrl-btn" onClick={onToggle} data-tip={tip} aria-label={tip}>
       {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
     </button>
   )

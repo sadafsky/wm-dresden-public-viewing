@@ -58,8 +58,8 @@ export default function SidePanel({
           </button>
         </div>
         <div className="side-panel__actions">
-          <button className="ctrl-btn" onClick={onAbout} aria-label={tr.about}><InfoIcon /></button>
-          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+          <button className="ctrl-btn" onClick={onAbout} data-tip={tr.about} aria-label={tr.about}><InfoIcon /></button>
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} lang={lang} />
           <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>{lang.toUpperCase()}</button>
         </div>
       </div>

@@ -41,6 +41,8 @@ export const t = {
     statScreens: 'Bildschirme',
     statHours: 'Öffnungszeiten',
     loading: 'wird geladen…',
+    lightMode: 'Helles Design',
+    darkMode: 'Dunkles Design',
     // About
     // Suggest a spot
     addSpotCta: 'Dein Lieblings-Spot fehlt? Füg ihn zur Karte hinzu.',
@@ -104,6 +106,8 @@ export const t = {
     statScreens: 'Screens',
     statHours: 'Opening hours',
     loading: 'loading…',
+    lightMode: 'Light mode',
+    darkMode: 'Dark mode',
     // About
     // Suggest a spot
     addSpotCta: "Can't find your favorite spot? Add it to the map.",

@@ -29,12 +29,13 @@ export default function TopControls({
         <button
           className={`ctrl-btn${openPanel === 'layers' ? ' ctrl-btn--active' : ''}`}
           onClick={() => setOpenPanel((p) => (p === 'layers' ? null : 'layers'))}
+          data-tip={t[lang].layers}
           aria-label={t[lang].layers}
         >
           <LayersIcon />
           {anyLayerOn && <span className="ctrl-btn__dot" />}
         </button>
-        <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+        <ThemeToggle theme={theme} onToggle={onToggleTheme} lang={lang} />
         <button className="ctrl-btn ctrl-btn--lang" onClick={toggleLang}>
           <AnimatePresence mode="wait">
             <motion.span key={lang} initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} transition={{ duration: 0.15 }}>

@@ -375,6 +375,24 @@ body::after {
 /* Weather + map toggles grouped together */
 .weather-controls { display: inline-flex; align-items: center; gap: 6px; pointer-events: auto; }
 
+/* Hover tooltips (desktop only) */
+[data-tip] { position: relative; }
+[data-tip]::after {
+  content: attr(data-tip);
+  position: absolute; top: calc(100% + 7px); left: 50%; transform: translate(-50%, -4px);
+  padding: 5px 9px; border-radius: 8px;
+  background: var(--glass); border: 1px solid var(--glass-border); color: var(--text);
+  font-family: var(--font-body); font-weight: 600; font-size: 11px; letter-spacing: 0.02em;
+  white-space: nowrap; text-transform: none;
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.45);
+  opacity: 0; pointer-events: none; transition: opacity 0.16s ease, transform 0.16s ease;
+  z-index: 60;
+}
+@media (hover: hover) {
+  [data-tip]:hover::after { opacity: 1; transform: translate(-50%, 0); }
+}
+
 /* Compact traffic legend pinned in the map corner (left of the rail) */
 .map-legend {
   position: fixed; bottom: 30px; right: calc(var(--rail-w, 408px) + 16px); z-index: 16;

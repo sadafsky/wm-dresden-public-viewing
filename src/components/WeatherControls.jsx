@@ -26,7 +26,7 @@ export default function WeatherControls({
       <button
         className={`cond-btn${showRain ? ' cond-btn--on' : ''}`}
         onClick={() => setShowRain((v) => !v)}
-        title={tr.rain}
+        data-tip={tr.rain}
         aria-label={tr.rain}
       >
         <RainIcon />
@@ -34,7 +34,7 @@ export default function WeatherControls({
       <button
         className={`cond-btn${showTraffic ? ' cond-btn--on' : ''}`}
         onClick={() => setShowTraffic((v) => !v)}
-        title={tr.traffic}
+        data-tip={tr.traffic}
         aria-label={tr.traffic}
       >
         <TrafficIcon />
