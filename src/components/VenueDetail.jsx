@@ -61,16 +61,17 @@ function AnimatedNumber({ value }) {
   return <span ref={ref}>{value}</span>
 }
 
-export default function VenueDetail({ venue, venues = [], lang, onClose, onNavigate, floating }) {
+export default function VenueDetail({ venue, venues = [], matches = [], lang, onClose, onNavigate, floating }) {
   const tr = t[lang]
   const scrollRef = useRef(null)
   const isDesktop = floating ?? window.innerWidth >= 768
   const idx = venues.findIndex((v) => v.id === venue.id)
   const prevVenue = venues[idx - 1] ?? null
   const nextVenue = venues[idx + 1] ?? null
-  const { counts, going, toggleGoing } = useGoing()
+  const { counts, going, toggleGoing, selectedMatchId } = useGoing()
   const goingCount = counts[venue.id] || 0
   const isGoing = going.has(venue.id)
+  const selMatch = matches.find((m) => m.id === selectedMatchId) || null
 
   const mobileStyle = {
     bottom: 0, left: 0, right: 0,
@@ -313,13 +314,29 @@ export default function VenueDetail({ venue, venues = [], lang, onClose, onNavig
           {venue.description[lang]}
         </p>
 
-        {/* "I'm going" — drives the venue heat */}
+        {/* "I'm going" — drives the venue heat, scoped to the selected match */}
+        {selMatch && (
+          <div style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6,
+            marginBottom: 8, fontFamily: 'var(--font-body)', fontSize: 11,
+            fontWeight: 600, letterSpacing: '0.04em', textTransform: 'uppercase',
+            color: 'var(--text-dim)',
+          }}>
+            {tr.goingTo}
+            <b style={{ color: 'var(--text-mid)' }}>
+              {selMatch.home.code}&nbsp;–&nbsp;{selMatch.away.code}
+            </b>
+            <span style={{ opacity: 0.6 }}>{selMatch.time}</span>
+          </div>
+        )}
         <motion.button
           whileTap={{ scale: 0.97 }}
           onClick={() => toggleGoing(venue.id)}
+          disabled={!selMatch}
           style={{
             width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8,
-            marginBottom: 10, padding: '12px 18px', borderRadius: 10, cursor: 'pointer',
+            marginBottom: 10, padding: '12px 18px', borderRadius: 10,
+            cursor: selMatch ? 'pointer' : 'not-allowed', opacity: selMatch ? 1 : 0.5,
             border: isGoing ? '1px solid transparent' : '1px solid var(--border-accent)',
             background: isGoing ? 'var(--accent)' : 'transparent',
             color: isGoing ? 'var(--ink)' : 'var(--accent)',

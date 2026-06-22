@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
 import Map from './components/Map'
 import MatchTicker from './components/MatchTicker'
+import MatchHeatSelector from './components/MatchHeatSelector'
 import RainOverlay from './components/RainOverlay'
 import Header from './components/Header'
 import TopControls from './components/TopControls'
@@ -95,6 +96,8 @@ function AppContent() {
       </AnimatePresence>
 
       <MatchTicker lang={lang} matches={matches} />
+
+      {!selectedVenue && <MatchHeatSelector matches={matches} lang={lang} />}
 
       {isDesktop ? (
         <>
@@ -204,6 +207,7 @@ function AppContent() {
             key={selectedVenue.id}
             venue={selectedVenue}
             venues={visibleVenues}
+            matches={matches}
             lang={lang}
             onClose={handleClose}
             onNavigate={handleVenueSelect}

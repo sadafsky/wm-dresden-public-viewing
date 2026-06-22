@@ -1,6 +1,6 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react'
+import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react'
 
-const KEY = 'wm_going_v1'
+const KEY = 'wm_going_v2' // schema bumped: now per match+venue
 const Ctx = createContext(null)
 
 function berlinDate() {
@@ -9,7 +9,8 @@ function berlinDate() {
   }).format(new Date())
 }
 
-// Which venues this device marked today (resets each matchday)
+// Which (match+venue) pairs this device marked today — stored as "matchId::venueId".
+// Resets each matchday.
 function loadGoing() {
   try {
     const raw = JSON.parse(localStorage.getItem(KEY) || '{}')
@@ -22,48 +23,86 @@ function saveGoing(set) {
 }
 
 export function GoingProvider({ children }) {
-  const [counts, setCounts] = useState({})
-  const [going, setGoing] = useState(loadGoing)
+  // Which match the map is currently "heated" for
+  const [selectedMatchId, setSelectedMatchId] = useState(null)
+  // Per-match counts cache: { [matchId]: { [venueId]: n } }
+  const [countsByMatch, setCountsByMatch] = useState({})
+  // Composite "matchId::venueId" entries this device tapped
+  const [goingSet, setGoingSet] = useState(loadGoing)
 
-  const fetchCounts = useCallback(async () => {
+  const counts = countsByMatch[selectedMatchId] || {}
+
+  const fetchCounts = useCallback(async (matchId) => {
+    if (!matchId) return
     try {
-      const res = await fetch('/api/going')
+      const res = await fetch(`/api/going?match=${encodeURIComponent(matchId)}`)
       if (!res.ok) return
       const data = await res.json()
-      if (data && typeof data === 'object') setCounts(data)
+      if (data && typeof data === 'object') {
+        setCountsByMatch((m) => ({ ...m, [matchId]: data }))
+      }
     } catch (_) {}
   }, [])
 
+  // Refetch whenever the selected match changes; keep it fresh every 60s.
   useEffect(() => {
-    fetchCounts()
-    const id = setInterval(fetchCounts, 60000)
+    if (!selectedMatchId) return
+    fetchCounts(selectedMatchId)
+    const id = setInterval(() => fetchCounts(selectedMatchId), 60000)
     return () => clearInterval(id)
-  }, [fetchCounts])
+  }, [selectedMatchId, fetchCounts])
+
+  // Venues this device is going to FOR THE SELECTED MATCH
+  const going = useMemo(() => {
+    const s = new Set()
+    if (!selectedMatchId) return s
+    const prefix = `${selectedMatchId}::`
+    for (const k of goingSet) if (k.startsWith(prefix)) s.add(k.slice(prefix.length))
+    return s
+  }, [goingSet, selectedMatchId])
 
   const toggleGoing = useCallback((venueId) => {
-    setGoing((g) => {
-      const isGoing = g.has(venueId)
+    if (!selectedMatchId) return
+    const composite = `${selectedMatchId}::${venueId}`
+    setGoingSet((g) => {
+      const isGoing = g.has(composite)
       const delta = isGoing ? -1 : 1
-      // optimistic count update
-      setCounts((c) => ({ ...c, [venueId]: Math.max(0, (c[venueId] || 0) + delta) }))
+      // optimistic count update for the selected match
+      setCountsByMatch((cm) => {
+        const cur = cm[selectedMatchId] || {}
+        return { ...cm, [selectedMatchId]: { ...cur, [venueId]: Math.max(0, (cur[venueId] || 0) + delta) } }
+      })
       const next = new Set(g)
-      if (isGoing) next.delete(venueId); else next.add(venueId)
+      if (isGoing) next.delete(composite); else next.add(composite)
       saveGoing(next)
       fetch('/api/going', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ venue: venueId, delta }),
+        body: JSON.stringify({ venue: venueId, match: selectedMatchId, delta }),
       })
         .then((r) => (r.ok ? r.json() : null))
-        .then((d) => { if (d && typeof d === 'object' && Object.keys(d).length) setCounts(d) })
+        .then((d) => {
+          if (d && typeof d === 'object' && Object.keys(d).length) {
+            setCountsByMatch((cm) => ({ ...cm, [selectedMatchId]: d }))
+          }
+        })
         .catch(() => {})
       return next
     })
-  }, [])
+  }, [selectedMatchId])
 
-  return <Ctx.Provider value={{ counts, going, toggleGoing }}>{children}</Ctx.Provider>
+  return (
+    <Ctx.Provider value={{ counts, going, toggleGoing, selectedMatchId, setSelectedMatchId }}>
+      {children}
+    </Ctx.Provider>
+  )
 }
 
 export function useGoing() {
-  return useContext(Ctx) || { counts: {}, going: new Set(), toggleGoing: () => {} }
+  return (
+    useContext(Ctx) || {
+      counts: {}, going: new Set(), toggleGoing: () => {},
+      selectedMatchId: null, setSelectedMatchId: () => {},
+    }
+  )
 }

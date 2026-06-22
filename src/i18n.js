@@ -46,6 +46,7 @@ export const t = {
     imGoing: 'Ich geh hin',
     youreGoing: 'Du gehst hin',
     goingCount: (n) => `${n} ${n === 1 ? 'geht' : 'gehen'} hin`,
+    goingTo: 'Zum Spiel',
     // About
     // Suggest a spot
     addSpotCta: 'Dein Lieblings-Spot fehlt? Füg ihn zur Karte hinzu.',
@@ -114,6 +115,7 @@ export const t = {
     imGoing: "I'm going",
     youreGoing: "You're going",
     goingCount: (n) => `${n} going`,
+    goingTo: 'For the match',
     // About
     // Suggest a spot
     addSpotCta: "Can't find your favorite spot? Add it to the map.",

@@ -356,6 +356,60 @@ body::after {
   color: #ff5628; font-weight: 800; font-variant-numeric: tabular-nums;
 }
 
+/* ── Match heat selector (floating strip over the map) ── */
+.match-heat {
+  position: fixed; z-index: 16;
+  top: calc(var(--ticker-h) + 100px);
+  left: calc((100vw - var(--rail-w, 0px)) / 2);
+  transform: translateX(-50%);
+  max-width: min(94vw, 680px);
+  pointer-events: none;
+}
+.match-heat__row {
+  display: flex; gap: 8px; padding: 4px;
+  overflow-x: auto; max-width: 94vw;
+  pointer-events: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 14px, #000 calc(100% - 14px), transparent);
+}
+.match-heat__row::-webkit-scrollbar { display: none; }
+.match-chip {
+  flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px;
+  padding: 7px 11px; border-radius: 999px; cursor: pointer; white-space: nowrap;
+  background: var(--scrim, rgba(12,14,12,0.72)); color: var(--text-mid);
+  border: 1px solid var(--glass-border, rgba(255,255,255,0.12));
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+}
+.match-chip:hover { transform: translateY(-1px); color: var(--text); }
+.match-chip b { color: var(--text); font-weight: 800; letter-spacing: 0.02em; }
+.match-chip__flag { width: 15px; height: 11px; object-fit: cover; border-radius: 2px; }
+.match-chip__vs { opacity: 0.45; margin: 0 -1px; }
+.match-chip__time { margin-left: 3px; font-size: 11px; font-weight: 700; color: var(--text-dim); font-variant-numeric: tabular-nums; }
+.match-chip__time--live { color: #ff5628; }
+.match-chip__count {
+  margin-left: 2px; min-width: 18px; height: 18px; padding: 0 5px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px; background: #ff5628; color: #fff;
+  font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums;
+}
+.match-chip--active {
+  background: var(--accent); color: var(--ink);
+  border-color: var(--accent);
+  box-shadow: 0 4px 18px rgba(242,197,0,0.4);
+}
+.match-chip--active b { color: var(--ink); }
+.match-chip--active .match-chip__vs,
+.match-chip--active .match-chip__time { color: rgba(0,0,0,0.6); }
+.match-chip--active .match-chip__time--live { color: #b3220a; }
+
+@media (min-width: 1024px) {
+  .match-heat { top: calc(var(--ticker-h) + 14px); }
+}
+
 /* ── Scanline overlay (VenueDetail hero) ──────────────── */
 .scanlines::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px); pointer-events: none; z-index: 1; }
 
