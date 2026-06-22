@@ -417,10 +417,12 @@ body::after {
   color: var(--text-dim); margin: 0 0 9px 2px;
 }
 .match-heat--rail .match-heat__row {
-  flex-direction: column; align-items: flex-start; gap: 7px;
+  flex-direction: column; align-items: stretch; gap: 7px;
   overflow: visible; max-width: none; padding: 0;
   -webkit-mask-image: none; mask-image: none;
 }
+.match-heat--rail .match-chip { width: 100%; justify-content: flex-start; }
+.match-heat--rail .match-chip__time { margin-left: auto; }
 
 /* ── Scanline overlay (VenueDetail hero) ──────────────── */
 .scanlines::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px); pointer-events: none; z-index: 1; }
