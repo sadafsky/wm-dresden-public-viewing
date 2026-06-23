@@ -53,6 +53,32 @@ export default async function handler(req, res) {
       return res.status(200).json({ message: msg })
     }
 
+    if (req.method === 'DELETE') {
+      const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {})
+      const match = clean(body.match, 64)
+      const id = clean(body.id, 64)
+      const cid = clean(body.cid, 40)
+      if (!match || !id || !cid) return res.status(400).json({ error: 'bad_request' })
+
+      const key = keyFor(match)
+      const raw = await kv.lrange(key, 0, -1)
+      const kept = []
+      let removed = false
+      for (const item of raw || []) {
+        let msg
+        try { msg = typeof item === 'string' ? JSON.parse(item) : item } catch (_) { kept.push(item); continue }
+        // Only the author (matching client id) can delete their own message
+        if (!removed && msg && msg.id === id && msg.cid === cid) { removed = true; continue }
+        kept.push(typeof item === 'string' ? item : JSON.stringify(item))
+      }
+      if (removed) {
+        await kv.del(key)
+        if (kept.length) await kv.rpush(key, ...kept)
+        await kv.expire(key, TTL)
+      }
+      return res.status(200).json({ ok: removed })
+    }
+
     // GET ?match=<id> → last messages, oldest first
     const match = clean(req.query?.match, 64)
     if (!match) return res.status(200).json({ messages: [] })

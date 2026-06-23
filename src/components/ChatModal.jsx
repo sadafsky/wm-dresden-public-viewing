@@ -80,6 +80,17 @@ export default function ChatModal({ match, lang, onClose }) {
     }
   }
 
+  async function deleteMessage(id) {
+    setMessages((prev) => prev.filter((m) => m.id !== id))
+    try {
+      await fetch('/api/chat', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ match: match.id, id, cid }),
+      })
+    } catch (_) {}
+  }
+
   function saveName(v) {
     const clean = v.trim().slice(0, 24) || 'Fan'
     setName(clean)
@@ -136,6 +147,13 @@ export default function ChatModal({ match, lang, onClose }) {
                     <span className="chat-msg__text">{m.text}</span>
                     <span className="chat-msg__time">{hhmm(m.ts)}</span>
                   </div>
+                  {own && (
+                    <button className="chat-msg__del" onClick={() => deleteMessage(m.id)} title={tr.chatDelete} aria-label={tr.chatDelete}>
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/>
+                      </svg>
+                    </button>
+                  )}
                 </div>
               )
             })

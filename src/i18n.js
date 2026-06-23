@@ -59,6 +59,7 @@ export const t = {
     chatLookingHint: 'Markier deine Nachricht: du suchst Leute zum gemeinsamen Schauen.',
     chatTooFast: 'Kurz durchatmen – nicht so schnell.',
     chatErr: 'Senden fehlgeschlagen.',
+    chatDelete: 'Löschen',
     // About
     // Suggest a spot
     addSpotCta: 'Dein Lieblings-Spot fehlt? Füg ihn zur Karte hinzu.',
@@ -140,6 +141,7 @@ export const t = {
     chatLookingHint: 'Tag your message: you’re looking for people to watch with.',
     chatTooFast: 'Easy — slow down a moment.',
     chatErr: 'Failed to send.',
+    chatDelete: 'Delete',
     // About
     // Suggest a spot
     addSpotCta: "Can't find your favorite spot? Add it to the map.",
