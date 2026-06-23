@@ -60,12 +60,22 @@ export default function ChatModal({ match, lang, onClose }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ match: match.id, name, text, cid }),
       })
-      if (res.status === 429) { setStatus('slow'); return }
+      if (res.status === 429) {
+        setMessages((prev) => prev.filter((m) => m.id !== optimistic.id))
+        setInput(text)
+        setStatus('slow')
+        return
+      }
       if (!res.ok) throw new Error()
       const data = await res.json()
-      if (data.message) setMessages((prev) => merge(prev, [data.message]))
+      // Swap the optimistic copy for the server one (different id → would otherwise double)
+      if (data.message) {
+        setMessages((prev) => merge(prev.filter((m) => m.id !== optimistic.id), [data.message]))
+      }
       setStatus('idle')
     } catch (_) {
+      setMessages((prev) => prev.filter((m) => m.id !== optimistic.id))
+      setInput(text)
       setStatus('err')
     }
   }
