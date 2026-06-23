@@ -575,15 +575,18 @@ body::after {
 
 /* ── Match chat ───────────────────────────────────────── */
 .match-heat__chat {
-  margin-top: 9px; width: 100%; pointer-events: auto;
+  margin-top: -2px; width: 100%; pointer-events: auto;
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;
   padding: 8px 12px; border-radius: 999px; cursor: pointer;
-  border: 1px solid var(--border-accent); background: transparent; color: var(--accent);
+  border: 1px solid var(--border-accent); color: var(--accent);
+  background: var(--glass);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
   font-family: var(--font-body); font-weight: 700; font-size: 11px;
   letter-spacing: 0.05em; text-transform: uppercase;
-  transition: background 0.2s, transform 0.15s;
+  transition: background 0.2s, transform 0.15s, color 0.2s;
 }
-.match-heat__chat:hover { background: var(--accent-dim); transform: translateY(-1px); }
+.match-heat__chat:hover { background: var(--accent); color: var(--ink); transform: translateY(-1px); }
 
 .chat-card {
   width: 420px; padding: 22px;
