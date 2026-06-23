@@ -629,7 +629,7 @@ body::after {
 .chat-empty { margin: auto; text-align: center; font-family: var(--font-body); font-size: 13px; color: var(--text-dim); padding: 0 20px; }
 
 .chat-msg { display: flex; align-items: center; gap: 6px; }
-.chat-msg--own { justify-content: flex-end; flex-direction: row-reverse; }
+.chat-msg--own { justify-content: flex-end; }
 .chat-msg__del {
   flex-shrink: 0; opacity: 0; cursor: pointer; padding: 4px; border: none; border-radius: 6px;
   background: transparent; color: var(--text-dim); display: grid; place-items: center;
@@ -637,6 +637,7 @@ body::after {
 }
 .chat-msg:hover .chat-msg__del { opacity: 0.55; }
 .chat-msg__del:hover { opacity: 1; color: #ef4444; background: rgba(239,68,68,0.12); }
+.chat-msg--own .chat-msg__del { order: -1; }
 @media (hover: none) { .chat-msg__del { opacity: 0.5; } }
 .chat-msg__bubble {
   max-width: 82%; padding: 8px 11px; border-radius: 13px;
