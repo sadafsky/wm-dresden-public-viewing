@@ -3,7 +3,7 @@ import Wordmark from './Wordmark'
 import WeatherControls from './WeatherControls'
 import MatchHeatSelector from './MatchHeatSelector'
 
-export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, showTraffic, setShowTraffic, matches }) {
+export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, showTraffic, setShowTraffic, matches, onOpenChat }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: -14 }}
@@ -22,7 +22,7 @@ export default function BrandMatchesBar({ lang, weather, showRain, setShowRain, 
         />
       </div>
 
-      <MatchHeatSelector matches={matches} lang={lang} variant="rail" />
+      <MatchHeatSelector matches={matches} lang={lang} variant="rail" onOpenChat={onOpenChat} />
     </motion.div>
   )
 }

@@ -14,9 +14,10 @@ import SidePanel from './components/SidePanel'
 import VenueDetail from './components/VenueDetail'
 import AboutModal from './components/AboutModal'
 import SubmitModal from './components/SubmitModal'
+import ChatModal from './components/ChatModal'
 import TrafficLegend from './components/TrafficLegend'
 import { LanguageProvider, useLanguage } from './context/LanguageContext'
-import { GoingProvider } from './context/GoingContext'
+import { GoingProvider, useGoing } from './context/GoingContext'
 import { useVenues } from './hooks/useVenues'
 import { useWeather } from './hooks/useWeather'
 import { useMatches } from './hooks/useMatches'
@@ -31,6 +32,7 @@ function AppContent() {
   const weather = useWeather()
   const matches = useMatches()
   const { theme, toggle: toggleTheme } = useTheme()
+  const { selectedMatchId } = useGoing()
   const isDesktop = useMediaQuery('(min-width: 1024px)')
 
   const [selectedVenue, setSelectedVenue] = useState(null)
@@ -41,6 +43,7 @@ function AppContent() {
   const [showTraffic, setShowTraffic]     = useState(false)
   const [aboutOpen, setAboutOpen]         = useState(false)
   const [submitOpen, setSubmitOpen]       = useState(false)
+  const [chatOpen, setChatOpen]           = useState(false)
   const [railOpen, setRailOpen]           = useState(true)
   const [sheetOpen, setSheetOpen]         = useState(false)
 
@@ -72,6 +75,7 @@ function AppContent() {
   const precipActive = showRain && (weather.isRain || weather.isSnow)
   const precipType = weather.isSnow ? 'snow' : 'rain'
   const railVisible = isDesktop && railOpen
+  const chatMatch = matches.find((m) => m.id === selectedMatchId) || null
 
   return (
     <div
@@ -97,7 +101,9 @@ function AppContent() {
 
       <MatchTicker lang={lang} matches={matches} />
 
-      {!isDesktop && !selectedVenue && !sheetOpen && <MatchHeatSelector matches={matches} lang={lang} variant="floating" />}
+      {!isDesktop && !selectedVenue && !sheetOpen && (
+        <MatchHeatSelector matches={matches} lang={lang} variant="floating" onOpenChat={() => setChatOpen(true)} />
+      )}
 
       {isDesktop ? (
         <>
@@ -107,6 +113,7 @@ function AppContent() {
             showRain={showRain} setShowRain={setShowRain}
             showTraffic={showTraffic} setShowTraffic={setShowTraffic}
             matches={matches}
+            onOpenChat={() => setChatOpen(true)}
           />
           <button
             className="rail-toggle"
@@ -223,6 +230,12 @@ function AppContent() {
 
       <AnimatePresence>
         {submitOpen && <SubmitModal lang={lang} onClose={() => setSubmitOpen(false)} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {chatOpen && chatMatch && (
+          <ChatModal match={chatMatch} lang={lang} onClose={() => setChatOpen(false)} />
+        )}
       </AnimatePresence>
 
       <Analytics />

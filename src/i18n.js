@@ -48,6 +48,17 @@ export const t = {
     goingCount: (n) => `${n} ${n === 1 ? 'geht' : 'gehen'} hin`,
     goingTo: 'Zum Spiel',
     watchingWhich: 'Welches Spiel?',
+    // Match chat
+    chatCta: 'Chat zum Spiel',
+    chatAs: 'als',
+    chatPlaceholder: 'Nachricht schreiben…',
+    chatEmpty: 'Noch keine Nachrichten. Mach den Anfang!',
+    chatNoLooking: 'Noch sucht niemand Anschluss.',
+    chatLooking: 'Anschluss gesucht',
+    chatLookingFilter: 'Nur Anschluss-Suche',
+    chatLookingHint: 'Markier deine Nachricht: du suchst Leute zum gemeinsamen Schauen.',
+    chatTooFast: 'Kurz durchatmen – nicht so schnell.',
+    chatErr: 'Senden fehlgeschlagen.',
     // About
     // Suggest a spot
     addSpotCta: 'Dein Lieblings-Spot fehlt? Füg ihn zur Karte hinzu.',
@@ -118,6 +129,17 @@ export const t = {
     goingCount: (n) => `${n} going`,
     goingTo: 'For the match',
     watchingWhich: 'Which match?',
+    // Match chat
+    chatCta: 'Match chat',
+    chatAs: 'as',
+    chatPlaceholder: 'Write a message…',
+    chatEmpty: 'No messages yet. Be the first!',
+    chatNoLooking: 'Nobody is looking for company yet.',
+    chatLooking: 'Looking for company',
+    chatLookingFilter: 'Only company-seekers',
+    chatLookingHint: 'Tag your message: you’re looking for people to watch with.',
+    chatTooFast: 'Easy — slow down a moment.',
+    chatErr: 'Failed to send.',
     // About
     // Suggest a spot
     addSpotCta: "Can't find your favorite spot? Add it to the map.",
