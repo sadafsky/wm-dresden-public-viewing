@@ -378,7 +378,7 @@ body::after {
   box-shadow: 0 4px 16px rgba(0,0,0,0.35);
   transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
 }
-.match-chip:hover { transform: translateY(-1px); color: var(--text); }
+/* hover handled per state below (active chip keeps its dark-on-gold text) */
 .match-chip b { color: var(--text); font-weight: 800; letter-spacing: 0.02em; }
 .match-chip__flag { width: 15px; height: 11px; object-fit: cover; border-radius: 2px; flex-shrink: 0; }
 .match-chip__vs { opacity: 0.45; margin: 0 -1px; }
@@ -392,7 +392,12 @@ body::after {
 }
 /* Non-selected matches dim down so the chosen one + chat button stand out */
 .match-chip:not(.match-chip--active) { opacity: 0.5; transition: opacity 0.2s, border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s; }
-.match-chip:not(.match-chip--active):hover { opacity: 1; }
+.match-chip:not(.match-chip--active):hover {
+  opacity: 1; color: var(--text);
+  border-color: var(--border-accent);
+  transform: translateY(-1px);
+}
+.match-chip--active:hover { filter: brightness(1.05); }
 .match-chip--active {
   background: var(--accent); color: var(--ink);
   border-color: var(--accent);
