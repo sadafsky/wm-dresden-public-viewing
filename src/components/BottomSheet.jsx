@@ -32,8 +32,22 @@ export default function BottomSheet({
     if (!isOpen) y.set(h - PEEK)
   }, [venues.length, isOpen, tab])
 
-  function snapOpen() { animate(y, 0, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(true); onOpenChange?.(true) }
-  function snapClose() { animate(y, sheetHeight - PEEK, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(false); onOpenChange?.(false) }
+  // Report "lifted" the moment the sheet is dragged up past a small threshold,
+  // not only when it snaps fully open — so overlapping UI (match selector) hides live.
+  const liftedRef = useRef(false)
+  useEffect(() => {
+    const unsub = y.on('change', (v) => {
+      const lifted = v < sheetHeight - PEEK - 24
+      if (lifted !== liftedRef.current) {
+        liftedRef.current = lifted
+        onOpenChange?.(lifted)
+      }
+    })
+    return unsub
+  }, [y, sheetHeight, onOpenChange])
+
+  function snapOpen() { animate(y, 0, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(true) }
+  function snapClose() { animate(y, sheetHeight - PEEK, { type: 'spring', stiffness: 380, damping: 40 }); setIsOpen(false) }
   function handleDragEnd(_, info) {
     if (info.velocity.y > 150 || info.offset.y > sheetHeight * 0.25) snapClose()
     else snapOpen()
