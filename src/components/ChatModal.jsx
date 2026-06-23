@@ -23,6 +23,7 @@ export default function ChatModal({ match, lang, onClose }) {
   const [input, setInput] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | err | slow
   const listRef = useRef(null)
+  const deletedIds = useRef(new Set()) // ids removed locally — never resurrect them on poll
 
   const fetchMessages = useCallback(async () => {
     if (!match) return
@@ -30,7 +31,9 @@ export default function ChatModal({ match, lang, onClose }) {
       const res = await fetch(`/api/chat?match=${encodeURIComponent(match.id)}`)
       if (!res.ok) return
       const data = await res.json()
-      if (Array.isArray(data.messages)) setMessages((prev) => merge(data.messages, prev))
+      if (Array.isArray(data.messages)) {
+        setMessages((prev) => merge(data.messages, prev).filter((m) => !deletedIds.current.has(m.id)))
+      }
     } catch (_) {}
   }, [match])
 
@@ -81,6 +84,7 @@ export default function ChatModal({ match, lang, onClose }) {
   }
 
   async function deleteMessage(id) {
+    deletedIds.current.add(id)
     setMessages((prev) => prev.filter((m) => m.id !== id))
     try {
       await fetch('/api/chat', {
