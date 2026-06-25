@@ -411,12 +411,26 @@ body::after {
 /* Desktop: in the left brand bar, width matched to the weather/traffic row */
 .match-heat--rail { width: 204px; margin-top: 18px; pointer-events: auto; }
 
-/* Mobile: fixed vertical column, top-left over the map */
+/* Mobile: fixed, top-left — collapsible dropdown */
 .match-heat--floating {
   position: fixed; z-index: 16; left: 12px;
   top: calc(var(--ticker-h) + 132px);
-  width: min(58vw, 210px); pointer-events: auto;
+  width: min(62vw, 220px); pointer-events: auto;
 }
+.match-heat__toggle {
+  width: 100%; display: flex; align-items: center; gap: 6px; cursor: pointer;
+  padding: 8px 11px; border-radius: 999px;
+  background: var(--glass); border: 1px solid var(--glass-border); color: var(--text-mid);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+}
+.match-heat__toggle b { color: var(--text); font-weight: 800; letter-spacing: 0.02em; }
+.match-heat__toggle-label { display: inline-flex; align-items: center; gap: 5px; min-width: 0; flex: 1; }
+.match-heat__chevron { flex-shrink: 0; color: var(--text-dim); transition: transform 0.25s; }
+.match-heat--open .match-heat__chevron { transform: rotate(180deg); }
+.match-heat__panel { display: flex; flex-direction: column; gap: 7px; margin-top: 7px; }
+.match-heat__panel .match-heat__row { gap: 7px; }
 
 /* ── Scanline overlay (VenueDetail hero) ──────────────── */
 .scanlines::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.06) 3px, rgba(0,0,0,0.06) 4px); pointer-events: none; z-index: 1; }
@@ -580,6 +594,25 @@ body::after {
 }
 .about-link:hover { background: var(--accent-dim); transform: translateY(-1px); }
 .about-sources { margin-top: 18px; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.04em; color: var(--text-dim); }
+
+/* ── Opening-hours dropdown (VenueDetail) ─────────────── */
+.hours-toggle {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  padding: 9px 13px; border-radius: 9px;
+  background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
+  font-family: var(--font-body); font-size: 10px; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  transition: border-color 0.2s;
+}
+.hours-toggle:hover { border-color: var(--border-accent); }
+.hours-toggle__chevron { color: var(--text-dim); transition: transform 0.25s; }
+.hours-toggle--open .hours-toggle__chevron { transform: rotate(180deg); }
+.hours-body {
+  margin-top: 8px; padding: 11px 13px; border-radius: 9px;
+  background: var(--surface-2); border: 1px solid var(--border);
+  font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: var(--text-mid);
+  white-space: pre-line; word-break: break-word;
+}
 
 /* ── Match chat ───────────────────────────────────────── */
 .match-heat__chat {

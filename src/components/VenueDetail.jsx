@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, animate } from 'framer-motion'
 import { t } from '../i18n'
 import { useGoing } from '../context/GoingContext'
@@ -73,13 +73,10 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
   const isGoing = going.has(venue.id)
   const selMatch = matches.find((m) => m.id === selectedMatchId) || null
 
-  // Stats grid — only show cells we actually have data for (OSM bars lack screens/hours)
+  // Tags (indoor/outdoor + type + screens) + collapsible opening hours.
+  // OSM bars often have long machine-style hours, so they live behind a dropdown.
   const hoursValue = venue.hours?.[lang] ?? venue.hours
-  const stats = [
-    { label: tr.statLocation, value: venue.indoor ? tr.indoor : tr.outdoor, animated: false },
-    venue.screens != null && { label: tr.statScreens, value: venue.screens, animated: true },
-    hoursValue && { label: tr.statHours, value: hoursValue, animated: false, small: true },
-  ].filter(Boolean)
+  const [hoursOpen, setHoursOpen] = useState(false)
 
   const mobileStyle = {
     bottom: 0, left: 0, right: 0,
@@ -252,45 +249,27 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
           {venue.address}
         </div>
 
-        {/* ── Stats grid: ALL cells same structure ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 6, marginBottom: 20 }}>
-          {stats.map(({ label, value, animated, small }, i) => (
-            <div
-              key={i}
-              style={{
-                background: 'var(--surface-2)',
-                border: '1px solid var(--border)',
-                borderRadius: 8,
-                padding: '10px 10px 10px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 4,
-              }}
-            >
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontSize: 9,
-                fontWeight: 600,
-                letterSpacing: '0.16em',
-                color: 'var(--text-dim)',
-                textTransform: 'uppercase',
-              }}>
-                {label}
-              </div>
-              <div style={{
-                fontFamily: 'var(--font-body)',
-                fontWeight: 700,
-                fontSize: 14,
-                color: animated ? 'var(--accent)' : 'var(--text)',
-                lineHeight: 1.25,
-                letterSpacing: '0.01em',
-                textTransform: 'uppercase',
-              }}>
-                {animated ? <AnimatedNumber value={value} /> : value}
-              </div>
-            </div>
-          ))}
+        {/* ── Tags: indoor/outdoor · type · screens ── */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: hoursValue ? 12 : 20 }}>
+          <span className="tag">{venue.indoor ? tr.indoor : tr.outdoor}</span>
+          <span className="tag">{tr.types[venue.type] ?? venue.type}</span>
+          {venue.screens != null && <span className="tag">{tr.screens(venue.screens)}</span>}
         </div>
+
+        {/* ── Opening hours: collapsible dropdown (OSM hours can be long) ── */}
+        {hoursValue && (
+          <div style={{ marginBottom: 20 }}>
+            <button
+              onClick={() => setHoursOpen((o) => !o)}
+              className={`hours-toggle${hoursOpen ? ' hours-toggle--open' : ''}`}
+              aria-expanded={hoursOpen}
+            >
+              <span>{tr.statHours}</span>
+              <svg className="hours-toggle__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            {hoursOpen && <div className="hours-body">{String(hoursValue).replace(/;\s*/g, '\n')}</div>}
+          </div>
+        )}
 
         {/* Description */}
         <p style={{
