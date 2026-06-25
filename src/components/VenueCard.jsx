@@ -37,9 +37,15 @@ export default function VenueCard({ venue, index, isSelected, onSelect, lang, sh
         <div className="venue-card__body">
           <div className="venue-card__name">{venue.name}</div>
           <div className="venue-card__meta">
-            <span className="venue-card__tag">{tr.types[venue.type] ?? venue.type}</span>
-            <span className="venue-card__dot">·</span>
-            {venue.indoor ? tr.indoor : tr.outdoor}
+            {venue.type === 'outdoor' ? (
+              <span className="venue-card__tag">{tr.outdoor}</span>
+            ) : (
+              <>
+                <span className="venue-card__tag">{tr.types[venue.type] ?? venue.type}</span>
+                <span className="venue-card__dot">·</span>
+                {venue.indoor ? tr.indoor : tr.outdoor}
+              </>
+            )}
             {venue.screens != null && <><span className="venue-card__dot">·</span>{tr.screens(venue.screens)}</>}
             {count > 0 && <span className="venue-card__heat"><FlameIcon />{count}</span>}
           </div>

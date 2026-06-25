@@ -9,6 +9,25 @@ const FlameIcon = () => (
   </svg>
 )
 
+const ClockIcon = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>
+  </svg>
+)
+
+// Split an OSM opening_hours string into readable day/time rows.
+function parseHours(str) {
+  return String(str)
+    .split(';')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((seg) => {
+      const m = seg.match(/^([A-Za-z,\-\s]+?)\s+(.+)$/)
+      if (m && /\d/.test(m[2])) return { days: m[1].trim(), times: m[2].trim().replace(/,/g, ', ') }
+      return { days: '', times: seg }
+    })
+}
+
 // Top-down football pitch — a dark green "photo" with white lines,
 // clearly visible in both light and dark themes.
 function PitchPattern() {
@@ -249,10 +268,16 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
           {venue.address}
         </div>
 
-        {/* ── Tags: indoor/outdoor · type · screens ── */}
+        {/* ── Tags: indoor/outdoor · type · screens (no Draußen/Open-Air double) ── */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6, marginBottom: hoursValue ? 12 : 20 }}>
-          <span className="tag">{venue.indoor ? tr.indoor : tr.outdoor}</span>
-          <span className="tag">{tr.types[venue.type] ?? venue.type}</span>
+          {venue.type === 'outdoor' ? (
+            <span className="tag tag--accent">{tr.outdoor}</span>
+          ) : (
+            <>
+              <span className="tag tag--accent">{venue.indoor ? tr.indoor : tr.outdoor}</span>
+              <span className="tag">{tr.types[venue.type] ?? venue.type}</span>
+            </>
+          )}
           {venue.screens != null && <span className="tag">{tr.screens(venue.screens)}</span>}
         </div>
 
@@ -264,10 +289,20 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
               className={`hours-toggle${hoursOpen ? ' hours-toggle--open' : ''}`}
               aria-expanded={hoursOpen}
             >
+              <ClockIcon />
               <span>{tr.statHours}</span>
               <svg className="hours-toggle__chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
             </button>
-            {hoursOpen && <div className="hours-body">{String(hoursValue).replace(/;\s*/g, '\n')}</div>}
+            {hoursOpen && (
+              <div className="hours-body">
+                {parseHours(hoursValue).map((row, i) => (
+                  <div className="hours-row" key={i}>
+                    {row.days && <span className="hours-row__days">{row.days}</span>}
+                    <span className="hours-row__times">{row.times}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         )}
 

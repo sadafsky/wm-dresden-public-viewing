@@ -596,23 +596,36 @@ body::after {
 .about-sources { margin-top: 18px; font-family: var(--font-body); font-size: 10px; letter-spacing: 0.04em; color: var(--text-dim); }
 
 /* ── Opening-hours dropdown (VenueDetail) ─────────────── */
+/* Accent tag variant — adds a pop of gold (used for indoor/outdoor) */
+.tag--accent { color: var(--accent); border-color: var(--border-accent); background: var(--accent-dim); }
+
 .hours-toggle {
   display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
-  padding: 9px 13px; border-radius: 9px;
+  min-width: 200px; padding: 10px 13px; border-radius: 9px;
   background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
   font-family: var(--font-body); font-size: 10px; font-weight: 700;
   letter-spacing: 0.16em; text-transform: uppercase;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, color 0.2s;
 }
-.hours-toggle:hover { border-color: var(--border-accent); }
-.hours-toggle__chevron { color: var(--text-dim); transition: transform 0.25s; }
+.hours-toggle:hover, .hours-toggle--open { border-color: var(--border-accent); }
+.hours-toggle > svg:first-child { color: var(--accent); }
+.hours-toggle__chevron { margin-left: auto; color: var(--text-dim); transition: transform 0.25s; }
 .hours-toggle--open .hours-toggle__chevron { transform: rotate(180deg); }
 .hours-body {
-  margin-top: 8px; padding: 11px 13px; border-radius: 9px;
+  margin-top: 8px; padding: 6px 14px; border-radius: 9px;
   background: var(--surface-2); border: 1px solid var(--border);
-  font-family: var(--font-body); font-size: 12px; line-height: 1.7; color: var(--text-mid);
-  white-space: pre-line; word-break: break-word;
+  font-family: var(--font-body);
 }
+.hours-row {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-row__days {
+  flex-shrink: 0; min-width: 64px; color: var(--accent);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.hours-row__times { color: var(--text-mid); font-size: 12.5px; line-height: 1.5; font-variant-numeric: tabular-nums; }
 
 /* ── Match chat ───────────────────────────────────────── */
 .match-heat__chat {
