@@ -73,6 +73,14 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
   const isGoing = going.has(venue.id)
   const selMatch = matches.find((m) => m.id === selectedMatchId) || null
 
+  // Stats grid — only show cells we actually have data for (OSM bars lack screens/hours)
+  const hoursValue = venue.hours?.[lang] ?? venue.hours
+  const stats = [
+    { label: tr.statLocation, value: venue.indoor ? tr.indoor : tr.outdoor, animated: false },
+    venue.screens != null && { label: tr.statScreens, value: venue.screens, animated: true },
+    hoursValue && { label: tr.statHours, value: hoursValue, animated: false, small: true },
+  ].filter(Boolean)
+
   const mobileStyle = {
     bottom: 0, left: 0, right: 0,
     borderRadius: '22px 22px 0 0',
@@ -245,26 +253,8 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
         </div>
 
         {/* ── Stats grid: ALL cells same structure ── */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6, marginBottom: 20 }}>
-          {[
-            {
-              label: tr.statLocation,
-              value: venue.indoor ? tr.indoor : tr.outdoor,
-              animated: false,
-            },
-            {
-              label: tr.statScreens,
-              value: venue.screens,
-              animated: true,
-              suffix: null,
-            },
-            {
-              label: tr.statHours,
-              value: venue.hours?.[lang] ?? venue.hours,
-              animated: false,
-              small: true,
-            },
-          ].map(({ label, value, animated, small }, i) => (
+        <div style={{ display: 'grid', gridTemplateColumns: `repeat(${stats.length}, 1fr)`, gap: 6, marginBottom: 20 }}>
+          {stats.map(({ label, value, animated, small }, i) => (
             <div
               key={i}
               style={{

@@ -358,7 +358,7 @@
     "address": "Theaterplatz 3, 01067 Dresden",
     "coordinates": [
       13.73555,
-      51.05520
+      51.0552
     ],
     "photo": null,
     "screens": 1,
@@ -371,6 +371,3359 @@
     "description": {
       "de": "Sommer-Terrassen am Italienischen Dörfchen direkt neben der Semperoper, mit Blick auf die Elbe. Pop-up-Lounge mit Musik, Kunst und Gastronomie – im WM-Sommer 2026 ein stimmungsvoller Ort zum gemeinsamen Schauen.",
       "en": "Summer terraces at the Italienisches Dörfchen right next to the Semperoper, overlooking the Elbe. A pop-up lounge with music, art and food — an atmospheric spot to watch together during the 2026 World Cup summer."
+    }
+  },
+  {
+    "id": "osm-n250892789",
+    "name": "Pinta",
+    "type": "bar",
+    "address": "Louisenstraße 49, 01099 Dresden",
+    "coordinates": [
+      13.753467,
+      51.066543
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su,PH 19:00+",
+      "en": "Mo-Su,PH 19:00+"
+    },
+    "website": "https://www.pinta-cocktailbar.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n251385149",
+    "name": "GAG 18",
+    "type": "bar",
+    "address": "Fritz-Löffler-Straße 16, 01069 Dresden",
+    "coordinates": [
+      13.73136,
+      51.035989
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,We,Th 20:00-24:00, Fr 21:00-02:00",
+      "en": "Mo,We,Th 20:00-24:00, Fr 21:00-02:00"
+    },
+    "website": "https://www.gag-18.com",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n265489072",
+    "name": "Blumenau",
+    "type": "bar",
+    "address": "Louisenstraße 67, 01099 Dresden",
+    "coordinates": [
+      13.755749,
+      51.065965
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 08:00-02:00, Fr 08:00-03:00, Sa-Su 09:00-03:00",
+      "en": "Mo-Th 08:00-02:00, Fr 08:00-03:00, Sa-Su 09:00-03:00"
+    },
+    "website": "https://www.cafe-blumenau.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n266961205",
+    "name": "Trotzdem",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.753835,
+      51.069304
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Su,Mo 20:00-02:00, Tu-Th 20:00-03:00, Fr,Sa 20:00-05:00",
+      "en": "Su,Mo 20:00-02:00, Tu-Th 20:00-03:00, Fr,Sa 20:00-05:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n266961344",
+    "name": "Bar Holda",
+    "type": "bar",
+    "address": "Martin-Luther-Platz 4, 01099 Dresden",
+    "coordinates": [
+      13.756409,
+      51.063984
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Fr 17:00-01:00, Sa-Su 18:00-01:00",
+      "en": "Mo-Fr 17:00-01:00, Sa-Su 18:00-01:00"
+    },
+    "website": "http://www.bar-holda.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n266977420",
+    "name": "Pawlow",
+    "type": "bar",
+    "address": "Görlitzer Straße 32, 01099 Dresden",
+    "coordinates": [
+      13.755604,
+      51.06881
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Sa 18:00+",
+      "en": "Tu-Sa 18:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n266979033",
+    "name": "Bautzner Tor",
+    "type": "bar",
+    "address": "Hoyerswerdaer Straße 37, 01099 Dresden",
+    "coordinates": [
+      13.751784,
+      51.06256
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "So-Th 17:00-24:00; Fr-Sa 17:00-02:00",
+      "en": "So-Th 17:00-24:00; Fr-Sa 17:00-02:00"
+    },
+    "website": "https://www.bautznertor.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n267952414",
+    "name": "TB Fusion Kitchen",
+    "type": "bar",
+    "address": "Bischofsplatz 2, 01097 Dresden",
+    "coordinates": [
+      13.74804,
+      51.071973
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 17:00-24:00; Fr-Sa 17:00-01:00",
+      "en": "Mo-Th 17:00-24:00; Fr-Sa 17:00-01:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n270582577",
+    "name": "HD - Die Rock& Metalbar",
+    "type": "bar",
+    "address": "Louisenstraße 28, 01099 Dresden",
+    "coordinates": [
+      13.750975,
+      51.067042
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 19:00-24:00+",
+      "en": "Mo-Sa 19:00-24:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n271785220",
+    "name": "SonderBar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.713153,
+      51.031311
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Su off, Mo-Th 18:00-24:00, Fr,Sa 18:00-02:00",
+      "en": "Su off, Mo-Th 18:00-24:00, Fr,Sa 18:00-02:00"
+    },
+    "website": "https://www.sonderbar.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n276591438",
+    "name": "Reck's",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.705887,
+      51.028885
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 11:00-14:00,17:00-22:00, Fr,Sa 17:00-24:00",
+      "en": "Mo-Th 11:00-14:00,17:00-22:00, Fr,Sa 17:00-24:00"
+    },
+    "website": "https://www.kneipen.de/dresden/recks-cafe-bierpub",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n278169651",
+    "name": "Bierstube",
+    "type": "bar",
+    "address": "Bergstraße 51, 01069 Dresden",
+    "coordinates": [
+      13.731921,
+      51.029203
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Fr 15:30-22:30; PH off",
+      "en": "Mo-Fr 15:30-22:30; PH off"
+    },
+    "website": "https://www.studentenwerk-dresden.de/kultur/bierstube/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n280546299",
+    "name": "Zur Schmiede",
+    "type": "bar",
+    "address": "Hechtstraße 15, 01097 Dresden",
+    "coordinates": [
+      13.746566,
+      51.073301
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "PH,Mo-Su 18:00+",
+      "en": "PH,Mo-Su 18:00+"
+    },
+    "website": "https://zur-schmiede-dresden.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n291875797",
+    "name": "Rauchereck Zwingli",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.783436,
+      51.033603
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Th,Fr,Su-Tu 17:00-04:00, Sa 18:30-04:00, We 20:00-04:00",
+      "en": "Th,Fr,Su-Tu 17:00-04:00, Sa 18:30-04:00, We 20:00-04:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n295078602",
+    "name": "Novitatis",
+    "type": "bar",
+    "address": "Fritz-Löffler-Straße 12c, 01069 Dresden",
+    "coordinates": [
+      13.731346,
+      51.037195
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Oct-Jun: Th 20:00-01:00",
+      "en": "Oct-Jun: Th 20:00-01:00"
+    },
+    "website": "https://novitatis.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n295078604",
+    "name": "Club 11",
+    "type": "bar",
+    "address": "Hochschulstraße 48, 01069 Dresden",
+    "coordinates": [
+      13.730735,
+      51.031902
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Fr 20:00-00:00",
+      "en": "Tu-Fr 20:00-00:00"
+    },
+    "website": "https://www.clubelf.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n297445716",
+    "name": "Stadt Dresden",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.825149,
+      51.003617
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Tu 11:30-14:00, 17:00-22:00; We,Fr 11:30-14:00, 17:00-23:00; Th 11:30-14:00; Sa 17:00-23:00",
+      "en": "Mo-Tu 11:30-14:00, 17:00-22:00; We,Fr 11:30-14:00, 17:00-23:00; Th 11:30-14:00; Sa 17:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n300861605",
+    "name": "Aquarium",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.740112,
+      51.044846
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "\"Mo, Do, Fr ab 20:00\"",
+      "en": "\"Mo, Do, Fr ab 20:00\""
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n307505138",
+    "name": "Paddy Foley´s",
+    "type": "bar",
+    "address": "Schandauer Straße 55, 01277 Dresden",
+    "coordinates": [
+      13.803427,
+      51.040526
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 15:00-23:00; Fr,Sa 15:00-24:00",
+      "en": "Mo-Th 15:00-23:00; Fr,Sa 15:00-24:00"
+    },
+    "website": "https://paddyfoleys.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n307795022",
+    "name": "Zur Elbinsel",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.870723,
+      51.00102
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Th 11:00-21:00; Fr,Sa 11:00-21:30; Su 11:00-20:00; Mo-We off",
+      "en": "Th 11:00-21:00; Fr,Sa 11:00-21:30; Su 11:00-20:00; Mo-We off"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n309018285",
+    "name": "Die Reisekneipe",
+    "type": "bar",
+    "address": "Görlitzer Straße 15, 01099 Dresden",
+    "coordinates": [
+      13.75378,
+      51.067449
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "We 18:00+",
+      "en": "We 18:00+"
+    },
+    "website": "http://www.reise-kneipe.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n314659297",
+    "name": "The Red Rooster",
+    "type": "bar",
+    "address": "Rähnitzgasse 10, 01097 Dresden",
+    "coordinates": [
+      13.740943,
+      51.059484
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 17:00-01:00, Fr 17:00-01:00+, Sa 17:00-01:00+, Su 17:00-00:00",
+      "en": "Mo-Th 17:00-01:00, Fr 17:00-01:00+, Sa 17:00-01:00+, Su 17:00-00:00"
+    },
+    "website": "https://www.redrooster-pub.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n318158303",
+    "name": "Kakadu-Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.821451,
+      51.063911
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n345190625",
+    "name": "BierBar Ass",
+    "type": "bar",
+    "address": "Grunaer Straße 23, Dresden",
+    "coordinates": [
+      13.749828,
+      51.048131
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 16:00-24:00",
+      "en": "Mo-Su 16:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n346230418",
+    "name": "Laika",
+    "type": "bar",
+    "address": "Kamenzer Straße 20, 01099 Dresden",
+    "coordinates": [
+      13.757904,
+      51.066902
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 17:00-01:00, Fr 17:00-03:00, Sa 17:00-03:00, Su 17:00-01:00",
+      "en": "Mo-Th 17:00-01:00, Fr 17:00-03:00, Sa 17:00-03:00, Su 17:00-01:00"
+    },
+    "website": "http://www.cafe-laika.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n367073817",
+    "name": "Steinhaus",
+    "type": "bar",
+    "address": "Rehefelder Straße 63, 01127 Dresden",
+    "coordinates": [
+      13.718897,
+      51.084324
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n371222451",
+    "name": "Club Wu5",
+    "type": "bar",
+    "address": "August-Bebel-Straße 12, 01219 Dresden",
+    "coordinates": [
+      13.751647,
+      51.032253
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Fr 20:00-01:00 || \"(semester vacation only Thursday)\"",
+      "en": "Tu-Fr 20:00-01:00 || \"(semester vacation only Thursday)\""
+    },
+    "website": "https://wu5.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n373270221",
+    "name": "Charly Tag & Nacht",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.688784,
+      51.042654
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 14:00-02:00, Fr 14:00-05:00, Sa 11:00-05:00, Su 11:00-02:00",
+      "en": "Mo-Th 14:00-02:00, Fr 14:00-05:00, Sa 11:00-05:00, Su 11:00-02:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n380970159",
+    "name": "BBC - Bar Brasserie Cassis",
+    "type": "bar",
+    "address": "Alaunstraße 18, 01099 Dresden",
+    "coordinates": [
+      13.749546,
+      51.0647
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Su-Th 18:00+; Fr,Sa 17:00+",
+      "en": "Su-Th 18:00+; Fr,Sa 17:00+"
+    },
+    "website": "http://www.bbc-dresden.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n381166990",
+    "name": "Boys Bar",
+    "type": "bar",
+    "address": "Alaunstraße 80, 01099 Dresden",
+    "coordinates": [
+      13.753661,
+      51.068745
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 20:00-03:00, Fr-Sa 20:00-05:00",
+      "en": "Mo-Th 20:00-03:00, Fr-Sa 20:00-05:00"
+    },
+    "website": "https://www.boys-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n381167074",
+    "name": "Die 100",
+    "type": "bar",
+    "address": "Alaunstraße 100, 01099 Dresden",
+    "coordinates": [
+      13.755,
+      51.0697
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Fr,Sa 18:00-03:00, Su-Th 18:00-01:00",
+      "en": "Fr,Sa 18:00-03:00, Su-Th 18:00-01:00"
+    },
+    "website": "https://www.diehundert.org",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n431197099",
+    "name": "Lappen, the",
+    "type": "bar",
+    "address": "Louisenstraße 83, 01099 Dresden",
+    "coordinates": [
+      13.757523,
+      51.065496
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 19:10-02:22",
+      "en": "Mo-Sa 19:10-02:22"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n456989889",
+    "name": "Stadt Riesa",
+    "type": "bar",
+    "address": "Adlergasse 14, 01067 Dresden",
+    "coordinates": [
+      13.720769,
+      51.055762
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Tu 18:00-24:00, Th-Su 18:00-24:00",
+      "en": "Mo-Tu 18:00-24:00, Th-Su 18:00-24:00"
+    },
+    "website": "https://stadtriesa.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n461103779",
+    "name": "Gutzkowclub",
+    "type": "bar",
+    "address": "Gutzkowstraße 29-33, 01069 Dresden",
+    "coordinates": [
+      13.740125,
+      51.032797
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 20:00-01:00",
+      "en": "Mo-Th 20:00-01:00"
+    },
+    "website": "http://gutzkow-club.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n488332584",
+    "name": "Crambambuli",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.848684,
+      51.010526
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,We-Th 18:00-22:00; Fr 18:00-24:00",
+      "en": "Mo,We-Th 18:00-22:00; Fr 18:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n518998812",
+    "name": "nook",
+    "type": "bar",
+    "address": "Bischofsweg 72, 01099 Dresden",
+    "coordinates": [
+      13.758512,
+      51.068916
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Th-Mo 18:00-24:00",
+      "en": "Th-Mo 18:00-24:00"
+    },
+    "website": "https://nook-bar.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n526724410",
+    "name": "Count Down",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.756979,
+      51.048444
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://countdown-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n529830129",
+    "name": "Top Eck",
+    "type": "bar",
+    "address": "Pfotenhauerstraße 84, 01307 Dresden",
+    "coordinates": [
+      13.774274,
+      51.057967
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 08:00-23:00, Su 10:00-23:00",
+      "en": "Mo-Sa 08:00-23:00, Su 10:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n560128773",
+    "name": "Schmidt's Bistro-Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.705576,
+      51.085083
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su,PH 17:00-01:00",
+      "en": "Mo-Su,PH 17:00-01:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n568285499",
+    "name": "veränderbar",
+    "type": "bar",
+    "address": "Görlitzer Straße 42 HH, 01099 Dresden",
+    "coordinates": [
+      13.756344,
+      51.069198
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://artderkultur.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n610923309",
+    "name": "Schwarzes Schaf",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.710161,
+      51.057915
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 12:00-22:00+; Su 10:00-22:00+",
+      "en": "Mo-Sa 12:00-22:00+; Su 10:00-22:00+"
+    },
+    "website": "https://schwarzes-schaf.metro.bar/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n671476863",
+    "name": "Studentenclub Borsi34",
+    "type": "bar",
+    "address": "Borsbergstraße 34, 01309 Dresden",
+    "coordinates": [
+      13.780484,
+      51.043701
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Oct-Jan,Apr-Jul: Mo,Th 21:00-01:00, Oct-Jan,Apr-Jul: We[1,3,5] 18:00-01:00",
+      "en": "Oct-Jan,Apr-Jul: Mo,Th 21:00-01:00, Oct-Jan,Apr-Jul: We[1,3,5] 18:00-01:00"
+    },
+    "website": "http://www.borsi34.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n845668275",
+    "name": "Straußwirtschaft Weingut Müller",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.791396,
+      51.064591
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Apr-Oct Sa,Su,PH 11:00-19:00; Mar,Nov Su,PH 11:00-19:00",
+      "en": "Apr-Oct Sa,Su,PH 11:00-19:00; Mar,Nov Su,PH 11:00-19:00"
+    },
+    "website": "https://www.winzer-lutz-mueller.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n929452209",
+    "name": "Madness",
+    "type": "bar",
+    "address": "Görlitzer Straße 23, 01099 Dresden",
+    "coordinates": [
+      13.75454,
+      51.067702
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 18:00+",
+      "en": "Mo-Su 18:00+"
+    },
+    "website": "https://www.madness-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n931565902",
+    "name": "Fiasko",
+    "type": "bar",
+    "address": "Görlitzer Straße 22, 01099 Dresden",
+    "coordinates": [
+      13.755167,
+      51.068165
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-We 16:00-22:00; Th-Sa 16:00-24:00; Su 15:00-24:00",
+      "en": "Mo-We 16:00-22:00; Th-Sa 16:00-24:00; Su 15:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n931730936",
+    "name": "Zora",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.76022,
+      51.064779
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n937267818",
+    "name": "Schokoladenbar",
+    "type": "bar",
+    "address": "Alaunstraße 68, 01099 Dresden",
+    "coordinates": [
+      13.753136,
+      51.068176
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Th 13:00-22:00; Fr-Sa 13:00-24:00; Su 13:00-20:00",
+      "en": "Mo-Th 13:00-22:00; Fr-Sa 13:00-24:00; Su 13:00-20:00"
+    },
+    "website": "http://www.schokoladenbar-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n937550392",
+    "name": "Koralle",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.753336,
+      51.065093
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "PH,Mo-Su 22:00-05:00",
+      "en": "PH,Mo-Su 22:00-05:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n969171688",
+    "name": "Café Echo",
+    "type": "bar",
+    "address": "Robert-Matzke-Straße 56, 01127 Dresden",
+    "coordinates": [
+      13.714925,
+      51.079371
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "24/7",
+      "en": "24/7"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n976589909",
+    "name": "Club Vendetta",
+    "type": "bar",
+    "address": "Lößnitzstraße 8, 01097 Dresden",
+    "coordinates": [
+      13.745867,
+      51.068409
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 07:00-05:00",
+      "en": "Mo-Sa 07:00-05:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1094525291",
+    "name": "Joy's Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.741952,
+      51.073294
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1106554762",
+    "name": "Happening",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.737583,
+      51.047633
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Su 15:00-05:00",
+      "en": "Tu-Su 15:00-05:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1131707650",
+    "name": "mora",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.756654,
+      51.065745
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "\"täglich geöffnet\"",
+      "en": "\"täglich geöffnet\""
+    },
+    "website": "http://www.mora-dresden.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1143017405",
+    "name": "Bistro Ecke Frauenkirche",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.741152,
+      51.052438
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Su-Th 10:00-23:00, Fr,Sa 10:00-24:00",
+      "en": "Su-Th 10:00-23:00, Fr,Sa 10:00-24:00"
+    },
+    "website": "http://www.restaurants-muenzgasse.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1250771030",
+    "name": "1705 Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.735665,
+      51.051646
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "18:00-02:00",
+      "en": "18:00-02:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1308341850",
+    "name": "PfefferMinze",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.784714,
+      51.034508
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Sa 11:30-02:00, Su,PH 11:30-21:00; Mo off",
+      "en": "Tu-Sa 11:30-02:00, Su,PH 11:30-21:00; Mo off"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1371132586",
+    "name": "Dingers Bierstube",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.682256,
+      51.051982
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Sa-Th 17:00-23:00+; Fr 12:00-23:00+",
+      "en": "Sa-Th 17:00-23:00+; Fr 12:00-23:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1417884227",
+    "name": "Sportsbar Dartpoint",
+    "type": "bar",
+    "address": "Saalhausener Straße 42, 01159 Dresden",
+    "coordinates": [
+      13.683417,
+      51.038765
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Fr 17:30-24:00, Sa,Su 16:30-24:00",
+      "en": "Tu-Fr 17:30-24:00, Sa,Su 16:30-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1457597699",
+    "name": "Kitty’s Pub/Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.713424,
+      51.081327
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 18:00+; Su 17:00+",
+      "en": "Mo-Sa 18:00+; Su 17:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1686091213",
+    "name": "Sportcasino Turbine Johannstadt",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.775338,
+      51.058476
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Th 17:00-23:00; Fr 17:00-24:00; Sa 12:00-24:00; Su 12:00-18:00",
+      "en": "Tu-Th 17:00-23:00; Fr 17:00-24:00; Sa 12:00-24:00; Su 12:00-18:00"
+    },
+    "website": "https://www.turbine-dresden.de/?page_id=369",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1822625711",
+    "name": "Schlossbar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.737684,
+      51.052168
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 09:00-00:00",
+      "en": "Mo-Su 09:00-00:00"
+    },
+    "website": "https://www.swissotel.de/hotels/dresden/bars/schlossbar",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1852176659",
+    "name": "Carolaschlösschen",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.763926,
+      51.033402
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Su 11:00-24:00",
+      "en": "Mo-Su 11:00-24:00"
+    },
+    "website": "https://www.carolaschloesschen.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1852176797",
+    "name": "Körnergarten",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.81192,
+      51.05315
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Th, Su 11:00-22:00; Fr, Sa 11:00-23:00",
+      "en": "Mo-Th, Su 11:00-22:00; Fr, Sa 11:00-23:00"
+    },
+    "website": "https://www.koernergarten.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1936301202",
+    "name": "Bräustübel",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.814944,
+      51.054143
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "We-Fr 18:00-23:00; Sa 16:00-23:00",
+      "en": "We-Fr 18:00-23:00; Sa 16:00-23:00"
+    },
+    "website": "https://www.braeustuebel.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n1998899430",
+    "name": "Sportcasino",
+    "type": "bar",
+    "address": "Am Sportplatz 1, 01454 Dresden",
+    "coordinates": [
+      13.895406,
+      51.079891
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2000044316",
+    "name": "Löbtauer Stübchen",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.699618,
+      51.037941
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-We,Fr 15:00-22:00",
+      "en": "Mo-We,Fr 15:00-22:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2339291286",
+    "name": "Hoa - Asia Bistro & Döner Kebab",
+    "type": "bar",
+    "address": "Großenhainer Straße 70, 01127 Dresden",
+    "coordinates": [
+      13.7316,
+      51.080705
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Fr 11:00-21:00; Sa 12:00-19:00",
+      "en": "Mo-Fr 11:00-21:00; Sa 12:00-19:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2465271937",
+    "name": "Sportsbar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.681195,
+      51.061617
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2490846321",
+    "name": "Heartbreak",
+    "type": "bar",
+    "address": "Rudolf-Leonhard-Straße 3, 01097 Dresden",
+    "coordinates": [
+      13.747432,
+      51.072369
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 19+",
+      "en": "Mo-Su 19+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2515506094",
+    "name": "Bellini´s Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.740397,
+      51.052112
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2530457019",
+    "name": "Sultan Palast",
+    "type": "bar",
+    "address": "Bautzner Straße 23, 01099 Dresden",
+    "coordinates": [
+      13.750801,
+      51.06331
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 16:00-05:00",
+      "en": "Mo-Su 16:00-05:00"
+    },
+    "website": "https://sultanpalast-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2559033715",
+    "name": "Oscar Lounge",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.74262,
+      51.064749
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2621360362",
+    "name": "Werk II",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.67718,
+      51.060636
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,Tu,Th 11:00-21:00; We 11:00-15:00; Fr 11:00-23:00",
+      "en": "Mo,Tu,Th 11:00-21:00; We 11:00-15:00; Fr 11:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2657680952",
+    "name": "Club HängeMathe",
+    "type": "bar",
+    "address": "Zeunerstraße 1f, 01069 Dresden",
+    "coordinates": [
+      13.736693,
+      51.026746
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo, Th-Fr 19:30-01:00",
+      "en": "Mo, Th-Fr 19:30-01:00"
+    },
+    "website": "https://club-haengemathe.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n2818867701",
+    "name": "Niedersedlitzer Eck",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.829501,
+      51.0006
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 10:00-24:00, Mo-Fr 00:00-03:00 \"Bei Bedarf auch länger maximal bis 5 Uhr\", Sa,Su 00:00-04:00 \"Bei Bedarf auch länger maximal bis 5 Uhr\"; PH off",
+      "en": "Mo-Su 10:00-24:00, Mo-Fr 00:00-03:00 \"Bei Bedarf auch länger maximal bis 5 Uhr\", Sa,Su 00:00-04:00 \"Bei Bedarf auch länger maximal bis 5 Uhr\"; PH off"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3206888861",
+    "name": "Dampfschiff",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.741201,
+      51.05312
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 12:00-22:00",
+      "en": "Mo-Su 12:00-22:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3621778534",
+    "name": "Elbe58 Karaokebar",
+    "type": "bar",
+    "address": "Leipziger Straße 58, 01127 Dresden",
+    "coordinates": [
+      13.725201,
+      51.073074
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "\"nach Vereinbarung\"",
+      "en": "\"nach Vereinbarung\""
+    },
+    "website": "https://www.elbe58.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3677867645",
+    "name": "Moment’s",
+    "type": "bar",
+    "address": "Heinrich-Zille-Straße 5, 01219 Dresden",
+    "coordinates": [
+      13.759123,
+      51.026438
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 18:00-02:00",
+      "en": "Mo-Su 18:00-02:00"
+    },
+    "website": "https://www.moments-sportpub.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3679475564",
+    "name": "PICKUP MENS CLUB",
+    "type": "bar",
+    "address": "Jordanstraße 2, Dresden",
+    "coordinates": [
+      13.748992,
+      51.068714
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Su-Th 21:00-04:00, Fr,Sa 21:00-05:00",
+      "en": "Su-Th 21:00-04:00, Fr,Sa 21:00-05:00"
+    },
+    "website": "https://www.pickupdresden.de",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3713926603",
+    "name": "The Shamrock",
+    "type": "bar",
+    "address": "Wilsdruffer Straße 20, 01067 Dresden",
+    "coordinates": [
+      13.736529,
+      51.050804
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "11:00+",
+      "en": "11:00+"
+    },
+    "website": "http://www.shamrock-dresden.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n3820854934",
+    "name": "Arena Sportsbar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.788624,
+      51.016243
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://www.arena-berlin.com/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4244320589",
+    "name": "Schäferstube \"Löwe\"",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.711937,
+      51.057563
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,We-Fr 15:30-24:00; Sa,Su 14:00-24:00",
+      "en": "Mo,We-Fr 15:30-24:00; Sa,Su 14:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4291049762",
+    "name": "Werk 7",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.762057,
+      51.055544
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Th 12:00-23:00, Fr,Sa 12:00-03:00, Su 12:00-23:00",
+      "en": "Tu-Th 12:00-23:00, Fr,Sa 12:00-03:00, Su 12:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4316854920",
+    "name": "The spiel BAR",
+    "type": "bar",
+    "address": "Bautzner Straße, 01099 Dresden",
+    "coordinates": [
+      13.752695,
+      51.062733
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "PH,Mo-Su 00:00-24:00",
+      "en": "PH,Mo-Su 00:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4323542572",
+    "name": "Rösslstube",
+    "type": "bar",
+    "address": "Friedrichstraße 37, 01067 Dresden",
+    "coordinates": [
+      13.721068,
+      51.058816
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "\"je nach Veranstaltung\"",
+      "en": "\"je nach Veranstaltung\""
+    },
+    "website": "http://www.roesslstube.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4323878289",
+    "name": "Bierstübel 99",
+    "type": "bar",
+    "address": "Bodenbacher Straße 99, Dresden",
+    "coordinates": [
+      13.80108,
+      51.027263
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 16:00-18:00+",
+      "en": "Mo-Su 16:00-18:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4432459697",
+    "name": "Lohrmanns Taproom",
+    "type": "bar",
+    "address": "An der Frauenkirche 5, 01067 Dresden",
+    "coordinates": [
+      13.740153,
+      51.053348
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Sa 14:30-21:30",
+      "en": "Tu-Sa 14:30-21:30"
+    },
+    "website": "https://lohrmannsbrew.de/taproom/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4586831328",
+    "name": "Newtown-Bar",
+    "type": "bar",
+    "address": "Helgolandstraße 9b, 01097 Dresden",
+    "coordinates": [
+      13.74297,
+      51.073024
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Fr 17:00-04:00, Sa-Su 13:00-04:00",
+      "en": "Mo-Fr 17:00-04:00, Sa-Su 13:00-04:00"
+    },
+    "website": "https://www.newtownbar.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n4787896482",
+    "name": "Max Bierstube",
+    "type": "bar",
+    "address": "Könneritzstraße 11, 01067 Dresden",
+    "coordinates": [
+      13.725787,
+      51.056613
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 17:00-05:00",
+      "en": "Mo-Su 17:00-05:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n5128793633",
+    "name": "Heinz",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.662253,
+      51.050146
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 12:00-24:00+",
+      "en": "Mo-Su 12:00-24:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n5133531434",
+    "name": "Königlicher Weinberg Ausschank Rogge",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.875647,
+      51.012821
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": "http://pillnitzer-weinberg.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n5262888558",
+    "name": "Drägg'scher Löffel",
+    "type": "bar",
+    "address": "Rudolf-Leonhard-Straße 40, 01097 Dresden",
+    "coordinates": [
+      13.749561,
+      51.074486
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 18:00-01:00",
+      "en": "Mo-Sa 18:00-01:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n5913331146",
+    "name": "Hugo - Spielothek und Kneipe",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.796302,
+      51.012191
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6141004609",
+    "name": "POOL",
+    "type": "bar",
+    "address": "Kipsdorfer Straße 100, 01277 Dresden",
+    "coordinates": [
+      13.802081,
+      51.038231
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://poolindresden.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6358074503",
+    "name": "Paulaner Biergarten",
+    "type": "outdoor",
+    "address": "Laubegaster Ufer 25, Dresden",
+    "coordinates": [
+      13.840348,
+      51.023961
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6442388988",
+    "name": "Eura Snack",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.826498,
+      51.012016
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 13:00-23:00",
+      "en": "Mo-Sa 13:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6533639940",
+    "name": "Schwarze Hexe",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.748295,
+      51.064332
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6731809785",
+    "name": "Gin House",
+    "type": "bar",
+    "address": "An der Frauenkirche 13, 01067 Dresden",
+    "coordinates": [
+      13.742459,
+      51.051804
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 19:00-01:00",
+      "en": "Mo-Su 19:00-01:00"
+    },
+    "website": "https://www.dresden-ginhouse.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n6982710656",
+    "name": "Binda-Lounge",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.70973,
+      51.044788
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 06:30-24:00",
+      "en": "Mo-Su 06:30-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n8244899288",
+    "name": "Leutz",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.686981,
+      51.055944
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n8734692247",
+    "name": "Radelbar",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.865966,
+      51.006585
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "We,Th 12:30-22:00; Fr-Su 11:00-22:00",
+      "en": "We,Th 12:30-22:00; Fr-Su 11:00-22:00"
+    },
+    "website": "https://radelbar.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n9025216431",
+    "name": "OTTO Pizza, Bar & Sommergarten",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.731063,
+      51.073082
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Th 16:00-22:00; Fr 15:00-22:00; Sa,Su 14:00-22:00",
+      "en": "Th 16:00-22:00; Fr 15:00-22:00; Sa,Su 14:00-22:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n9740217442",
+    "name": "Champagner Lounge",
+    "type": "bar",
+    "address": "An der Frauenkirche 20, 01067 Dresden",
+    "coordinates": [
+      13.741326,
+      51.051229
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://www.champagner-lounge-dresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n9864657065",
+    "name": "Hechtgarten",
+    "type": "outdoor",
+    "address": "Bischofsplatz 1, Dresden",
+    "coordinates": [
+      13.747392,
+      51.071477
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Th 16:00-23:30; Fr 16:00-00:30; Sa 14:00-00:30; Su 14:00-23:30",
+      "en": "Mo-Th 16:00-23:30; Fr 16:00-00:30; Sa 14:00-00:30; Su 14:00-23:30"
+    },
+    "website": "https://scheune.org/node/sanierung/posts/scheunecafe-sanierung",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n10095789146",
+    "name": "Château9",
+    "type": "bar",
+    "address": "Annenstraße 4, 01067 Dresden",
+    "coordinates": [
+      13.731089,
+      51.050078
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Sa 15:00-23:00",
+      "en": "Tu-Sa 15:00-23:00"
+    },
+    "website": "https://chateau9.de/dresden/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n10225262916",
+    "name": "Meixmühle",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.894664,
+      51.017998
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n10543513774",
+    "name": "Trachenberger Hof",
+    "type": "bar",
+    "address": "Trachenberger Straße 17, 01129 Dresden",
+    "coordinates": [
+      13.727255,
+      51.084045
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Su 13:00-04:00",
+      "en": "Mo-Su 13:00-04:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n10647126609",
+    "name": "Am Dreikaiserhof",
+    "type": "bar",
+    "address": "Tharandter Straße 1, 01159 Dresden",
+    "coordinates": [
+      13.704206,
+      51.043196
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "24/7",
+      "en": "24/7"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n11200632333",
+    "name": "Besenwirtschaft Parzelle 6",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.879368,
+      51.012034
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Apr-Oct: Sa,Su 12:00+",
+      "en": "Apr-Oct: Sa,Su 12:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n11420404370",
+    "name": "sportsBar Grützis",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.848495,
+      50.997178
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Fr 16:00-23:00; Sa,Su 09:00-24:00; Mo off",
+      "en": "Tu-Fr 16:00-23:00; Sa,Su 09:00-24:00; Mo off"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n11952049720",
+    "name": "Herrenhaus Biergarten",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.668238,
+      51.038961
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12114218850",
+    "name": "Lohrmanns",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.722932,
+      51.053042
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Sa 16:30-24:00",
+      "en": "Mo-Sa 16:30-24:00"
+    },
+    "website": "https://lohrmannsbrew.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12842743747",
+    "name": "Love Boat",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.737891,
+      51.054714
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12856935617",
+    "name": "Petzis Sportcasino",
+    "type": "bar",
+    "address": "Hebbelstraße 21b, 01157 Dresden",
+    "coordinates": [
+      13.685734,
+      51.054269
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Fr 17:00+",
+      "en": "Tu-Fr 17:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12883859850",
+    "name": "Primus",
+    "type": "bar",
+    "address": "Braunschweiger Straße 2, 01127 Dresden",
+    "coordinates": [
+      13.717415,
+      51.079711
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12924983512",
+    "name": "Ostende",
+    "type": "bar",
+    "address": "Prießnitzstraße 18, 01099 Dresden",
+    "coordinates": [
+      13.759382,
+      51.065024
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo off; Tu-Su 16:00-22:00",
+      "en": "Mo off; Tu-Su 16:00-22:00"
+    },
+    "website": "https://www.ostende-dresden.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n12957645135",
+    "name": "Elbzentrale",
+    "type": "bar",
+    "address": "Österreicher Straße 95, Dresden",
+    "coordinates": [
+      13.845575,
+      51.018378
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://jenspietzonka.de/elbzentrale",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13026788667",
+    "name": "Erbgerichtsklause",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.839676,
+      51.032435
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13277681463",
+    "name": "Trachauer Schankwirtschaft",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.702741,
+      51.090671
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": "http://www.bennewitz-events.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13607272455",
+    "name": "Sports and Fun Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.686068,
+      51.042595
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "12:00-02:00",
+      "en": "12:00-02:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13662091909",
+    "name": "Café Deniz",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.724837,
+      51.075706
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13754249334",
+    "name": "Esche Neun Bar",
+    "type": "bar",
+    "address": "Eschenstraße 9, 01097 Dresden",
+    "coordinates": [
+      13.747689,
+      51.070123
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Th 17:00-24:00, Fr,Sa 17:00-02:00, Su 17:00-23:00",
+      "en": "Tu-Th 17:00-24:00, Fr,Sa 17:00-02:00, Su 17:00-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-n13846581629",
+    "name": "Biergarten im alten Heizhaus",
+    "type": "outdoor",
+    "address": "Stetzscher Straße 4, 01097 Dresden",
+    "coordinates": [
+      13.745479,
+      51.066572
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Fr-Sa",
+      "en": "Fr-Sa"
+    },
+    "website": "https://kontakt97691.wixsite.com/altes-heizhaus-dresd",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w23030131",
+    "name": "Wachstube",
+    "type": "outdoor",
+    "address": "Lennéstraße 9, 01069 Dresden",
+    "coordinates": [
+      13.752229,
+      51.042529
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Sa 11:00-22:00; Su 11:00-20:00",
+      "en": "Mo-Sa 11:00-22:00; Su 11:00-20:00"
+    },
+    "website": "https://www.torwirtschaft-dresden.de/wachstube/restaurant.php",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w23069747",
+    "name": "Susi's Sportsbar",
+    "type": "bar",
+    "address": "Grunaer Straße 30, 01069 Dresden",
+    "coordinates": [
+      13.754166,
+      51.045899
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "10:00-24:00",
+      "en": "10:00-24:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w23760527",
+    "name": "el Horst",
+    "type": "bar",
+    "address": "Bergmannstraße 39, 01309 Dresden",
+    "coordinates": [
+      13.789873,
+      51.04379
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "May-Sep: Mo-Sa 16:00-23:00; Oct-Apr: Mo-Sa 17:00-24:00",
+      "en": "May-Sep: Mo-Sa 16:00-23:00; Oct-Apr: Mo-Sa 17:00-24:00"
+    },
+    "website": "https://www.el-horst.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w25337386",
+    "name": "Es geht weiter",
+    "type": "bar",
+    "address": "Waldstraße 2, 01129 Dresden",
+    "coordinates": [
+      13.728191,
+      51.091037
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w28139867",
+    "name": "Floras Garten",
+    "type": "outdoor",
+    "address": "Hauptallee 9, 01219 Dresden",
+    "coordinates": [
+      13.76609,
+      51.037329
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": "https://www.floras-garten.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w46106622",
+    "name": "Zur Hexe",
+    "type": "bar",
+    "address": "Lockwitzer Straße 48, 01219 Dresden",
+    "coordinates": [
+      13.765627,
+      51.022045
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Fr 14:30-22:00; Sa 16:30+; Su off",
+      "en": "Mo-Fr 14:30-22:00; Sa 16:30+; Su off"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w70765649",
+    "name": "Hellergarten",
+    "type": "bar",
+    "address": "Hellersiedlung Weg E 385, 01099 Dresden",
+    "coordinates": [
+      13.760921,
+      51.0887
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w94163078",
+    "name": "Gartenlokal Fortschritt",
+    "type": "bar",
+    "address": "Bärnsdorfer Straße 2, 01097 Dresden",
+    "coordinates": [
+      13.742025,
+      51.075012
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Tu-Th 17:00-24:00, Fr-Sa 16:00-24:00, Su 15:00-23:00",
+      "en": "Tu-Th 17:00-24:00, Fr-Sa 16:00-24:00, Su 15:00-23:00"
+    },
+    "website": "https://www.fortschritt-gartenlokal.de/",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w150922712",
+    "name": "Live! Die Karaoke-Bar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.701458,
+      51.03133
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "We-Sa 19:00+",
+      "en": "We-Sa 19:00+"
+    },
+    "website": null,
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-w172348606",
+    "name": "Kleeblatt",
+    "type": "bar",
+    "address": "Röderauer Straße 44, 01127 Dresden",
+    "coordinates": [
+      13.736012,
+      51.077613
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Th,Fr 16:00-18:00+; Sa,Su 10:00-13:00",
+      "en": "Th,Fr 16:00-18:00+; Sa,Su 10:00-13:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w185548155",
+    "name": "Alt-Dresden",
+    "type": "bar",
+    "address": "Fröbelstraße 80, 01159 Dresden",
+    "coordinates": [
+      13.69889,
+      51.049818
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w186663871",
+    "name": "Vereinsgaststätte Sommerfrische",
+    "type": "bar",
+    "address": "Stöckelstraße 96, 01127 Dresden",
+    "coordinates": [
+      13.73482,
+      51.07827
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w203732004",
+    "name": "City Beach Strandbar",
+    "type": "bar",
+    "address": "Dresden",
+    "coordinates": [
+      13.728637,
+      51.068166
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://www.citybeachdresden.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-w204923625",
+    "name": "Trobischhof",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.713398,
+      51.086484
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w206305177",
+    "name": "Spitzwegerich",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.707564,
+      51.077663
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Su 11:30-23:00",
+      "en": "Mo-Su 11:30-23:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w223645745",
+    "name": "Club Traumtänzer",
+    "type": "bar",
+    "address": "Budapester Straße 24, 01069 Dresden",
+    "coordinates": [
+      13.72118,
+      51.042286
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,We,Th 20:00-24:00",
+      "en": "Mo,We,Th 20:00-24:00"
+    },
+    "website": "https://club-traumtaenzer.de/",
+    "description": {
+      "de": "Bar in Dresden.",
+      "en": "Bar in Dresden."
+    }
+  },
+  {
+    "id": "osm-w224017918",
+    "name": "Sylvis Dartstube",
+    "type": "bar",
+    "address": "Hansastraße 57, 01097 Dresden",
+    "coordinates": [
+      13.738479,
+      51.077139
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Oct-Apr We 17:00-22:00; Oct-Apr Th 17:00-23:00; Oct-Apr Fr,Sa 17:00+; Oct-Apr Su 16:00-22:00; May-Sep We 16:00-22:00; May-Sep Th 16:00-23:00; May-Sep Fr 16:00+; May-Sep Sa 14:00+; May-Sep Su 14:00-22:00; PH \"kann abweichen\"",
+      "en": "Oct-Apr We 17:00-22:00; Oct-Apr Th 17:00-23:00; Oct-Apr Fr,Sa 17:00+; Oct-Apr Su 16:00-22:00; May-Sep We 16:00-22:00; May-Sep Th 16:00-23:00; May-Sep Fr 16:00+; May-Sep Sa 14:00+; May-Sep Su 14:00-22:00; PH \"kann abweichen\""
+    },
+    "website": "https://sylvisdartstube.de",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w224018837",
+    "name": "Eichenkranz",
+    "type": "bar",
+    "address": "Im Kleingartenpark 31, 01127 Dresden",
+    "coordinates": [
+      13.737969,
+      51.078165
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo,Tu,Fr 15:30+; Sa 10:00-23:00; Su 10:00-20:00",
+      "en": "Mo,Tu,Fr 15:30+; Sa 10:00-23:00; Su 10:00-20:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w227012313",
+    "name": "Pick-Nick",
+    "type": "bar",
+    "address": "Salzburger Straße 80, 01279 Dresden",
+    "coordinates": [
+      13.820178,
+      51.022325
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": null,
+    "website": "https://kgvsalzburgerstrasse.de/vereinsgastst%c3%a4tte",
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w231457660",
+    "name": "Biergarten Zschonermühle",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.641134,
+      51.05885
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Apr-Oct: Sa,Su,PH 10:30-17:00",
+      "en": "Apr-Oct: Sa,Su,PH 10:30-17:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w232659056",
+    "name": "Biergarten Elbsegler",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.739745,
+      51.057333
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w232769145",
+    "name": "Augustus Garten",
+    "type": "outdoor",
+    "address": "Wiesentorstraße 2, 01097 Dresden",
+    "coordinates": [
+      13.741673,
+      51.056967
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": "https://www.augustusgarten.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w258503952",
+    "name": "Torwirtschaft",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.751394,
+      51.041536
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "We-Fr 15:00-22:00; Sa,So,PH 11:00-23:00",
+      "en": "We-Fr 15:00-22:00; Sa,So,PH 11:00-23:00"
+    },
+    "website": "https://torwirtschaft-dd.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w323553210",
+    "name": "Am Revier",
+    "type": "bar",
+    "address": "Trattendorfer Straße 3a, 01239 Dresden",
+    "coordinates": [
+      13.800326,
+      51.010077
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": true,
+    "hours": {
+      "de": "Mo-Sa 10:00-22:00",
+      "en": "Mo-Sa 10:00-22:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Pub in Dresden.",
+      "en": "Pub in Dresden."
+    }
+  },
+  {
+    "id": "osm-w335371239",
+    "name": "Lingnerterrassen",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.79755,
+      51.063952
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w358897224",
+    "name": "Klotzscher Sommerwirtschaft",
+    "type": "outdoor",
+    "address": "Klotzscher Hauptstraße 27, 01109 Dresden",
+    "coordinates": [
+      13.768796,
+      51.110708
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Fr 17:00-23:00; Sa-Su 11:00-23:00; Nov-Mar off",
+      "en": "Mo-Fr 17:00-23:00; Sa-Su 11:00-23:00; Nov-Mar off"
+    },
+    "website": "http://klotzschersommerwirtschaft.de",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w705040481",
+    "name": "Sommerwirtschaft Paul Rackwitz \"Neue Welt\"",
+    "type": "outdoor",
+    "address": "Stübelallee 4, 01309 Dresden",
+    "coordinates": [
+      13.774673,
+      51.038008
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Su 11:00-23:00 \"bei schönem Wetter\"",
+      "en": "Mo-Su 11:00-23:00 \"bei schönem Wetter\""
+    },
+    "website": "https://www.paul-rackwitz.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w753701620",
+    "name": "Biergarten an der Heidemühle",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.842925,
+      51.0943
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w845828718",
+    "name": "Albertgarten",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.7157,
+      51.064788
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w973503158",
+    "name": "Speiselokal & Pension Köhlerhütte",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.805421,
+      51.141304
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Tu-Fr 16:00-22:00; Sa 12:00-22:30",
+      "en": "Tu-Fr 16:00-22:00; Sa 12:00-22:30"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w1060499997",
+    "name": "Hofewiese",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.832053,
+      51.109834
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w1207091830",
+    "name": "Saloppe",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.79006,
+      51.065127
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Fr 17:00+; Sa,Su 12:00+",
+      "en": "Mo-Fr 17:00+; Sa,Su 12:00+"
+    },
+    "website": "https://www.saloppe.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w1414503496",
+    "name": "Lindenschänke",
+    "type": "outdoor",
+    "address": "Altmickten 1, 01139 Dresden",
+    "coordinates": [
+      13.701303,
+      51.073706
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": null,
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w1414967885",
+    "name": "Brauhaus am Waldschlösschen",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.77803,
+      51.067773
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Su-Th 11:30-22:00; Fr,Sa 11:30-23:00",
+      "en": "Su-Th 11:30-22:00; Fr,Sa 11:30-23:00"
+    },
+    "website": "https://waldschloesschen-brauhaus.de/",
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
+    }
+  },
+  {
+    "id": "osm-w1513618539",
+    "name": "SchillerGarten",
+    "type": "outdoor",
+    "address": "Dresden",
+    "coordinates": [
+      13.808902,
+      51.052256
+    ],
+    "photo": null,
+    "screens": null,
+    "indoor": false,
+    "hours": {
+      "de": "Mo-Su 11:00-01:00",
+      "en": "Mo-Su 11:00-01:00"
+    },
+    "website": null,
+    "description": {
+      "de": "Biergarten in Dresden.",
+      "en": "Beer garden in Dresden."
     }
   }
 ]

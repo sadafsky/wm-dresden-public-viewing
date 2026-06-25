@@ -38,10 +38,8 @@ export default function VenueCard({ venue, index, isSelected, onSelect, lang, sh
           <div className="venue-card__name">{venue.name}</div>
           <div className="venue-card__meta">
             <span className="venue-card__tag">{tr.types[venue.type] ?? venue.type}</span>
-            <span className="venue-card__dot">·</span>
-            {tr.screens(venue.screens)}
-            <span className="venue-card__dot">·</span>
-            {venue.hours?.[lang] ?? venue.hours}
+            {venue.screens != null && <><span className="venue-card__dot">·</span>{tr.screens(venue.screens)}</>}
+            {(venue.hours?.[lang] ?? venue.hours) && <><span className="venue-card__dot">·</span>{venue.hours?.[lang] ?? venue.hours}</>}
             {count > 0 && <span className="venue-card__heat"><FlameIcon />{count}</span>}
           </div>
         </div>
