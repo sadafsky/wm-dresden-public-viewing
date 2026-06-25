@@ -15,16 +15,28 @@ const ClockIcon = () => (
   </svg>
 )
 
-// Split an OSM opening_hours string into readable day/time rows.
-function parseHours(str) {
+// OSM day/keyword codes → localized labels
+const DAY_MAP = {
+  de: { Mo: 'Mo', Tu: 'Di', We: 'Mi', Th: 'Do', Fr: 'Fr', Sa: 'Sa', Su: 'So', PH: 'Feiertag', SH: 'Ferien', off: 'geschl.', closed: 'geschl.' },
+  en: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun', PH: 'Holidays', SH: 'School hols', off: 'closed', closed: 'closed' },
+}
+function localizeDays(s, lang) {
+  const map = DAY_MAP[lang] || DAY_MAP.de
+  return s.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH|off|closed)\b/g, (k) => map[k] || k)
+}
+
+// Split an OSM opening_hours string into readable, localized day/time rows.
+function parseHours(str, lang) {
   return String(str)
     .split(';')
     .map((s) => s.trim())
     .filter(Boolean)
     .map((seg) => {
       const m = seg.match(/^([A-Za-z,\-\s]+?)\s+(.+)$/)
-      if (m && /\d/.test(m[2])) return { days: m[1].trim(), times: m[2].trim().replace(/,/g, ', ') }
-      return { days: '', times: seg }
+      if (m && /\d/.test(m[2])) {
+        return { days: localizeDays(m[1].trim(), lang), times: m[2].trim().replace(/,/g, ', ') }
+      }
+      return { days: '', times: localizeDays(seg, lang) }
     })
 }
 
@@ -295,7 +307,7 @@ export default function VenueDetail({ venue, venues = [], matches = [], lang, on
             </button>
             {hoursOpen && (
               <div className="hours-body">
-                {parseHours(hoursValue).map((row, i) => (
+                {parseHours(hoursValue, lang).map((row, i) => (
                   <div className="hours-row" key={i}>
                     {row.days && <span className="hours-row__days">{row.days}</span>}
                     <span className="hours-row__times">{row.times}</span>
