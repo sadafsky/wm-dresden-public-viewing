@@ -27,7 +27,14 @@ function localizeDays(s, lang) {
 
 // Split an OSM opening_hours string into readable, localized day/time rows.
 function parseHours(str, lang) {
-  return String(str)
+  // Some entries separate day-rules with a comma instead of ";"
+  // (e.g. "Mo-Th 11:00-22:00, Fr,Sa 17:00-24:00"). Turn the rule-comma
+  // (after a time, before a day code) into a proper ";" separator first.
+  const normalized = String(str).replace(
+    /(\d[\d:+.\s,\-]*?)\s*,\s*(?=(?:Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b)/g,
+    '$1; ',
+  )
+  return normalized
     .split(';')
     .map((s) => s.trim())
     .filter(Boolean)
