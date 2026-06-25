@@ -15,23 +15,42 @@ const ClockIcon = () => (
   </svg>
 )
 
-// OSM day/keyword codes → localized labels
+// OSM (English) day codes → localized labels
 const DAY_MAP = {
-  de: { Mo: 'Mo', Tu: 'Di', We: 'Mi', Th: 'Do', Fr: 'Fr', Sa: 'Sa', Su: 'So', PH: 'Feiertag', SH: 'Ferien', off: 'geschl.', closed: 'geschl.' },
-  en: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun', PH: 'Holidays', SH: 'School hols', off: 'closed', closed: 'closed' },
+  de: { Mo: 'Mo', Tu: 'Di', We: 'Mi', Th: 'Do', Fr: 'Fr', Sa: 'Sa', Su: 'So', PH: 'Feiertag', SH: 'Ferien' },
+  en: { Mo: 'Mon', Tu: 'Tue', We: 'Wed', Th: 'Thu', Fr: 'Fri', Sa: 'Sat', Su: 'Sun', PH: 'Holidays', SH: 'School hols' },
 }
-function localizeDays(s, lang) {
-  const map = DAY_MAP[lang] || DAY_MAP.de
-  return s.replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH|off|closed)\b/g, (k) => map[k] || k)
+// Time keywords (sources may be German or English) → target language
+const KW_MAP = {
+  de: { ab: 'ab', von: 'ab', from: 'ab', bis: 'bis', till: 'bis', until: 'bis', off: 'geschl.', closed: 'geschl.', geschlossen: 'geschl.' },
+  en: { ab: 'from', von: 'from', from: 'from', bis: 'till', till: 'till', until: 'till', off: 'closed', closed: 'closed', geschlossen: 'closed' },
+}
+// German-only abbreviations → canonical English (so EN can re-localize them)
+const DE_TO_CANON = { Di: 'Tu', Mi: 'We', Do: 'Th', So: 'Su' }
+// Any day token, EN or DE (used to detect rule boundaries)
+const ANY_DAY = 'Mo|Di|Tu|Mi|We|Do|Th|Fr|Sa|So|Su|PH|SH'
+
+function localize(s, lang) {
+  const dmap = DAY_MAP[lang] || DAY_MAP.de
+  const kmap = KW_MAP[lang] || KW_MAP.de
+  return s
+    .replace(/\b(Di|Mi|Do|So)\b/g, (k) => DE_TO_CANON[k])
+    .replace(/\b(Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b/g, (k) => dmap[k] || k)
+    .replace(/\b(ab|von|from|bis|till|until|off|closed|geschlossen)\b/gi, (k) => kmap[k.toLowerCase()] || k)
+    .replace(/24\/7/g, lang === 'en' ? '24/7' : 'täglich 0–24 Uhr')
+    .replace(/\s+/g, ' ')
+    .trim()
 }
 
-// Split an OSM opening_hours string into readable, localized day/time rows.
+// Parse an OSM opening_hours string into readable, localized day/time rows.
+// Tolerant of messy data: quotes, comma-separated rules, German free text,
+// "ab/from" instead of a start time. Anything unparseable shows as one line.
 function parseHours(str, lang) {
+  const cleaned = String(str).replace(/["“”'']/g, '').trim()
   // Some entries separate day-rules with a comma instead of ";"
-  // (e.g. "Mo-Th 11:00-22:00, Fr,Sa 17:00-24:00"). Turn the rule-comma
-  // (after a time, before a day code) into a proper ";" separator first.
-  const normalized = String(str).replace(
-    /(\d[\d:+.\s,\-]*?)\s*,\s*(?=(?:Mo|Tu|We|Th|Fr|Sa|Su|PH|SH)\b)/g,
+  // (e.g. "Mo-Th 11:00-22:00, Fr,Sa 17:00-24:00"). Make it a real ";" first.
+  const normalized = cleaned.replace(
+    new RegExp(`(\\d[\\d:+.\\s,\\-]*?)\\s*,\\s*(?=(?:${ANY_DAY})\\b)`, 'g'),
     '$1; ',
   )
   return normalized
@@ -39,11 +58,14 @@ function parseHours(str, lang) {
     .map((s) => s.trim())
     .filter(Boolean)
     .map((seg) => {
-      const m = seg.match(/^([A-Za-z,\-\s]+?)\s+(.+)$/)
-      if (m && /\d/.test(m[2])) {
-        return { days: localizeDays(m[1].trim(), lang), times: m[2].trim().replace(/,/g, ', ') }
+      // Time part starts at the first digit OR a time keyword (ab/von/from/…)
+      const t = seg.match(/\d|\b(?:ab|von|from|bis|till|until|off|closed|geschlossen)\b|24\/7/i)
+      if (t && t.index > 0 && /[A-Za-z]/.test(seg.slice(0, t.index))) {
+        const daysRaw = seg.slice(0, t.index).trim().replace(/[,\s]+$/, '')
+        const timesRaw = seg.slice(t.index).trim().replace(/,(?=\S)/g, ', ')
+        return { days: localize(daysRaw, lang), times: localize(timesRaw, lang) }
       }
-      return { days: '', times: localizeDays(seg, lang) }
+      return { days: '', times: localize(seg, lang) }
     })
 }
 
